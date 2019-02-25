@@ -282,6 +282,30 @@ For each $8 \times 8$ block of our output image, we select the block of color va
 
 Details of our choices for $k$, $Q_l$ and $Q_h$, as well as target image sizes are provided in the next section.  A wider range of $Q_l$ and $Q_h$ will tend to produce stronger results, but at the expense of very poor quality in non-salient regions.
 
+\begin{algorithm}
+\SetKwInOut{Input}{Input}
+\SetKwInOut{Output}{Output}
+
+    \Input{Image: I}
+    \Output{Image: O, same dimensions as I}
+    Let $Q_{l \cdot h}$ be N fixed values in range l to h
+    
+    \For{b $\gets 8 \times 8$ blocks in I}{
+        $Q_i = \hat{M}$[b] \#Nearest\ quantized\ level
+        
+        I'[b] $\gets$ JPEG \{I[b], $Q_i$\}
+    }
+    O $\gets$ JPEG\{I', $Q_f$\}
+\caption[Encoding with MSROI]{JPEG Encoding with MSROI}
+\label{alg:encoding}
+\end{algorithm}
+
+Encoding of image can be summarized as shown by algorithm ~\ref{alg:encoding}.
+
+
+
+
+
 \section{Experimental Results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 We trained our model with the Caltech-256 dataset \cite{xxx_griffin2007caltech}, which contains 256 classes of man-made and natural objects, common plants and animals, buildings, etc.
