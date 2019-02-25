@@ -1,5 +1,7 @@
 \documentclass{brandeis-dissertationx}
-\usepackage[utf8]{inputenc}
+\input{preamble.tex}
+
+\addbibresource{references.bib}
 
 \title{Thesis}
 \author{Aaditya Prakash}
@@ -17,13 +19,30 @@
 %\thesisfront[nocopyrightpage,lot,lof]
 \thesisfront[nocopyrightpage]
 
+\listoffigures
+
 \thesisabstract{Semantic Maps}
 
 
 
 
 \chapter{Introduction}
-\input{introduction.tex}
+\input{chapters/introduction.tex}
+
+\chapter{Semantic Image Compression}
+% \input{chapters/semantic.tex}
+
+\chapter{Adversarial Images}
+% \input{chapters/protect.tex}
+
+\chapter{Pixel Deflection}
+% \input{chapters/pixel.tex}
+
+\chapter{Efficient Training}
+\input{chapters/repr.tex}
+
+\printbibliography
+
 
 
 \end{document}

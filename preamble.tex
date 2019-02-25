@@ -1,0 +1,85 @@
+\usepackage[utf8]{inputenc}
+\usepackage[style=alphabetic]{biblatex}
+\usepackage{epsfig}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage[font=normalsize]{caption}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{tabularx}
+\usepackage{caption}
+%\usepackage{tabular}
+\usepackage[linesnumbered,ruled]{algorithm2e}
+\usepackage[breaklinks=true,colorlinks,bookmarks=false]{hyperref}
+% \usepackage{xcolor}
+\usepackage[table]{xcolor}
+\usepackage{makeidx}
+\usepackage{arydshln}
+
+% \usepackage[dvipsnames,table,xcdraw]{xcolor}
+
+%\usepackage[backend=biber,sorting=none]{biblatex}
+
+
+%\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+%\newlength{\figurewidth}
+%\newlength{\smallfigurewidth}
+%\setlength{\smallfigurewidth}{2.75in}
+%\setlength{\figurewidth}{6in}
+%\setlength{\belowcaptionskip}{-10pt}
+% \setlength{\bibsep}{0pt plus 0.3ex}
+
+% \let\oldbibliography\thebibliography
+% \renewcommand{\thebibliography}[1]{\oldbibliography{#1}
+% \setlength{\itemsep}{0pt}} %Reducing spacing in the bibliography.
+
+
+
+\newcommand\todo[1]{ \textcolor{red}{\footnotesize #1}}
+
+%\renewcommand*{\bibfont}{\footnotesize}
+
+\DeclareMathOperator*{\argmin}{\arg\!\min}
+\DeclareMathOperator*{\argmax}{\arg\!\max}
+
+\DeclareRobustCommand\onedot{\futurelet\@let@token\@onedot}
+\def\onedot{\ifx\@let@token.\else.\null\fi\xspace}
+% \def\onedot{.}
+
+\def\eg{\emph{e.g}\onedot} \def\Eg{\emph{E.g}\onedot}
+\def\ie{\emph{i.e}\onedot} \def\Ie{\emph{I.e}\onedot}
+\def\cf{\emph{c.f}\onedot} \def\Cf{\emph{C.f}\onedot}
+\def\etc{\emph{etc}\onedot} \def\vs{\emph{vs}\onedot}
+\def\wrt{w.r.t\onedot} \def\dof{d.o.f\onedot}
+\def\etal{\emph{et al}\onedot}
+
+\newcommand{\STAB}[1]{\begin{tabular}{@{}c@{}}#1\end{tabular}}
+
+
+\definecolor{Gray}{RGB}{239, 239, 239}
+\definecolor{White}{RGB}{255, 255, 255}
+\definecolor{winered}{rgb}{0.5,0,0}
+\definecolor{Yellow}{RGB}{255,255,0}
+\definecolor{ora}{rgb}{1,0.5,0}
+
+\hypersetup
+{
+     pdfauthor={Aaditya Prakash},
+     pdfsubject={PhD Thesis},
+     pdfkeywords={thesis, deep learning, aaditya prakash}
+%    colorlinks=false,
+     pdfborder={0 0 0},
+%You can set individual colors for links as below:
+colorlinks=true,
+linkcolor={winered},
+urlcolor={winered},
+filecolor={winered},
+citecolor={blue}
+% allcolors={winered}
+}
