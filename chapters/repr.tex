@@ -695,9 +695,7 @@ More details of the training and hyper-parameters are provided in the supplement
 Each subsequent RePr leads to improved performance with significantly diminishing returns.
 Improvement is more distinct in architectures which do not have skip connections, like Inception v1 and VGG and have lower baseline performance.
 
-Figure ~\ref{fig:CCA_after}) provides a side-by-side comparison of correlation of activations on the layers of a two-layer ConvNet when trained with standard training scheme and when trained with RePr. While RePr is not able to remove all the high correlation filters, it significantly reduces the overlap of feature representation. For the first layer the differences are less pronounced due to less overlapping filters in the standard training.
-
-\begin{figure}[]
+\begin{figure}[H]
    \includegraphics[width=0.999\linewidth]{figures/repr/filter_CCA_3_second_rebuttal.pdf}
 %   \vspace{-2mm}
    \caption[Comparison of Filter Overlap]{Canonical Correlation Analysis of activations from the $1^\text{st}$ and $2^\text{nd}$ layer of a C$2^(32)$ ConvNet trained on CIFAR-10.}
@@ -705,7 +703,11 @@ Figure ~\ref{fig:CCA_after}) provides a side-by-side comparison of correlation o
 %   \vspace{-4mm}
 \end{figure}
 
-\begin{table}[H]
+Figure ~\ref{fig:CCA_after}) provides a side-by-side comparison of correlation of activations on the layers of a two-layer ConvNet when trained with standard training scheme and when trained with RePr. While RePr is not able to remove all the high correlation filters, it significantly reduces the overlap of feature representation. For the first layer the differences are less pronounced due to less overlapping filters in the standard training.
+
+
+
+\begin{table}[ht]
 \center
 \begin{tabular}{ccccccc}
 \toprule
