@@ -30,7 +30,7 @@ This suggests that there is room for improvement in the training of Convolutiona
    %\hspace{-8.0mm}
    %\includegraphics[width=1.05\linewidth]{figures/repr/combine_repr.pdf}
    %\vspace{-3mm}
-   \caption{Performance of a three layer ConvNet with 32 filters each over $100$ epochs using \textcolor{orange}{standard scheme} and \textcolor{blue}{our method - RePr} on CIFAR-$10$. The shaded regions denote periods when only part of the network is trained. 
+   \caption[Performance Standard vs RePr]{Performance of a three layer ConvNet with 32 filters each over $100$ epochs using \textcolor{orange}{standard scheme} and \textcolor{blue}{our method - RePr} on CIFAR-$10$. The shaded regions denote periods when only part of the network is trained. 
    Left: Training Accuracy, Right: Test Accuracy. Annotations [A-F] are discussed in Section~\ref{sec:training}.}
    \label{fig:REPR}
    %%\vspace{1mm}
@@ -72,7 +72,7 @@ Our goal is to reduce the redundancy of the filters and increase the expressive 
 \section{Related Work}
 
 %We have divided the discussion of related works into categories that broadly cover our area of research.
-\subsection{Training Scheme }
+\subsection{Training Scheme } 
 Many changes to the training paradigm have been proposed to reduce over-fitting and improve generalization.
 Dropout~\cite{Wu2015TowardsDT} is widely used in training deep nets. 
 By stochastically dropping the neurons it prevents co-adaption of feature detectors.
@@ -81,56 +81,56 @@ Wu \etal~\cite{Wu2015TowardsDT} extend the idea of stochastic dropping to convol
 Yet another form of stochastic training recommends randomly dropping entire layers~\cite{Huang2016DeepNW}, forcing the model to learn similar features across various layers which prevent extreme overfitting.
 In contrast, our technique encourages the model to use a linear combination of features instead of duplicating the same feature.
 Han \etal~\cite{Han2016DSDDT} propose Dense-Sparse-Dense (DSD), a similar training scheme, in which they apply weight regularization mid-training to encourage the development of sparse weights, and subsequently remove the regularization to restore dense weights.
-%They recommend adding weight regularization to make sparse weights and removing the regularization subsequently to achieve dense network again.
-%DSD works on individual parameters and uses weight norm to drop the weights. 
-%We designed our training scheme for specially convolutional filters and we show that it is important to allow each of the model (with reduced filters) to converge before switching over. %TODO: move note about allowing each model to converge elsewhere
+They recommend adding weight regularization to make sparse weights and removing the regularization subsequently to achieve dense network again.
+DSD works on individual parameters and uses weight norm to drop the weights. 
+We designed our training scheme for specially convolutional filters and we show that it is important to allow each of the model (with reduced filters) to converge before switching over. 
 While DSD works at the level of individual parameters, our method is specifically designed to apply to convolutional filters.
-%We achieve this by allowing the sub-network to relearn any missing feature representations with existing filters.
-%In a limited model capacity, doing so encourages more expressivity~\cite{Raghu2017OnTE} and as our results show it leads to efficient model.
+We achieve this by allowing the sub-network to relearn any missing feature representations with existing filters.
+In a limited model capacity, doing so encourages more expressivity~\cite{Raghu2017OnTE} and as our results show it leads to efficient model.
 
 
 
 \subsection{Model Compression } 
 Knowledge Distillation (KD)~\cite{Hinton2015DistillingTK} is a training scheme which uses soft logits from a larger trained model (teacher) to train a smaller model (student).
 Soft logits capture hierarchical information about the object and provide a smoother loss function for optimization. This leads to easier training and better convergence for small models.
-%Stronger forms of KD where a model matches intermediate activations have also been proposed~\cite{Romero2014FitNetsHF}. 
-%By forcing the student model to match the output statistics from the teacher, it provides the directions for weight updates which are not found in the gradients.
+Stronger forms of KD where a model matches intermediate activations have also been proposed~\cite{Romero2014FitNetsHF}. 
+By forcing the student model to match the output statistics from the teacher, it provides the directions for weight updates which are not found in the gradients.
 In a surprising result, Born-Again-Network~\cite{Furlanello2018BornAN} shows that if the student model is of the same capacity as the teacher it can outperform the teacher.
 A few other variants of KD have been proposed~\cite{Romero2014FitNetsHF} and all of them require training several models.
 Our training scheme does not depend on an external teacher and requires less training than KD. %More importantly, our scheme is complementary to KD. 
 More importantly, when combined with KD, our method gives better performance than can be achieved by either technique independently (discussed in Section~\ref{lbl:distillation}).
 
 
-\subsection{Neuron ranking } 
+\subsection{Neuron ranking }
 Interest in finding the least salient neurons/weights has a long history. 
 LeCun~\cite{LeCun1989OptimalBD} and Hassibi\etal~\cite{Hassibi1992SecondOD} show that using the Hessian, which contains second-order derivative, identifies the weak neurons and performs better than using the magnitude of the weights.
 Computing the Hessian is expensive and thus is not widely used.
 Han \etal~\cite{Han2015DeepCC} show that the norm of weights is still effective ranking criteria and yields sparse models.
 The sparse models do not translate to faster inference, but as a neuron ranking criterion, they are effective.
-%Computing the norm of the weights is easy and data-free, thus lends itself to pruning for transfer learning.
+Computing the norm of the weights is easy and data-free, thus lends itself to pruning for transfer learning.
 Hu \etal~\cite{Hu2016NetworkTA} explore Average Percentage of Zeros (APoZ) in the activations and use a data-driven threshold to determine the cut-off. 
-%It is a useful comparison metric and works well when the training data is available.
-%ThinNet~\cite{Luo2017ThiNetAF} explores reconstruction error between the layers, this does not lead to a generalized filter ranking criteria.
+It is a useful comparison metric and works well when the training data is available.
+ThinNet~\cite{Luo2017ThiNetAF} explores reconstruction error between the layers, this does not lead to a generalized filter ranking criteria.
 Molchanov \etal~\cite{Molchanov2016PruningCN} recommend the second term from the Taylor expansion of the loss function.%, which is a product of activation and the gradient.
-%Currently, it is the state-of-the-art in filter pruning and works well for transfer pruning.
-%Our filter ranking criteria, \textit{inter}-filter orthogonality, is yet another approach and is designed especially for the purposes of temporary pruning. 
+Currently, it is the state-of-the-art in filter pruning and works well for transfer pruning.
+Our filter ranking criteria, \textit{inter}-filter orthogonality, is yet another approach and is designed especially for the purposes of temporary pruning. 
 We provide detail comparison and show results on using these metrics with our training scheme in Section~\ref{sec:metric}.
 
 Chen \etal ~\cite{Chen2017TrainingGO} used privileged information, like segmentation maps, to encourage diversity in feature maps, and approximate group orthogonal filters.
 Unfortunately, such techniques restrict themselves to domains where segmentation maps are available for the task of image classification. 
 Our method does not rely on any external information or a pretrained model.
 
-\subsection{Architecture Search } %It is possible to argue that works neural architecture search ~\cite{Liu2017ProgressiveNA, Real2018RegularizedEF, Zoph2016NeuralAS} is related to our technique. 
-%Neural architecture search ~\cite{Liu2017ProgressiveNA, Real2018RegularizedEF, Zoph2016NeuralAS} (NAS) finds optimal network structure given a dataset.
-%They iterate over large possible space of networks and generally yield state-of-the-art models.
-%while our training regime restricts itself to the original form. 
-%Our scheme is finds better weights given a fixed architecture and thus have a lower potential than the NAS models.
-%Potential for finding a better generalizing architecture diminishes by restricting to a fixed final architecture but asserts itself to several applications where predetermined architecture is warranted.
-%This could be due to certified model deployment, memory requirements or better interpretability of simpler ConvNets.
-Neural architecture search ~\cite{Liu2017ProgressiveNA, Real2018RegularizedEF, Zoph2016NeuralAS} is where the architecture is modified during training, and multiple neural network structures are explored in search of the best architecture for a given dataset. Such methods do not have any benefits if the architecture is fixed ahead of time. Our scheme improves training for a given architecture by making better use of the available parameters. This could be used in conjunction with architecture search if there is flexibility around the final architecture or used on its own when the architecture is fixed due to certified model deployment, memory requirements, or other considerations.
+\subsection{Architecture Search } 
+
+Neural architecture search ~\cite{Liu2017ProgressiveNA, Real2018RegularizedEF, Zoph2016NeuralAS} is where the architecture is modified during training, and multiple neural network structures are explored in search of the best architecture for a given dataset. 
+Such methods do not have any benefits if the architecture is fixed ahead of time. Our scheme improves training for a given architecture by making better use of the available parameters. 
+This could be used in conjunction with architecture search if there is flexibility around the final architecture or used on its own when the architecture is fixed due to certified model deployment, memory requirements, or other considerations.
+Our scheme is finds better weights given a fixed architecture and thus have a lower potential than the NAS models.
+Potential for finding a better generalizing architecture diminishes by restricting to a fixed final architecture but asserts itself to several applications where predetermined architecture is warranted.
+This could be due to certified model deployment, memory requirements or better interpretability of simpler ConvNets.
 
 \subsection{Feature correlation } 
-A well-known shortcoming of vanilla convolutional networks is their correlated feature maps ~\cite{Cogswell2015ReducingOI, Glorot2010UnderstandingTD}.
+A well-known shortcoming of vanilla convolutional networks is their correlated feature maps~\cite{Cogswell2015ReducingOI, Glorot2010UnderstandingTD}.
 Architectures like Inception-Net~\cite{Szegedy2015GoingDW} are motivated by analyzing the correlation statistics of features across layers.
 They aim to reduce the correlation between the layers by using concatenated features from various sized filters, subsequent research shows otherwise~\cite{Raghu2017SVCCASV}.
 %However, correlation of singular values across inception layers show that there is a significant overlap of activations. 
@@ -165,11 +165,10 @@ The authors of ~\cite{Xie2017AllYN, Xiao2018DynamicalIA} further demonstrate the
 Orthogonal initialization is common practice for Recurrent Neural Networks due to their increased sensitivity to initial conditions~\cite{Vorontsov2017OnOA}, but it has somewhat fallen out of favor for ConvNets.
 %Yet another advantage of orthogonal weights is that they lead to the efficient training of very deep networks~\cite{Xie2017AllYN, Xiao2018DynamicalIA}.
 These factors shape our motivation for encouraging orthogonality of features in the ConvNet and form the basis of our ranking criteria.
-%TODO
-%Collecting activations over a dataset in order to compute orthogonal features is slow and inefficient. Instead, we use orthogonality of weights, to represent feature overlap.
+
+Collecting activations over a dataset in order to compute orthogonal features is slow and inefficient. Instead, we use orthogonality of weights, to represent feature overlap.
 Because features are dependent on the input data, determining their orthogonality requires computing statistics across the entire training set, and is therefore prohibitive.  
 We instead compute the orthogonality of filter weights as a surrogate.
-%Our experiments show that explicit regularization by adding weight orthogonality term to the loss function does not promote a multitude of directions captured by the features.
 Our experiments show that encouraging weight orthogonality through a regularization term is insufficient to promote the development of features which capture the full space of the input data manifold.
 Our method of dropping overlapping filters acts as an implicit regularization and leads to the better orthogonality of filters without hampering model convergence.
 
@@ -187,18 +186,16 @@ As a result, VGG-$16$ has been shown to be easily pruned - more than $50$\% of t
 Is this also true for significantly smaller convolutional networks, which under-fit the dataset?
 
 
-\begin{figure}[H]
+\begin{figure}[]
    \includegraphics[width=0.49\linewidth]{figures/repr/Filter_CCA.pdf}
    \includegraphics[width=0.49\linewidth]{figures/repr/Error_Distribution.pdf}
    %%\vspace{-2mm}
-   \caption{Left: Canonical Correlation Analysis of activations from two layers of a ConvNet trained on CIFAR-10. Right: Distribution of change in accuracy when the model is evaluated by dropping one filter at a time.}
+   \caption[Correlation Analysis of filters]{Left: Canonical Correlation Analysis of activations from two layers of a ConvNet trained on CIFAR-10. Right: Distribution of change in accuracy when the model is evaluated by dropping one filter at a time.}
    \label{fig:CCA}
    %\vspace{-2mm}
 \end{figure}
 
 We will consider a simple network with two convolutional layers of $32$ filters each, and a softmax layer at the end.
-%Consider a two-layer convolutional network with $32$ filters each and a softmax layer at the end.
-%This model, when trained on CIFAR-$10$ with SGD for $100$ epochs with annealed learning rate, achieves test accuracy of $58.2$\%, which is far below VGG-$16$'s accuracy of $93.5$\%.
 Training this model on CIFAR-$10$ for $100$ epochs with an annealed learning rate results in test set accuracy of $58.2$\%, far below the $93.5$\% achieved by VGG-$16$.
 %Given the limited capacity of this model every filter is critical to its performance and any correlation in activation would mean limited expressivity of the features and therefore inefficiency in the training.
 In the case of VGG-$16$, we might expect that correlation between filters is merely an artifact of the over-parameterization of the model - the dataset simply does not have a dimensionality high enough to require every feature to be orthogonal to every other.
@@ -284,7 +281,7 @@ We summarize our training scheme in Algorithm~\ref{alg:repr}.
         {\textit{(and their training specific parameters \\ from BatchNorm and Adam, if applicable)}}
         
     }
-    \caption{RePr Training Scheme}
+    \caption[RePr Training Scheme]{RePr Training Scheme}
     \label{alg:repr}
 \end{algorithm}
 
@@ -295,10 +292,8 @@ We provide results on larger and deeper convolutional networks in Section Result
 
 %Consider a three layer vanilla ConvNet, without a skip or dense connections, as shown below.
 Consider a $n$ layer vanilla ConvNet, without a skip or dense connections, with X filter each, as shown below:
-\begin{equation*}
-    %%\vspace{-1mm}
+\begin{equation*}  
     \text{Img} \longmapsto \bigg[ \text{CONV}(X) \rightarrow \text{RELU}  \bigg]^n \longmapsto \text{FC} \longmapsto \text{Softmax}
-    %%\vspace{-1mm}
 \end{equation*}
 
 We will represent this architecture as $C^n(X)$. Thus, a $C^3(32)$ has $96$ filters, and when trained with SGD with a learning rate of $0.01$, achieves test accuracy of $73\%$.
@@ -322,7 +317,7 @@ to the point [E] ($100\%$ of the model size.
 Another observation we can make from the plots is that training accuracy of RePr model is lower, which signifies some form of regularization on the model. 
 This is evident in the Figure~\ref{fig:ablation_percent} (Right), which shows RePr with a large number of iterations ($N=28$). 
 While the marginal benefit of higher test accuracy diminishes quickly, the generalization gap between train and test accuracy is reduced significantly.
-%TODO adds about how most weights/filters are useless and only a few of them are doing the task.
+
 
 \section{Our Metric : \textit{inter}-filter orthogonality} \label{sec:metric}
 
@@ -402,10 +397,10 @@ A few researchers  ~\cite{Brock2016NeuralPE, Poole2014AnalyzingNI, Xie2017NearOr
 We experimented by adding $\lambda * \sum_\ell \boldsymbol{P}_\ell$ to the loss function, but we did not see any improvement. 
 Soft regularization penalizes all the filters and changes the loss surface to encourage random orthogonality in the weights without improving expressiveness.
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[scale=0.4]{figures/repr/correlation_combined_reduced.pdf}
-    \caption{Left: Pearson correlation coefficient of various metric values with the accuracy values from greedy Oracle.
+    \caption[Correlation of Various Metrics]{Left: Pearson correlation coefficient of various metric values with the accuracy values from greedy Oracle.
    Center: Pearson correlation coefficient of filter ranks using various metric with rank from greedy Oracle \label{fig:corr}}
 \end{figure}
 
@@ -433,7 +428,7 @@ Soft regularization penalizes all the filters and changes the loss surface to en
                   \rowcolor[HTML]{EFEFEF} 
                   \textcolor{green}{Ortho}                & \textbf{76.4}                                  \\ \hline
     \end{tabular}
-    \caption{Test accuracy on CIFAR-10 using standard training and RePr training with various metrics}
+    \caption[Neuron Ranking Metrics]{Test accuracy on CIFAR-10 using standard training and RePr training with various metrics}
   \label{tbl:corr_metrics}
 \end{table}
 
@@ -441,18 +436,18 @@ Soft regularization penalizes all the filters and changes the loss surface to en
 %There are some hyper-parameters and function choices in our scheme. 
 %We present a short study of the parameters in our scheme.
 
-\begin{figure}[H]
+\begin{figure}[]
 \center
     \includegraphics[width=0.8\linewidth]{figures/repr/percentage_pruned_X.pdf}
-   \caption{RePr training with various percentage of filters pruned. Shows average test accuracy over 5 epochs starting from epoch 20 for better visibility.}
+   \caption[Percentage of filters pruned]{RePr training with various percentage of filters pruned. Shows average test accuracy over 5 epochs starting from epoch 20 for better visibility.}
    \label{fig:ablation_percent}
 \end{figure}
 
 
-\begin{figure}[H]
+\begin{figure}[]
 \center
    \includegraphics[width=0.75\linewidth]{figures/repr/marginal_returns_no_y.pdf}
-   \caption{Marginal returns of multiple iterations of RePR - \textcolor{blue}{Training} and \textcolor{green}{Test} accuracy.}
+   \caption[Multiple Iterations of RePr]{Marginal returns of multiple iterations of RePR - \textcolor{blue}{Training} and \textcolor{green}{Test} accuracy on CIFAR-10}
    \label{fig:ablation_N_repeat}
 \end{figure}
 
@@ -501,10 +496,10 @@ Similar to Dense-Sparse-Dense~\cite{Han2016DSDDT} and Born-Again-Networks~\cite{
 Figure~\ref{fig:ablation_optimizer_s1s2} (left) shows variance in improvement when using different optimizers. 
 Our model works well with most well-known optimizers. Adam and Momentum perform better than SGD due to their added stability in training. 
 We experimented with various values of $S1$ and $S2$, and there is not much difference if either of them is large enough for the model to converge temporarily. 
-\begin{figure}[H]
+\begin{figure}[]
    \includegraphics[width=1.0\linewidth]{figures/repr/ablation_optimizer_s1s2.pdf}
    %%\vspace{-2mm}
-   \caption{Left: Impact of using various optimizers on RePr training scheme. Right: Results from using different S1/S2 values. For clarity, these experiments only shows results with $S1=S2$}
+   \caption[Optimizers on RePr]{Left: Impact of using various optimizers on RePr training scheme. Right: Results from using different S1/S2 values. For clarity, these experiments only shows results with $S1=S2$}
    \label{fig:ablation_optimizer_s1s2}
    %\vspace{-2mm}
 \end{figure}
@@ -522,14 +517,14 @@ Cyclical learning rates~\cite{Smith2017CyclicalLR} can provide stronger performa
 Figure~\ref{fig:LR} shows the comparison of our training technique when applied in conjunction with fixed schedule learning rate scheme and cyclical learning rate. 
 Our training scheme is not impacted by using these schemes, and improvements over standard training is still apparent.
 
-\begin{figure}[H]
+\begin{figure}[]
 \hspace*{-4.0mm}
 \center
    \includegraphics[width=0.47\linewidth]{figures/repr/RePr_LR_Staircase.pdf}
    \hspace{-2.0mm}
    \includegraphics[width=0.47\linewidth]{figures/repr/RePr_LR_Cycle.pdf}
    %\vspace{-3mm}
-   \caption{Test accuracy of a three layer ConvNet with 32 filters each over $100$ epochs using \textcolor{orange}{standard scheme} and \textcolor{blue}{our method - RePr} on CIFAR-$10$. The shaded regions denote periods when only part of the network is trained for RePr.
+   \caption[Learning Rate Schedule]{Test accuracy of a three layer ConvNet with 32 filters each over $100$ epochs using \textcolor{orange}{standard scheme} and \textcolor{blue}{our method - RePr} on CIFAR-$10$. The shaded regions denote periods when only part of the network is trained for RePr.
    Left: Fixed Learning Rate schedule of $0.1$, $0.01$ and $0.001$.Right: Cyclic Learning Rate with periodicity of $50$ Epochs, and amplitude of 0.005 and starting LR of 0.001.}
    \label{fig:LR}
    %%\vspace{1mm}
@@ -554,18 +549,18 @@ We observe that the inclusion of Dropout lowers the final test accuracy, due to 
 %However, our training scheme (RePr) applied with our proposed metric - \textit{inter}-filter orthogonality - still provides improves performance over the standard training. 
 Our method produces improved performance with or without the addition of standard Dropout, demonstrating that its effects are distinct from the benefits of Dropout. 
 
-\begin{figure}[H]
+\begin{figure}[]
 %\hspace*{-2mm}
 \center
    \includegraphics[width=0.48\linewidth]{figures/repr/with_dropout.pdf}
    \includegraphics[width=0.48\linewidth]{figures/repr/without_dropout.pdf}
    %\vspace{-3mm}
-   \caption{Test accuracy of a three layer ConvNet with 32 filters each over $100$ epochs using \textcolor{red}{standard scheme}, \textcolor{blue}{RePr with Oracle} and \textcolor{green}{RePr with Ortho} on CIFAR-$10$. Left: With Dropout of $0.5$. Right: No Dropout}
+   \caption[Impact of Dropout]{Test accuracy of a three layer ConvNet with 32 filters each over $100$ epochs using \textcolor{red}{standard scheme}, \textcolor{blue}{RePr with Oracle} and \textcolor{green}{RePr with Ortho} on CIFAR-$10$. Left: With Dropout of $0.5$. Right: No Dropout}
    \label{fig:dropout}
    %%\vspace{1mm}
 \end{figure}
 
-\subsection{Orthogonal Loss - OL}
+\textbf{Orthogonal Loss - OL}
 Adding Orthogonality of filters (equation 1) as a regularization term as a part of the optimization loss does not significantly impact the performance of the model.
 Thus, the loss function will be -
 \begin{equation*}
@@ -575,7 +570,6 @@ where, $\lambda$ is a hyper-parameter which balances both the cost terms. We exp
 
 \begin{table}[H]
 \center
-\rowcolors{1}{White}{Gray}
 \begin{tabular}{ccccc}
 \toprule
           $C^3(32)$ & \multicolumn{1}{c}{\textbf{Std}} & \multicolumn{1}{c}{\textbf{Std+OL}} & \multicolumn{1}{c}{\textbf{RePr}} & \multicolumn{1}{c}{\textbf{RePr+OL}} \\ \hline
@@ -583,24 +577,23 @@ CIFAR-10  & 72.1                                                     & 72.8     
 CIFAR-100 & 47.2                                                     & 48.3                                                    & 58.2                                                      & {\color[HTML]{3166FF} 58.6}                                                        \\ \bottomrule
 \end{tabular}
 %%\vspace{-2mm}
-\caption{Comparison of addition of Orthogonality loss to Standard Training and RePr}
+\caption[Orthogonality Loss]{Comparison of addition of Orthogonality loss to Standard Training and RePr}
 \label{tbl:ortho_loss}
 %%\vspace{-2mm}
 \end{table}
 
 
-\begin{figure}[H]
+\begin{figure}[]
    \includegraphics[width=1.0\linewidth]{figures/repr/orthogonality_distillation.pdf}
    %%\vspace{-2mm}
-   \caption{Comparison of orthogonality of filters (Ortho-sum - eq 2) in standard training and RePr training with and without Knowledge Distillation. \textbf{Lower value} signifies less overlapping filters.
+   \caption[Comparison with Knowledge Distillation]{Comparison of orthogonality of filters (Ortho-sum - eq 2) in standard training and RePr training with and without Knowledge Distillation. \textbf{Lower value} signifies less overlapping filters.
    Dashed vertical lines denotes filter dropping.}
    \label{fig:orthodistill}
    %%\vspace{-2mm}
 \end{figure}
 
-\begin{table}[H]
+\begin{table}[]
 \center
-\rowcolors{1}{White}{Gray}
 \begin{tabular}{
 >{\columncolor[HTML]{FFFFFF}}c 
 >{\columncolor[HTML]{FFFFFF}}c 
@@ -613,7 +606,7 @@ CIFAR-10  & 72.1                                                     & 74.8     
 CIFAR-100 & 47.2                                                     & 56.5                                                    & 58.2                                                      & \textbf{64.1}                                                        \\ \bottomrule
 \end{tabular}
 %%\vspace{-2mm}
-\caption{Comparison of Knowledge Distillation with RePr.}
+\caption[Comparison of Knowledge Distillation with RePr]{Comparison of Knowledge Distillation with RePr.}
 \label{tbl:distillation}
 %%\vspace{-2mm}
 \end{table}
@@ -644,16 +637,16 @@ Indeed, that is the case as the combined model has significantly better performa
 We present the performance of our training scheme, RePr, with our ranking criteria, \textit{inter}-filter orthogonality, Ortho, on different ConvNets~\cite{Simonyan2014VeryDC, He2016DeepRL, Szegedy2015GoingDW, Szegedy2016RethinkingTI, Huang2017DenselyCC}.
 For all the results provided RePr parameters are: $S_1=20$, $S_2=10$, $p_\%=30$, and with three iterations, $N=3$.
 
-\begin{figure}[H]
+\begin{figure}[]
 \center
    \includegraphics[width=1.0\linewidth]{figures/repr/ablation_layers.pdf}
    %%\vspace{-2mm}
-   \caption{Accuracy improvement using RePr over standard training on Vanilla ConvNets across many layered networks [$C^n(32)$]}
+   \caption[Impact of model depth]{Accuracy improvement using RePr over standard training on Vanilla ConvNets across many layered networks [$C^n(32)$]}
    \label{fig:ablation_layers}
    %%\vspace{-2mm}
 \end{figure}
 
-\begin{table}[H]
+\begin{table}[]
 \center
 \begin{tabular}{cccccc}
 \toprule
@@ -663,7 +656,7 @@ For all the results provided RePr parameters are: $S_1=20$, $S_2=10$, $p_\%=30$,
 \multicolumn{1}{c}{8.7} & \multicolumn{1}{c|}{8.4}                                                         & \multicolumn{1}{c}{7.8} & \multicolumn{1}{c|}{8.2}          & 7.7                                                                                 & \textcolor{blue}{6.9}                     \\
 \bottomrule
 \end{tabular}
-    \caption{Comparison of test error from using various techniques. }
+    \caption[RePr vs DSD vs BAN]{Comparison of test error from using various techniques. }
    \label{tbl:resnet20}
    %%\vspace{-2mm}
 \end{table}
@@ -704,10 +697,10 @@ Improvement is more distinct in architectures which do not have skip connections
 
 Figure ~\ref{fig:CCA_after}) provides a side-by-side comparison of correlation of activations on the layers of a two-layer ConvNet when trained with standard training scheme and when trained with RePr. While RePr is not able to remove all the high correlation filters, it significantly reduces the overlap of feature representation. For the first layer the differences are less pronounced due to less overlapping filters in the standard training.
 
-\begin{figure}[H]
+\begin{figure}[]
    \includegraphics[width=0.999\linewidth]{figures/repr/filter_CCA_3_second_rebuttal.pdf}
 %   \vspace{-2mm}
-   \caption{Canonical Correlation Analysis of activations from the $1^\text{st}$ and $2^\text{nd}$ layer of a C$2^(32)$ ConvNet trained on CIFAR-10.}
+   \caption[Comparison of Filter Overlap]{Canonical Correlation Analysis of activations from the $1^\text{st}$ and $2^\text{nd}$ layer of a C$2^(32)$ ConvNet trained on CIFAR-10.}
    \label{fig:CCA_after}
 %   \vspace{-4mm}
 \end{figure}
@@ -739,7 +732,7 @@ Layers & \begin{tabular}[c]{@{}c@{}}Params\\ {\scriptsize($\times 000$)}\end{tab
 110               & 1727                                                                       & \multicolumn{1}{c}{\cellcolor[HTML]{EFEFEF}7.1}                                             & 6.3                        & \multicolumn{1}{c}{\cellcolor[HTML]{EFEFEF}{\color[HTML]{3166FF} 5.4}}  & 27.5         & {\color[HTML]{3166FF} 26.4} \\
 182               & 2894                                                                       & \multicolumn{1}{c}{11.7}                                                                    & 5.6                        & \multicolumn{1}{c}{{\color[HTML]{3166FF} 5.1}}                          & 26.0         & {\color[HTML]{3166FF} 25.3} \\ \bottomrule
 \end{tabular}
-\caption{Comparison of test error on Cifar-10 \& Cifar-100 of various ConvNets using Standard training vs RePr Training. Inf. Time shows the inference times for a single pass. All time measurements are relative to Vanilla CNN with three layers. Parameter count does not include the last fully-connected layer.}
+\caption[Results on CIFAR-10/100]{Comparison of test error on Cifar-10 \& Cifar-100 of various ConvNets using Standard training vs RePr Training. Inf. Time shows the inference times for a single pass. All time measurements are relative to Vanilla CNN with three layers. Parameter count does not include the last fully-connected layer.}
    \label{tbl:cifar}
 \end{table}
 
@@ -764,14 +757,12 @@ VGG-16         & 31.30                       & 27.76        & 26.45        & {\c
 Inception v1   & 31.11                       & 29.41        & 28.47        & {\color[HTML]{3166FF} 28.01} & -11.07                      \\
 Inception v2   & 27.60                       & 27.15        & 26.95        & {\color[HTML]{3166FF} 26.80} & -2.99                       \\ \bottomrule
 \end{tabular}
-   \caption{Comparison of test error (Top-1) on ImageNet with different models at various stages of RePr. N=1, N=2, N=3 are results after each round of RePr.}
+   \caption[Results on ImageNet]{Comparison of test error (Top-1) on ImageNet with different models at various stages of RePr. N=1, N=2, N=3 are results after each round of RePr.}
    \label{tbl:imagenet}
 \end{table}
 
 Our model improves upon other computer vision tasks that use similar ConvNets. We present a small sample of results from visual question answering and object detection tasks.
 Both these tasks involve using ConvNets to extract features, and RePr improves their baseline results.
-%For object detection on COCO~\cite{Lin2014MicrosoftCC}, using Feature Pyramid Network~\cite{Lin2017FeaturePN} and ResNet-50, mAP improves from $38.2$ to $42.3$.
-%For visual question answering on VQAv1, using VQA-LSTM-CNN model~\cite{Antol2015VQAVQ}, accuracy on Open-Ended questions increases from $60.3\%$ to $64.6\%$. 
 
 \subsection{Visual Question Answering}
 
@@ -781,7 +772,7 @@ These features are then fed to a third model which learns to select the correct 
 Table~\ref{tbl:vqa} provides accuracy on VQAv1 using VQA-LSTM-CNN model~\cite{Antol2015VQAVQ}.
 Results are reported for Open-Ended questions, which is a harder task compared to multiple-choice questions.
 We extract image features from Inception-v1, trained using standard training and with RePr (Ortho) training, and then feed these image features and the language embeddings (GloVe vectors) from the question, to a two layer fully connected network. 
-Thus, the only difference between the two reported results ~\ref{tbl:vqa} is the training methodology of Inception-v1.
+Thus, the only difference between the two reported results~\ref{tbl:vqa} is the training methodology of Inception-v1.
 Figure ~\ref{fig:vqa_quality} shows qualitative results on VQA. Even in cases where the top-1 choice does not change RePR is able to improve the confidence of the prediction.
 
 
@@ -792,7 +783,7 @@ Figure ~\ref{fig:vqa_quality} shows qualitative results on VQA. Even in cases wh
 Standard & \begin{tabular}[c]{@{}l@{}}0.4 - Soccer ball\\ 0.3 - Frisbee\\ 0.2 - Soccer\end{tabular}   & Standard & \begin{tabular}[c]{@{}l@{}}0.6 - Donkey\\ 0.3 - Dog\\ 0.1 - No\end{tabular}  \\ \midrule
 RePr     & \begin{tabular}[c]{@{}l@{}}{\color[HTML]{3166FF} 0.7 - Frisbee}\\ 0.2 - Soccer ball\\ 0.1 - Baseball\end{tabular} & RePr     & \begin{tabular}[c]{@{}l@{}}{\color[HTML]{3166FF} 0.5 - Dog}\\ 0.3 - Donkey\\ 0.1 - Cow\end{tabular} \\ \midrule
 \end{tabular}
-\caption{Sample of differences in confidence of selected answers between Standard Trainin and RePr training}
+\caption[Qualitative Results on VQA]{Sample of differences in confidence of selected answers between Standard Trainin and RePr training}
 \label{fig:vqa_quality}
 \end{table}
 
@@ -806,7 +797,7 @@ RePr     & \begin{tabular}[c]{@{}l@{}}{\color[HTML]{3166FF} 0.7 - Frisbee}\\ 0.2
 Standard & 60.3    &    81.4    &  47.6     &  37.2      \\
 RePr (Ortho)    & {\color[HTML]{3166FF} 64.6}    &  {\color[HTML]{3166FF} 83.4}      &  {\color[HTML]{3166FF} 54.5}     &  37.2     \\ \bottomrule
 \end{tabular}
-\caption{Comparison of Standard Training and RePr on VQA using VQA-LSTM-CNN model}
+\caption[Results on VQA]{Comparison of Standard Training and RePr on VQA using VQA-LSTM-CNN model}
 \label{tbl:vqa}
 \end{table}
 
@@ -829,7 +820,7 @@ mAP for the boxes obtained with standard training and RePr training is shown in 
 Standard  &      38.1  & 38.2      &  40.7     & 41.7\\
 RePr (Ortho) &   {\color[HTML]{3166FF} 41.1}  & {\color[HTML]{3166FF} 42.3}     &   {\color[HTML]{3166FF} 43.5}     & {\color[HTML]{3166FF} 44.5}       \\ \bottomrule
 \end{tabular}
-\caption{mAP scores with Standard and RePr (Ortho) training for object detection with ResNet the ConvNet (RPN on C4)}
+\caption[Results on Object Detection]{mAP scores with Standard and RePr (Ortho) training for object detection with ResNet the ConvNet (RPN on C4)}
 \label{tbl:rpn}
 \end{table}
 

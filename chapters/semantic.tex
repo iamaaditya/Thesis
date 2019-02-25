@@ -56,7 +56,7 @@ We evaluate on these metrics, as well as \texttt{VIFP}\cite{xxx_vifp},  \texttt{
 \begin{figure}
     \centering
     \includegraphics[scale=0.34]{figures/semantic/arrow_small.png}
-    \caption{Comparison of compression of semantic objects in standard \textsc{jpeg}[left] and our model [right]\label{fig_compressing_demo}}
+    \caption[Comparison with JPEG]{Comparison of compression of semantic objects in standard \textsc{jpeg}[left] and our model [right]\label{fig_compressing_demo}}
 \end{figure}
 
 \textsc{cnn}s have been successfully applied to a variety of computer vision tasks \cite{xxx_krizhevsky2012imagenet}.
@@ -219,7 +219,7 @@ This reduces the number of parameters and also allows for the joint learning of 
 \begin{figure}
     \centering
     \includegraphics[scale=0.45]{figures/semantic/girl_compression.pdf}
-    \caption{Comparison of various methods of detecting objects in an image \label{fig_comparison_of_map}}
+    \caption[MSROI vs CAM vs Saliency]{Comparison of various methods of detecting objects in an image \label{fig_comparison_of_map}}
 \end{figure}
 
 Although we do not restrict ourselves to a single most-probable class, it is desirable to eliminate the effects of activations for classes which are not present in the image.  
@@ -302,7 +302,7 @@ The average $Q$ for the final image generated using our model was $55$, whereas 
 \begin{figure}
     \centering
     \includegraphics[scale=0.37]{figures/semantic/all_images_small.png}
-    \caption{Sample of our map for five KODAK images.\label{fig_kodak_combo}}
+    \caption[Results on KODAK]{Sample of our map for five KODAK images.\label{fig_kodak_combo}}
 \end{figure}
 
 We tested on the Kodak PhotoCD set (24 images) and the the MIT dataset (2,000 images).
@@ -347,19 +347,19 @@ Std \textsc{jpeg} & 35.4   & 27.46  & 33.12 & 43.26     & 0.912 & 0.988 & 0.494 
 Our model & 39.6  & 28.67  & 34.63 & 44.89     & 0.915 & 0.991 & 0.522     \\
 			  \toprule
 \end{tabular}
-\caption{Results across datasets \label{tbl_results}}
+\caption[Results across various datasets]{Results across datasets \label{tbl_results}}
 \end{table}
         
 \begin{figure}
     \centering
     \includegraphics[scale=0.23]{figures/semantic/image_size.pdf}
-    \caption{\texttt{PSNR-HVS} of our model - \textsc{jpeg} across various image size (higher is better). \label{fig_size}}
+    \caption[Impact on Image Size]{\texttt{PSNR-HVS} of our model - \textsc{jpeg} across various image size (higher is better). \label{fig_size}}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[scale=0.23]{figures/semantic/image_mit.pdf}
-    \caption{\texttt{PSNR-HVS} of our model - \textsc{jpeg} across various categories of MIT Saliency dataset (higher is better). \label{fig_mit}}
+    \caption[Impact on Image Type]{\texttt{PSNR-HVS} of our model - \textsc{jpeg} across various categories of MIT Saliency dataset (higher is better). \label{fig_mit}}
 \end{figure}
 
 \section{Discussion}
