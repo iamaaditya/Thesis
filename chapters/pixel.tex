@@ -215,7 +215,7 @@ Let $R_{x,y}$ be a square neighborhood with apothem $r$ centered at $x,y$.
 If $r>\text{min}(H,W)$, then whole image is the neighbor. %TODO: unnecessary sentence?
 
 
-\begin{algorithm}
+\begin{algorithm}[H]
 	\SetKwInOut{Input}{Input}
     \SetKwInOut{Output}{Output}
     %\underline{function pixel-update} $(image)$\;
@@ -241,7 +241,7 @@ If $r>\text{min}(H,W)$, then whole image is the neighbor. %TODO: unnecessary sen
    
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
    \includegraphics[width=1\linewidth]{figures/pixel/clean_pixel.pdf}
    \includegraphics[width=1\linewidth]{figures/pixel/clean_pixel_no_adv.pdf}
    \caption[Impact on clean images]{Average classification probabilities for an adversarial image (top) and clean image (bottom) after pixel deflection (Image size: 299x299)}
@@ -263,7 +263,7 @@ This is especially true for attacks which aim to minimize the $L_p$ norm of thei
 In fact, Lou \etal \cite{FoveationbasedMALuo2015} use the object coordinates to mask out the background region and show that this defends against some of the known attacks. 
  
 
-\begin{figure}
+\begin{figure}[H]
    \includegraphics[width=0.242\linewidth]{figures/pixel/vis_attack_X.pdf}
    \includegraphics[width=0.242\linewidth]{figures/pixel/vis_attack_0.pdf}
    \includegraphics[width=0.242\linewidth]{figures/pixel/vis_attack_1.pdf}
@@ -339,7 +339,7 @@ To obtain a map which is robust to fluctuations of the most likely class, we tak
 %We will refer to this robust activation maps as $\widehat{M}(x,y)$. 
 We normalize the map by diving it by its max so that values are in the range of $[0,1]$. %TODO: include this in the formula?
 Even if the top-1 class is incorrect, this averaging reduces the impact of mis-localization of the object in the image. 
-\begin{figure}
+\begin{figure}[H]
    \includegraphics[width=1\linewidth]{figures/pixel/robust_cam.pdf}
    \caption[Robust Activation Maps]{Difference between standard activation maps and robust maps under the presence of an adversary.}
    \label{fig:robustcam}
@@ -489,7 +489,7 @@ In general, as the $K$ and $r$ increase, the variance of the resulting classific
 This is primarily due to the stochastic nature of pixel deflection - as more deflections are performed over a wider window, a greater variety of transformed images can result.
 %Variance in the accuracy increases with the increase in window size and number of iterations, this is due to stochastic nature of pixel deflection.
 
-\begin{figure}
+\begin{figure}[H]
    \includegraphics[width=0.49\linewidth]{figures/pixel/CW.pdf}
    \includegraphics[width=0.49\linewidth]{figures/pixel/IGSM.pdf}
    \includegraphics[width=0.49\linewidth]{figures/pixel/DFool.pdf}

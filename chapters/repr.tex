@@ -397,14 +397,14 @@ A few researchers  ~\cite{Brock2016NeuralPE, Poole2014AnalyzingNI, Xie2017NearOr
 We experimented by adding $\lambda * \sum_\ell \boldsymbol{P}_\ell$ to the loss function, but we did not see any improvement. 
 Soft regularization penalizes all the filters and changes the loss surface to encourage random orthogonality in the weights without improving expressiveness.
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.4]{figures/repr/correlation_combined_reduced.pdf}
     \caption[Correlation of Various Metrics]{Left: Pearson correlation coefficient of various metric values with the accuracy values from greedy Oracle.
    Center: Pearson correlation coefficient of filter ranks using various metric with rank from greedy Oracle \label{fig:corr}}
 \end{figure}
 
-\begin{table}
+\begin{table}[H]
 \centering
 \rowcolors{1}{White}{Gray}
 \begin{tabular}{rl}

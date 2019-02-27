@@ -53,7 +53,7 @@ Measuring visual quality is an ongoing area of research and there is no consensu
 Yuri et al \cite{xxx_kerofsky2015perceptual} showed that \texttt{PSNR} has severe limitations as an image comparison metric.
 Richter et al \cite{xxx_richter2009ms}\cite{xxx_richter2011ssim} addressed structural similarity (\texttt{SSIM}\cite{xxx_ssim} and \texttt{MS-SSIM}\cite{xxx_msssim}) for \textsc{jpeg} and \textsc{jpeg} 2000.
 We evaluate on these metrics, as well as \texttt{VIFP}\cite{xxx_vifp},  \texttt{PSNR-HVS}\cite{xxx_psnrhvs} and \texttt{PSNR-HVSM}\cite{xxx_psnrhvsm}, which have been shown to correlate with subjective visual quality.  Figure~\ref{fig_compressing_demo} compares close-up views of a salient object in a standard \textsc{jpeg} and our new content-aware method.
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.34]{figures/semantic/arrow_small.png}
     \caption[Comparison with JPEG]{Comparison of compression of semantic objects in standard \textsc{jpeg}[left] and our model [right]\label{fig_compressing_demo}}
@@ -216,7 +216,7 @@ The first few layers of a \textsc{cnn} learn filters which recognize small edges
 Therefore, we propose parameter sharing across the feature maps for different classes.
 This reduces the number of parameters and also allows for the joint learning of these shared, low-level features.
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.45]{figures/semantic/girl_compression.pdf}
     \caption[MSROI vs CAM vs Saliency]{Comparison of various methods of detecting objects in an image \label{fig_comparison_of_map}}
@@ -282,7 +282,7 @@ For each $8 \times 8$ block of our output image, we select the block of color va
 
 Details of our choices for $k$, $Q_l$ and $Q_h$, as well as target image sizes are provided in the next section.  A wider range of $Q_l$ and $Q_h$ will tend to produce stronger results, but at the expense of very poor quality in non-salient regions.
 
-\begin{algorithm}
+\begin{algorithm}[H]
 \SetKwInOut{Input}{Input}
 \SetKwInOut{Output}{Output}
 
@@ -321,7 +321,7 @@ For all experiments, the file size of the standard \textsc{jpeg} image and the \
 On average, salient regions were compressed at $Q_f=65$, and non-salient regions were compressed at $Q=45$.
 The average $Q$ for the final image generated using our model was $55$, whereas for all standard \textsc{jpeg} samples, $Q$ was chosen to be 50. It should be noted that even though images are at different $Q$ they have same size.
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.37]{figures/semantic/all_images_small.png}
     \caption[Results on KODAK]{Sample of our map for five KODAK images.\label{fig_kodak_combo}}
@@ -339,7 +339,7 @@ In addition to an array of standard quality metrics, we also report a \texttt{PS
 By examining only regions of high semantic saliency, this metric demonstrates that our compression method is indeed able to preserve visual quality in targeted regions, without sacrificing performance on traditional image-level quality metrics or compression ratio.
 It should be noted that the validity of this metric is dependent on the correctness of the underlying saliency map, and thus should only be interpreted to demonstrate the success of the final image construction in preserving details highlighted by that map.
 
-\begin{table}
+\begin{table}[H]
 % \footnotesize
 \centering
 \rowcolors{1}{White}{Gray}
@@ -372,13 +372,13 @@ Our model & 39.6  & 28.67  & 34.63 & 44.89     & 0.915 & 0.991 & 0.522     \\
 \caption[Results across various datasets]{Results across datasets \label{tbl_results}}
 \end{table}
         
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.23]{figures/semantic/image_size.pdf}
     \caption[Impact on Image Size]{\texttt{PSNR-HVS} of our model - \textsc{jpeg} across various image size (higher is better). \label{fig_size}}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.23]{figures/semantic/image_mit.pdf}
     \caption[Impact on Image Type]{\texttt{PSNR-HVS} of our model - \textsc{jpeg} across various categories of MIT Saliency dataset (higher is better). \label{fig_mit}}
