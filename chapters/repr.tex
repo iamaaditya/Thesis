@@ -186,7 +186,7 @@ As a result, VGG-$16$ has been shown to be easily pruned - more than $50$\% of t
 Is this also true for significantly smaller convolutional networks, which under-fit the dataset?
 
 
-\begin{figure}[]
+\begin{figure}[H]
    \includegraphics[width=0.49\linewidth]{figures/repr/Filter_CCA.pdf}
    \includegraphics[width=0.49\linewidth]{figures/repr/Error_Distribution.pdf}
    %%\vspace{-2mm}
@@ -436,7 +436,7 @@ Soft regularization penalizes all the filters and changes the loss surface to en
 %There are some hyper-parameters and function choices in our scheme. 
 %We present a short study of the parameters in our scheme.
 
-\begin{figure}[]
+\begin{figure}[H]
 \center
     \includegraphics[width=0.8\linewidth]{figures/repr/percentage_pruned_X.pdf}
    \caption[Percentage of filters pruned]{RePr training with various percentage of filters pruned. Shows average test accuracy over 5 epochs starting from epoch 20 for better visibility.}
@@ -444,7 +444,7 @@ Soft regularization penalizes all the filters and changes the loss surface to en
 \end{figure}
 
 
-\begin{figure}[]
+\begin{figure}[H]
 \center
    \includegraphics[width=0.75\linewidth]{figures/repr/marginal_returns_no_y.pdf}
    \caption[Multiple Iterations of RePr]{Marginal returns of multiple iterations of RePR - \textcolor{blue}{Training} and \textcolor{green}{Test} accuracy on CIFAR-10}
@@ -496,7 +496,7 @@ Similar to Dense-Sparse-Dense~\cite{Han2016DSDDT} and Born-Again-Networks~\cite{
 Figure~\ref{fig:ablation_optimizer_s1s2} (left) shows variance in improvement when using different optimizers. 
 Our model works well with most well-known optimizers. Adam and Momentum perform better than SGD due to their added stability in training. 
 We experimented with various values of $S1$ and $S2$, and there is not much difference if either of them is large enough for the model to converge temporarily. 
-\begin{figure}[]
+\begin{figure}[H]
    \includegraphics[width=1.0\linewidth]{figures/repr/ablation_optimizer_s1s2.pdf}
    %%\vspace{-2mm}
    \caption[Optimizers on RePr]{Left: Impact of using various optimizers on RePr training scheme. Right: Results from using different S1/S2 values. For clarity, these experiments only shows results with $S1=S2$}
@@ -517,7 +517,7 @@ Cyclical learning rates~\cite{Smith2017CyclicalLR} can provide stronger performa
 Figure~\ref{fig:LR} shows the comparison of our training technique when applied in conjunction with fixed schedule learning rate scheme and cyclical learning rate. 
 Our training scheme is not impacted by using these schemes, and improvements over standard training is still apparent.
 
-\begin{figure}[]
+\begin{figure}[H]
 \hspace*{-4.0mm}
 \center
    \includegraphics[width=0.47\linewidth]{figures/repr/RePr_LR_Staircase.pdf}
@@ -549,7 +549,7 @@ We observe that the inclusion of Dropout lowers the final test accuracy, due to 
 %However, our training scheme (RePr) applied with our proposed metric - \textit{inter}-filter orthogonality - still provides improves performance over the standard training. 
 Our method produces improved performance with or without the addition of standard Dropout, demonstrating that its effects are distinct from the benefits of Dropout. 
 
-\begin{figure}[]
+\begin{figure}[H]
 %\hspace*{-2mm}
 \center
    \includegraphics[width=0.48\linewidth]{figures/repr/with_dropout.pdf}
@@ -583,7 +583,7 @@ CIFAR-100 & 47.2                                                     & 48.3     
 \end{table}
 
 
-\begin{figure}[]
+\begin{figure}[H]
    \includegraphics[width=1.0\linewidth]{figures/repr/orthogonality_distillation.pdf}
    %%\vspace{-2mm}
    \caption[Comparison with Knowledge Distillation]{Comparison of orthogonality of filters (Ortho-sum - eq 2) in standard training and RePr training with and without Knowledge Distillation. \textbf{Lower value} signifies less overlapping filters.
@@ -592,7 +592,7 @@ CIFAR-100 & 47.2                                                     & 48.3     
    %%\vspace{-2mm}
 \end{figure}
 
-\begin{table}[]
+\begin{table}[H]
 \center
 \begin{tabular}{
 >{\columncolor[HTML]{FFFFFF}}c 
@@ -637,7 +637,7 @@ Indeed, that is the case as the combined model has significantly better performa
 We present the performance of our training scheme, RePr, with our ranking criteria, \textit{inter}-filter orthogonality, Ortho, on different ConvNets~\cite{Simonyan2014VeryDC, He2016DeepRL, Szegedy2015GoingDW, Szegedy2016RethinkingTI, Huang2017DenselyCC}.
 For all the results provided RePr parameters are: $S_1=20$, $S_2=10$, $p_\%=30$, and with three iterations, $N=3$.
 
-\begin{figure}[]
+\begin{figure}[H]
 \center
    \includegraphics[width=1.0\linewidth]{figures/repr/ablation_layers.pdf}
    %%\vspace{-2mm}
@@ -646,7 +646,7 @@ For all the results provided RePr parameters are: $S_1=20$, $S_2=10$, $p_\%=30$,
    %%\vspace{-2mm}
 \end{figure}
 
-\begin{table}[]
+\begin{table}[H]
 \center
 \begin{tabular}{cccccc}
 \toprule
