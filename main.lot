@@ -1,0 +1,55 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {2.1}{\ignorespaces Results across various datasets}}{24}{table.caption.9}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3.1}{\ignorespaces Quantitative results using Aug-MSROI}}{43}{table.caption.20}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.1}{\ignorespaces Classification Accuracy with Pixel Deflection}}{67}{table.caption.26}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.2}{\ignorespaces Accuracy Under Various Attacks}}{68}{table.caption.27}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.3}{\ignorespaces ResNet-50 under Pixel Deflection}}{69}{table.caption.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.4}{\ignorespaces VGG-19 under Pixel Deflection}}{70}{table.caption.29}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.5}{\ignorespaces Inception-v3 under Pixel Deflection}}{70}{table.caption.30}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.6}{\ignorespaces Destruction Rate}}{72}{table.caption.31}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.7}{\ignorespaces Comparison with JPEG}}{75}{table.caption.33}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.8}{\ignorespaces Comparsion of Thresholding}}{75}{table.caption.34}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.9}{\ignorespaces Number of Delfections}}{76}{table.caption.35}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.10}{\ignorespaces Different Window Sizes}}{77}{table.caption.36}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.11}{\ignorespaces Average Accuracy of atacks}}{77}{table.caption.37}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.1}{\ignorespaces Neuron Ranking Metrics}}{96}{table.caption.41}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.2}{\ignorespaces Orthogonality Loss}}{103}{table.caption.47}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.3}{\ignorespaces Comparison of Knowledge Distillation with RePr}}{104}{table.caption.49}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.4}{\ignorespaces RePr vs DSD vs BAN}}{106}{table.caption.51}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.5}{\ignorespaces Results on CIFAR-10/100}}{110}{table.caption.53}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.6}{\ignorespaces Results on ImageNet}}{110}{table.caption.54}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.7}{\ignorespaces Qualitative Results on VQA}}{112}{table.caption.55}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.8}{\ignorespaces Results on VQA}}{112}{table.caption.56}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.9}{\ignorespaces Results on Object Detection}}{113}{table.caption.57}
