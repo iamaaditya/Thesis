@@ -1,6 +1,6 @@
 \section{Introduction}
 
-Convolutional Neural Networks have achieved state-of-the-art results in various computer vision tasks~\cite{He2016DeepRL, Lin2018FocalLF}. 
+Convolutional Neural Networks have achieved state-of-the-art results in various computer vision tasks~\cite{he2015deep, Lin2018FocalLF}. 
 %Most of the success is lead by innovation in designing more complex and task-specific networks~\cite{He2017MaskR, Ronneberger2015UNetCN}.
 Much of this success is due to innovations of a novel, task-specific network architectures~\cite{He2017MaskR, Ronneberger2015UNetCN}.
 %All these networks are trained using similar optimization techniques, which are principally designed for a generic neural network which treats each weight as a single entity - \textit{a neuron}.
@@ -134,7 +134,7 @@ A well-known shortcoming of vanilla convolutional networks is their correlated f
 Architectures like Inception-Net~\cite{Szegedy2015GoingDW} are motivated by analyzing the correlation statistics of features across layers.
 They aim to reduce the correlation between the layers by using concatenated features from various sized filters, subsequent research shows otherwise~\cite{Raghu2017SVCCASV}.
 %However, correlation of singular values across inception layers show that there is a significant overlap of activations. 
-More recent architectures like ResNet~\cite{He2016DeepRL} and DenseNet ~\cite{Huang2017DenselyCC} aim to implicitly reduce feature correlations by summing or concatenating activations from previous layers.
+More recent architectures like ResNet~\cite{he2015deep} and DenseNet ~\cite{Huang2017DenselyCC} aim to implicitly reduce feature correlations by summing or concatenating activations from previous layers.
 That said, these models are computationally expensive and require large memory to store previous activations.
 Our aim is to induce decorrelated features without changing the architecture of the convolutional network.
 This benefits all the existing implementations of ConvNet without having to change the infrastructure.
@@ -634,7 +634,7 @@ Indeed, that is the case as the combined model has significantly better performa
 \section{Results} \label{sec:results}
 
 \subsection{Image Classification}
-We present the performance of our training scheme, RePr, with our ranking criteria, \textit{inter}-filter orthogonality, Ortho, on different ConvNets~\cite{Simonyan2014VeryDC, He2016DeepRL, Szegedy2015GoingDW, Szegedy2016RethinkingTI, Huang2017DenselyCC}.
+We present the performance of our training scheme, RePr, with our ranking criteria, \textit{inter}-filter orthogonality, Ortho, on different ConvNets~\cite{Simonyan2014VeryDC, he2015deep, Szegedy2015GoingDW, Szegedy2016RethinkingTI, Huang2017DenselyCC}.
 For all the results provided RePr parameters are: $S_1=20$, $S_2=10$, $p_\%=30$, and with three iterations, $N=3$.
 
 \begin{figure}[H]
@@ -652,7 +652,7 @@ For all the results provided RePr parameters are: $S_1=20$, $S_2=10$, $p_\%=30$,
 \toprule
 \multicolumn{6}{c}{\textbf{ResNet-20 on CIFAR-10}}                                                                                                                                                                                                                                                                                                     \\ \toprule
 \multicolumn{2}{c}{Baseline}                                                                                 & \multicolumn{4}{c}{Various Training Schemes}                                                                                                                                                                                                    \\
-\multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}Original\\ ~\cite{He2016DeepRL}\end{tabular}}}        & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Our \\ Impl\end{tabular}}} & \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}DSD\\ ~\cite{Han2016DSDDT}\end{tabular}}}             & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}BAN\\ ~\cite{Furlanello2018BornAN}\end{tabular}}} & \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}RePr\\ Weights\end{tabular}}} & \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}RePr \\ Ortho\end{tabular}}} \\ \hline
+\multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}Original\\ ~\cite{he2015deep}\end{tabular}}}        & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Our \\ Impl\end{tabular}}} & \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}DSD\\ ~\cite{Han2016DSDDT}\end{tabular}}}             & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}BAN\\ ~\cite{Furlanello2018BornAN}\end{tabular}}} & \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}RePr\\ Weights\end{tabular}}} & \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}RePr \\ Ortho\end{tabular}}} \\ \hline
 \multicolumn{1}{c}{8.7} & \multicolumn{1}{c|}{8.4}                                                         & \multicolumn{1}{c}{7.8} & \multicolumn{1}{c|}{8.2}          & 7.7                                                                                 & \textcolor{blue}{6.9}                     \\
 \bottomrule
 \end{tabular}

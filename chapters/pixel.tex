@@ -456,10 +456,10 @@ The following steps are used to soften the impact of pixel deflection:
 \section{Experimental Design\label{sec:exp}}
 
 We tested our method on $1000$ randomly selected images from the ImageNet ~\cite{Deng2009ImageNetAL} Validation set. 
-We use ResNet-50 ~\cite{He2016DeepRL} as our classifier. 
+We use ResNet-50 ~\cite{he2015deep} as our classifier. 
 We obtain the pre-trained weights from TensorFlow's GitHub repository.
 These models achieved a Top-1 accuracy of $76\%$ on our selected images. %TODO:IMP REMOVE THIS????????
-This is in agreement with the accuracy numbers reported in ~\cite{He2016DeepRL} for a single-model single-crop inference.
+This is in agreement with the accuracy numbers reported in ~\cite{he2015deep} for a single-model single-crop inference.
 
 By the definition set by adversarial attacks, an attack is considered successful by default if the original image is already mis-classified. 
 In this case, the adversary simply returns the original image unmodified. 
@@ -503,7 +503,6 @@ This is primarily due to the stochastic nature of pixel deflection - as more def
 \section{Results \& Discussion \label{sec:results_pixel}}
 
 \begin{table}[H]
-\small
 \centering
 \rowcolors{1}{White}{Gray}
 \begin{tabular}{lcccc}
@@ -542,7 +541,6 @@ We randomly sampled 10K images from ILSVRC2012 validation set; this contained al
 
 %\vspace{-2mm}
 \begin{table}[H]
-\small
 %\vspace{-1mm}
 \centering
 \rowcolors{1}{White}{Gray}
@@ -570,7 +568,6 @@ Weights for each classifier were obtained from Tensorflow GitHub repository
 \footnote{https://github.com/tensorflow/models/tree/master/research/slim\#Pretrained}. \\
 
 \begin{table}[H]
-\small
 \centering
 \rowcolors{1}{White}{Gray}
 \begin{tabular}{lcccc}
@@ -595,7 +592,6 @@ Weights for each classifier were obtained from Tensorflow GitHub repository
  
  
 \begin{table}[H]
-\small
 \centering
 \rowcolors{1}{White}{Gray}
 \begin{tabular}{lcccc}
@@ -617,7 +613,6 @@ Weights for each classifier were obtained from Tensorflow GitHub repository
  
  
  \begin{table}[H]
-\small
 \centering
 \rowcolors{1}{White}{Gray}
 \begin{tabular}{lcccc}
@@ -652,7 +647,6 @@ This ratio is known as  Destruction Rate and was originally proposed in [24].
 Value of $1$ means all the misclassified images due to the adversary are correctly classified after the transformation.
 
 \begin{table}[H]
-\small
 \centering
 \rowcolors{1}{White}{Gray}
 \setlength{\tabcolsep}{0.4em}
@@ -723,7 +717,6 @@ While JPEG alone is effective against only a few attacks, the combination of JPE
 The best results are obtained from pixel deflection and wavelet denoising.
 Adding JPEG on top of these leads to a drop in performance. 
 \begin{table}[H]
-\small
 \centering
 \rowcolors{1}{White}{Gray}
 \begin{tabular}{lllllll}
@@ -741,7 +734,6 @@ Ablation study of pixel deflection (PD) in combination with wavelet denoising (W
 \end{table}
 
 \begin{table}[H]
-\small
 \centering
 \rowcolors{1}{White}{Gray}
 \begin{tabular}{lrrrr}
@@ -782,7 +774,6 @@ SUREShrink has been shown to perform well with compression but as evident, in ou
 
 %We presented some ablation studies of various parameters in Table 2 and 3 of the original paper, and Table 1 of the supplementary. Here, we provide additional studies.
 \begin{table}[H]
-\small
 %\vspace{-2mm}
 \centering
 \rowcolors{1}{White}{Gray}
@@ -805,7 +796,6 @@ SUREShrink has been shown to perform well with compression but as evident, in ou
 
 
 \begin{table}[H]
-\small
 %\vspace{-3mm}
 \centering
 \rowcolors{1}{White}{Gray}
@@ -829,7 +819,6 @@ SUREShrink has been shown to perform well with compression but as evident, in ou
 %For the following studies we present results averaged across all six attacks.
 
 \begin{table}[H]
-\small
 %\vspace{-2mm}
 \centering
 \rowcolors{1}{White}{Gray}

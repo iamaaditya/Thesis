@@ -1,5 +1,5 @@
 \section{Introduction}
-Several attempts have been made to improve upon the lossy image compression offered by \textsc{jpeg} \cite{xxx_ginesu2012objective} \cite{xxx_toderici2016full}.
+Several attempts have been made to improve upon the lossy image compression offered by \textsc{jpeg} \cite{ginesu2012objective} \cite{toderici2016full}.
 Despite these efforts, \textsc{jpeg} continues to be the standard image file format on the web.
 Because of the status of \textsc{jpeg} as the default standard and its wide adoption, it seems unlikely that the new formats will get any traction.
 We propose an image compression technique to improve the visual quality of standard \textsc{jpeg} by using a higher bitrate to encode image regions flagged by our model as containing an object of interest and lowering the bitrate elsewhere in the image.
@@ -8,74 +8,74 @@ The compressed output of our method can be decoded by standard \textsc{jpeg} imp
 The \textsc{jpeg} algorithm uses a scaling factor $Q$ in order to scale the quantization matrix to achieve a variety of compression ratios.
 However, this ratio is an image level property and all the $8 \times 8$ blocks of a given image are compressed using the same scaling factor.
 Natural images are heterogeneous with respect to frequency, and contain both regions of primarily low frequencies and of primarily high frequencies.
-While low frequency regions are more tolerant of higher compression ratios, high frequency regions are not \cite{xxx_chandra1999jpegcompressionme}.
+While low frequency regions are more tolerant of higher compression ratios, high frequency regions are not \cite{chandra1999jpegcompressionme}.
 Therefore, variable quantization in \textsc{jpeg} would aim to provide optimum perceptual quality across the image by compressing different blocks at different ratios.
-Previous approaches to use variable quantization have employed DCT analysis on each block to determine the frequency components \cite{xxx_konstantinides1998method} as well as classification of each block according to a pre-determined look-up table \cite{xxx_memon2000method}.
-Soon et al \cite{xxx_tan1996classified} proposed classifying blocks as textures, edges or flat regions, and adjusting the quantization matrix for each block accordingly.
-Adaptive Quantization techniques have also been applied to video coding \cite{xxx_xiang2014adaptive}.
+Previous approaches to use variable quantization have employed DCT analysis on each block to determine the frequency components \cite{konstantinides1998method} as well as classification of each block according to a pre-determined look-up table \cite{memon2000method}.
+Soon et al \cite{tan1996classified} proposed classifying blocks as textures, edges or flat regions, and adjusting the quantization matrix for each block accordingly.
+Adaptive Quantization techniques have also been applied to video coding \cite{xiang2014adaptive}.
 
-These methods are limited in their ability to improve the perceptual quality of an image because frequency analysis and image metrics do not correlate with human perception \cite{xxx_klein1992relevance}.
+These methods are limited in their ability to improve the perceptual quality of an image because frequency analysis and image metrics do not correlate with human perception \cite{klein1992relevance}.
 Therefore, we propose variable quantization of \textsc{jpeg} in which the choice of scaling factor is informed by semantic knowledge of the image.
 Human vision naturally focuses on familiar semantic objects, and is particularly sensitive to distortions of these objects as compared to distortions of background details.
 Our goal is to develop a technique which improves the visual quality of an image by improving the signal to noise ratio within these semantic objects while keeping the overall visual quality close to that of standard \textsc{jpeg}. 
 Measuring visual quality is an ongoing research area and there is no consensus among researchers on the proper metric. 
-We evaluate our model on a variety of metrics, \texttt{SSIM}\cite{xxx_ssim}, \texttt{MS-SSIM}\cite{xxx_msssim}, \texttt{VIFP}\cite{xxx_vifp}, \texttt{PSNR-HVS}\cite{xxx_psnrhvs} and \texttt{PSNR-HVSM}\cite{xxx_psnrhvsm}; these robust metrics have been shown to correlate better with subjective quality measurement than pixel-level metrics such as \texttt{MSE} or \texttt{PSNR} \cite{xxx_psnrhvsm}.
-Yuri et al \cite{xxx_kerofsky2015perceptual} showed that \texttt{PSNR} as an image comparison metric has severe limitations.
+We evaluate our model on a variety of metrics, \texttt{SSIM}\cite{ssim}, \texttt{MS-SSIM}\cite{msssim}, \texttt{VIFP}\cite{vifp}, \texttt{PSNR-HVS}\cite{psnrhvs} and \texttt{PSNR-HVSM}\cite{psnrhvsm}; these robust metrics have been shown to correlate better with subjective quality measurement than pixel-level metrics such as \texttt{MSE} or \texttt{PSNR} \cite{psnrhvsm}.
+Yuri et al \cite{kerofsky2015perceptual} showed that \texttt{PSNR} as an image comparison metric has severe limitations.
 
-Convolutional Neural Networks (\textsc{cnn}s) have been successfully applied to a variety of computer vision tasks \cite{xxx_he2015deep} \cite{xxx_krizhevsky2012imagenet}.
-Their feature extraction and transfer learning capabilities are now well known\cite{xxx_zeiler2014visualizing} .
-\textsc{cnn}s, well known for their ability to classify images by their most prominent object, and have also been used to draw a bounding box around that object \cite{xxx_girshick2014rich}.
-This method is capable of providing a binary map for the presence of the most salient object. Some success has been obtained in predicting the visual saliency map of a given image \cite{xxx_jiang2015salicon} \cite{xxx_kummerer2014deep}.
+Convolutional Neural Networks (\textsc{cnn}s) have been successfully applied to a variety of computer vision tasks \cite{he2015deep} \cite{krizhevsky2012imagenet}.
+Their feature extraction and transfer learning capabilities are now well known\cite{zeiler2014visualizing} .
+\textsc{cnn}s, well known for their ability to classify images by their most prominent object, and have also been used to draw a bounding box around that object \cite{girshick2014rich}.
+This method is capable of providing a binary map for the presence of the most salient object. Some success has been obtained in predicting the visual saliency map of a given image \cite{jiang2015salicon} \cite{kummerer2014deep}.
 
 We propose a deep convolution network designed to locate several semantic objects within a single image.
-Our model differs from traditional object detection models like \cite{xxx_dai2016r} \cite{xxx_girshick2014rich} as these models are restricted to detecting a single salient object in an image, typically an instance of a pre-computed class for that image.
-Previous work has shown that semantic object detection has a variety of advantages over saliency maps \cite{xxx_mnih2014recurrent} \cite{xxx_zund2013content}. Semantic detection models recognize discrete objects and are thus able to generate maps that are more coherent for human perception.
+Our model differs from traditional object detection models like \cite{dai2016r} \cite{girshick2014rich} as these models are restricted to detecting a single salient object in an image, typically an instance of a pre-computed class for that image.
+Previous work has shown that semantic object detection has a variety of advantages over saliency maps \cite{mnih2014recurrent} \cite{zund2013content}. Semantic detection models recognize discrete objects and are thus able to generate maps that are more coherent for human perception.
 % done: consider comparing ground-truth heatmap with model's heatmap -- NOT enough SPACE
 Visual saliency models are based on human eye fixations, and thus produce results which do not capture object boundaries.
-This is particularly evident in the results obtained by Stella et al \cite{xxx_stella2009image}, in which image compression is guided by a multi-scale saliency map, and the obtained images show blurred edges and soft focus.
-Our proposed model captures the structure of the depicted scene and thus maintains the integrity of semantic objects, unlike results produced using human eye fixations \cite{xxx_liu2015predicting}.
+This is particularly evident in the results obtained by Stella et al \cite{stella2009image}, in which image compression is guided by a multi-scale saliency map, and the obtained images show blurred edges and soft focus.
+Our proposed model captures the structure of the depicted scene and thus maintains the integrity of semantic objects, unlike results produced using human eye fixations \cite{liu2015predicting}.
 
 
 Our proposed model produces a single class-invariant feature map by learning separate feature maps for each of a set of object classes and then summing over the top features.
 Our model trades lower confidence of bounding edges for the ability to find all salient regions of an image in a single pass, as opposed to standard object-detection \textsc{cnn}s, which require multiple passes over the image to identify and locate all the objects.
-In comparison to grid-based features as described by Yuri et al \cite{xxx_reznik2013coding} our features are scale- and transformation-invariant, which allows application of the model to a wider class of images.
+In comparison to grid-based features as described by Yuri et al \cite{reznik2013coding} our features are scale- and transformation-invariant, which allows application of the model to a wider class of images.
 
 We employ a Convolutional Neural Network (\textsc{cnn}) tailored to the specific task of semantic image understanding to achieve higher visual quality in lossy image compression.
 We focus on the \textsc{jpeg} standard, which remains the dominant image representation on the internet and in consumer electronics. 
-Several attempts have been made to improve upon its lossy image compression, for example WebP \cite{xxx_ginesu2012objective} and Residual-GRU \cite{xxx_toderici2016full}, but many of these require custom decoders and are not sufficiently content-aware.
+Several attempts have been made to improve upon its lossy image compression, for example WebP \cite{ginesu2012objective} and Residual-GRU \cite{toderici2016full}, but many of these require custom decoders and are not sufficiently content-aware.
 
 We improve the visual quality of standard \textsc{jpeg} by using a higher bit rate to encode image regions flagged by our model as containing content of interest and lowering the bit rate elsewhere in the image. 
 With our enhanced \textsc{jpeg} encoder, the quantization of each region is informed by knowledge of the image content.
-Human vision naturally focuses on familiar objects, and is particularly sensitive to distortions of these objects as compared to distortions of background details \cite{xxx_jiang2015salicon}.
+Human vision naturally focuses on familiar objects, and is particularly sensitive to distortions of these objects as compared to distortions of background details \cite{jiang2015salicon}.
 By improving the signal-to-noise ratio within multiple regions of interest, we improve visual quality of those regions, while preserving overall \texttt{PSNR} and compression ratio.
 A second encoding pass produces a final \textsc{jpeg} encoding that may be decoded with any standard off-the-shelf \textsc{jpeg} decoder.
 Measuring visual quality is an ongoing area of research and there is no consensus among researchers on the proper metric.
-Yuri et al \cite{xxx_kerofsky2015perceptual} showed that \texttt{PSNR} has severe limitations as an image comparison metric.
-Richter et al \cite{xxx_richter2009ms}\cite{xxx_richter2011ssim} addressed structural similarity (\texttt{SSIM}\cite{xxx_ssim} and \texttt{MS-SSIM}\cite{xxx_msssim}) for \textsc{jpeg} and \textsc{jpeg} 2000.
-We evaluate on these metrics, as well as \texttt{VIFP}\cite{xxx_vifp},  \texttt{PSNR-HVS}\cite{xxx_psnrhvs} and \texttt{PSNR-HVSM}\cite{xxx_psnrhvsm}, which have been shown to correlate with subjective visual quality.  Figure~\ref{fig_compressing_demo} compares close-up views of a salient object in a standard \textsc{jpeg} and our new content-aware method.
+Yuri et al \cite{kerofsky2015perceptual} showed that \texttt{PSNR} has severe limitations as an image comparison metric.
+Richter et al \cite{richter2009ms}\cite{richter2011ssim} addressed structural similarity (\texttt{SSIM}\cite{ssim} and \texttt{MS-SSIM}\cite{msssim}) for \textsc{jpeg} and \textsc{jpeg} 2000.
+We evaluate on these metrics, as well as \texttt{VIFP}\cite{vifp},  \texttt{PSNR-HVS}\cite{psnrhvs} and \texttt{PSNR-HVSM}\cite{psnrhvsm}, which have been shown to correlate with subjective visual quality.  Figure~\ref{fig_compressing_demo} compares close-up views of a salient object in a standard \textsc{jpeg} and our new content-aware method.
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.34]{figures/semantic/arrow_small.png}
     \caption[Comparison with JPEG]{Comparison of compression of semantic objects in standard \textsc{jpeg}[left] and our model [right]\label{fig_compressing_demo}}
 \end{figure}
 
-\textsc{cnn}s have been successfully applied to a variety of computer vision tasks \cite{xxx_krizhevsky2012imagenet}.
-The feature extraction and transfer learning capabilities of \textsc{cnn}s are well known \cite{xxx_zeiler2014visualizing}, as are their ability to classify images by their most prominent object \cite{xxx_he2015deep}, and compute a bounding box \cite{xxx_girshick2014rich}.
-Some success has been obtained in predicting the visual saliency map of a given image \cite{xxx_jiang2015salicon},\cite{xxx_kummerer2014deep}.
-Previous work has shown that semantic object detection has a variety of advantages over saliency maps \cite{xxx_mnih2014recurrent}, \cite{xxx_zund2013content}.
+\textsc{cnn}s have been successfully applied to a variety of computer vision tasks \cite{krizhevsky2012imagenet}.
+The feature extraction and transfer learning capabilities of \textsc{cnn}s are well known \cite{zeiler2014visualizing}, as are their ability to classify images by their most prominent object \cite{he2015deep}, and compute a bounding box \cite{girshick2014rich}.
+Some success has been obtained in predicting the visual saliency map of a given image \cite{jiang2015salicon},\cite{kummerer2014deep}.
+Previous work has shown that semantic object detection has a variety of advantages over saliency maps \cite{mnih2014recurrent}, \cite{zund2013content}.
 Semantic detection recognizes discrete objects and is thus able to generate maps that are more coherent for human perception.
-Visual saliency models are based on human eye fixations, and thus produce results which do not capture object boundaries \cite{xxx_kummerer2014deep}.
-This is evident in the results obtained by Stella et al \cite{xxx_stella2009image}, in which image compression is guided by a multi-scale saliency map, and the obtained images show blurred edges and soft focus.
+Visual saliency models are based on human eye fixations, and thus produce results which do not capture object boundaries \cite{kummerer2014deep}.
+This is evident in the results obtained by Stella et al \cite{stella2009image}, in which image compression is guided by a multi-scale saliency map, and the obtained images show blurred edges and soft focus.
 
 We present a \textsc{cnn} designed to locate multiple regions of interest (\textsc{roi}) within a single image.
-Our model differs from traditional object detection models like \cite{xxx_dai2016r}, \cite{xxx_girshick2014rich} as these models are restricted to detecting a single salient object in an image.
-It captures the structure of the depicted scene and thus maintains the integrity of semantic objects, unlike results produced using human eye fixations \cite{xxx_liu2015predicting}.
+Our model differs from traditional object detection models like \cite{dai2016r}, \cite{girshick2014rich} as these models are restricted to detecting a single salient object in an image.
+It captures the structure of the depicted scene and thus maintains the integrity of semantic objects, unlike results produced using human eye fixations \cite{liu2015predicting}.
 We produce a single class-invariant feature map by learning separate feature maps for each of a set of object classes and then summing over the top features.
 Because this task does not require precise identification of object boundaries, our system is able to capture multiple salient regions of an image in a single pass, as opposed to standard object detection \textsc{cnn}s, which require multiple passes over the image to identify and locate multiple objects.
 Model training need only be done offline, and encoding with our model employs a standard \textsc{jpeg} encoder combined with efficient computation of saliency maps (over 60 images per second for 1920x1080 using a Titan X Maxwell \textsc{gpu}).
 A key advantage of our approach is that its compressed output can be decoded by any standard off-the-shelf \textsc{jpeg} implementation.  It serves to maintain the existing decoding complexity, the primary issue for distribution of electronic media.
 % done: Move this citation to past work, make it not be negative -- decided against adding this line
-%In contrast to grid based features as described by Yuri et al \cite{xxx_reznik2013coding} our features are scale and translation invariant, which allows application of the model to a wider class of images.
+%In contrast to grid based features as described by Yuri et al \cite{reznik2013coding} our features are scale and translation invariant, which allows application of the model to a wider class of images.
 
 
 % TODO fix section numbers
@@ -88,7 +88,7 @@ Sections 5 presents experimental results on a variety of image datasets and metr
 \section{Review of localization using CNNs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textsc{cnn}s are multi-layered feed-forward architectures where the learned features at each level are the weights of the convolution filters to be applied to the output of the previous level. Learning is done via gradient-based optimization \cite{xxx_lecun1995convolutional}.
+\textsc{cnn}s are multi-layered feed-forward architectures where the learned features at each level are the weights of the convolution filters to be applied to the output of the previous level. Learning is done via gradient-based optimization \cite{lecun1995convolutional}.
 \textsc{cnn}s differ from fully connected neural networks in that the dimensions of the learned convolution filters are, in general, much smaller than the dimensions of the input image, so the learned features are forced to be localized in space. Also, the convolution operation uses the same weight kernel at every image location, so feature detection is spatially invariant.
 
 
@@ -100,7 +100,7 @@ Given an image $x$, and a convolution filter of size $n \times n$, then a convol
 \end{equation}
 
 In practice, multiple filters are learned in parallel within each layer, and thus the output of a convolution layer is a 3-\textit{d} feature map, where the depth represents the number of filters. The number of features in a given layer is a design choice, and may differ from layer to layer.
-\textsc{cnn}s include a max pooling \cite{xxx_lecun1995convolutional} step after every or every other layer of convolution, in which the height and width of the feature map (filter response) are reduced by replacing several neighboring activations (coefficients), generally within a square window, with a single activation equal to the maximum within that window.  This pooling operation is strided, but the size of the pooling window can be greater than the stride, so windows can overlap.
+\textsc{cnn}s include a max pooling \cite{lecun1995convolutional} step after every or every other layer of convolution, in which the height and width of the feature map (filter response) are reduced by replacing several neighboring activations (coefficients), generally within a square window, with a single activation equal to the maximum within that window.  This pooling operation is strided, but the size of the pooling window can be greater than the stride, so windows can overlap.
 This results in down-sampling of input data, and filters applied to such a map will have a larger receptive field (spatial support in the pixel space) for a given kernel size, thus reducing the number of parameters of the \textsc{cnn} model and allowing the training of much deeper networks.
 %Max pooling performed with a stride of $ k \times k $ will reduce a feature matrix of size $ N \times N $ to $ \frac{N}{k} \times \frac{N}{k}$.
 This does not change the depth of the feature map, but only its width and height.
@@ -108,27 +108,27 @@ In practice, pooling windows are typically of size $2 \times 2$ or $4 \times 4$,
 \textsc{cnn}s apply some form of non-linear operation such as sigmoid $ (1-e^{-x})^{-1} $ or linear rectifier $max(0,x)$ on the output of each convolution operation.
 
 
-Region-based \textsc{cnn}s use a moving window to maximize the posterior of the presence of an object \cite{xxx_girshick2015fast}.
+Region-based \textsc{cnn}s use a moving window to maximize the posterior of the presence of an object \cite{girshick2015fast}.
 %However, this is computationally expensive as it requires looking for all possible classes in all possible regions.
-Faster \textsc{rcnn}s \cite{xxx_ren2015faster} have been proposed, but they are still computationally expensive and are limited to determining the presence or absence of a single class of object within the entire image.
+Faster \textsc{rcnn}s \cite{ren2015faster} have been proposed, but they are still computationally expensive and are limited to determining the presence or absence of a single class of object within the entire image.
 %Moving-window methods are also limited in their ability to provide tight bounds on the location of an object.
 Moving-window methods are able to produce rectangular bounding boxes, but cannot produce object silhouettes.
-In contrast, recent deep learning models proposed for semantic segmentation \cite{xxx_long2015fully}, \cite{xxx_girshick2014rich}, \cite{xxx_zheng2015conditional} are very good at drawing a close border around the objects.
-However, these methods do not scale well to more than a small number of object categories (e.g. $20$) \cite{xxx_everingham2010pascal}.
+In contrast, recent deep learning models proposed for semantic segmentation \cite{long2015fully}, \cite{girshick2014rich}, \cite{zheng2015conditional} are very good at drawing a close border around the objects.
+However, these methods do not scale well to more than a small number of object categories (e.g. $20$) \cite{everingham2010pascal}.
 Segmentation methods typically seek to produce a hard boundary for the object, in which every pixel is labeled as either part of the object or part of the background.
 In contrast, class activation mapping produces a fuzzy boundary and is therefore able to capture pixels which are not part of any particular object, but are still salient to some spatial interaction between objects.
 Segmentation techniques are also currently limited by the requirement for strongly-labeled data for training.
-Obtaining training data where the locations of all the objects in the images are tagged is expensive and not scalable \cite{xxx_everingham2010pascal}. Our approach only requires image-level labels of object classes, without pixel-level annotation or bounding-box localization.
+Obtaining training data where the locations of all the objects in the images are tagged is expensive and not scalable \cite{everingham2010pascal}. Our approach only requires image-level labels of object classes, without pixel-level annotation or bounding-box localization.
 
 %\section{Class Activation Mapping}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Convolution filters learned from natural images are sensitive to the object classes in the training data \cite{xxx_oquab2015object}, \cite{xxx_lin2013network}.
+%Convolution filters learned from natural images are sensitive to the object classes in the training data \cite{oquab2015object}, \cite{lin2013network}.
 %In other words, regions of an image which contain relevant objects tend to produce high activations when convolved with learned filters, while regions that do not contain any object class have lower activations, and this is particularly true for the deeper levels of the \textsc{cnn}.
 In a traditional \textsc{cnn}, there are two fully-connected (non-convolutional) layers as the final layers of the network. 
 %neurons at end of the pipeline, with connections to every activation from the feature map of the previous layer.
 The final layer has one neuron for every class in the training data, and the final step in the inference is to normalize the activations of the last layer to sum to one.
 The second to last layer, however, is fully connected to the last convolution layer, and a non-linearity is applied to its activations.
-The authors of \cite{xxx_oquab2015object}, \cite{xxx_zhou2015learning} modify this second to last layer to allow for class localization.
+The authors of \cite{oquab2015object}, \cite{zhou2015learning} modify this second to last layer to allow for class localization.
 In their architecture, the second to last layer is not learned, but consists of one neuron for each feature map, which has fixed  equally-weighted connections to each activation of its corresponding map.
 %They suggest one neuron for each feature map from the last convolution layer, and this neuron has connections of equal weight to every activation of its feature map and no connections to any other feature map.
 No non-linearity is applied to the outputs of these neurons, so that each activation in this layer represents the global spatial average of one feature map from the previous layer.
@@ -136,19 +136,19 @@ Since the output of this layer is connected directly to the classification layer
 Thus, given an image and a class, the classification weights for that class can be used to re-weight the layers of activations of the final convolution layer on that image.
 These activations can be collapsed along the feature axis to create a class activation map, spatially localizing the best evidence for that class within that image. 
 % done discuss the definition
-%Taking the spatial average of the feature map (global average pooling) at the last convolution layer reveals possible locations of objects within the image \cite{xxx_oquab2015object}, \cite{xxx_zhou2015learning}. 
+%Taking the spatial average of the feature map (global average pooling) at the last convolution layer reveals possible locations of objects within the image \cite{oquab2015object}, \cite{zhou2015learning}. 
 This is used to make Class Activation Maps (CAM), which shows the probability distribution of the most likely class.
 
 While standard max pooling combines spatially local activations for each feature independently, `global max pooling' instead combines the activations of all features for each spatial location.  
 %This collapses the feature map to two spatial dimensions by reducing the $D$ features at each location to a single maximum value.
 If the activation of a convolution layer is of size $ M \times N \times D $ where $M$ and $N$ are the spatial dimensions of feature activations and $D$ denotes the number of features in the feature map, then after `global max pooling', the size of activations becomes $M \times N$.
-It is important to note that global average pooling is performed in lieu of a final fully-connected layer (or perceptron), which is often used in image classification tasks \cite{xxx_simonyan2014very}.
+It is important to note that global average pooling is performed in lieu of a final fully-connected layer (or perceptron), which is often used in image classification tasks \cite{Simonyan2014VeryDC}.
 Fully-connected layers have dense connections across all neurons and thus do not preserve spatial locality of activations.
-The substitution of a global max pooling layer retains this locality property in exchange for a fractional loss of classification accuracy\cite{xxx_oquab2015object}.
-Pooling of feature maps is probabilistic \cite{xxx_li2015beyond}, which means the most salient object is not always the one with highest activation across the feature map. 
+The substitution of a global max pooling layer retains this locality property in exchange for a fractional loss of classification accuracy\cite{oquab2015object}.
+Pooling of feature maps is probabilistic \cite{li2015beyond}, which means the most salient object is not always the one with highest activation across the feature map. 
 If we plot the activation of each feature on the $2$-dimensional map and overlay them on each other, we find significant overlap of regions of high activations.
 This means taking a `global max pooling' would lead to missing some. 
-Zhou \cite{xxx_zhou2015learning} reported that they obtained better localization by performing `global average pooling' instead of `global max pooling'. 
+Zhou \cite{zhou2015learning} reported that they obtained better localization by performing `global average pooling' instead of `global max pooling'. 
 This is because taking an average across the feature map ensures each detected object has consistently high activations across many features, instead of a single maximal activation of one feature.
 %The application of GAP after the final layer of convolution $ y_{ij} $ over $\mathbf{D}$ features would result in --
 %CAM is obtained by taking output of the last convolution layer $f(x,y)$, and taking a weighted sum across the feature map.
@@ -212,7 +212,7 @@ Details of the combined classes used in our model are provided in the Experiment
 
 It is self-evident that most images contain only a few classes and thus it is computationally inefficient to build a separate feature map for every class.
 More importantly, many classes have similar lower-level features, even when the number of classes is relatively small.
-The first few layers of a \textsc{cnn} learn filters which recognize small edges and motifs \cite{xxx_zeiler2014visualizing}, which are found across a wide variety of object classes.
+The first few layers of a \textsc{cnn} learn filters which recognize small edges and motifs \cite{zeiler2014visualizing}, which are found across a wide variety of object classes.
 Therefore, we propose parameter sharing across the feature maps for different classes.
 This reduces the number of parameters and also allows for the joint learning of these shared, low-level features.
 
@@ -312,9 +312,9 @@ Figure ~\ref{fig_encoding_steps} shows the steps of taking an image and using th
 
 \section{Experimental Results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-We trained our model with the Caltech-256 dataset \cite{xxx_griffin2007caltech}, which contains 256 classes of man-made and natural objects, common plants and animals, buildings, etc.
+We trained our model with the Caltech-256 dataset \cite{griffin2007caltech}, which contains 256 classes of man-made and natural objects, common plants and animals, buildings, etc.
 
-We believe this offers a good balance between covering more classes as compared to CIFAR-100 which contains only 100 classes, and avoiding overly finely-grained classes as in ImageNet with 1000 classes \cite{xxx_imagenet_cvpr09}.
+We believe this offers a good balance between covering more classes as compared to CIFAR-100 which contains only 100 classes, and avoiding overly finely-grained classes as in ImageNet with 1000 classes \cite{imagenet_cvpr09}.
 For the results reported here, we experimented with several stacked layers of convolution as shown in the diagram below:
 \begin{equation*}
     \text{IMAGE} \longmapsto \bigg[ \big[ \text{CONV} \rightarrow \text{RELU}\big]^2 \rightarrow \text{MAXPOOL} \bigg]^5 \longmapsto \text{MS-ROI} \longmapsto \text{MAP}
@@ -403,7 +403,7 @@ Further, given the efficacy of our method in identifying multiple regions of int
 
 When we look at Figure~\ref{fig_compressing_demo} we see the difference in quality of the salient object.  
 Our model consistently outperforms standard \textsc{jpeg} on \texttt{SSIM} and \texttt{MS-SSIM} metric.
-These metrics measure the inherent structures in the image and Richter et al \cite{xxx_richter2009ms} \cite{xxx_richter2011ssim} has shown efficacy of these metric for image compression.
+These metrics measure the inherent structures in the image and Richter et al \cite{richter2009ms} \cite{richter2011ssim} has shown efficacy of these metric for image compression.
 
 Figure~\ref{fig_mit} shows the performance of our model across all categories of the MIT dataset.
 Performance was strongest in categories like `Outdoor Natural', `Outdoor Man Made', `Action' and `Object', while categories like `Line Drawing', `Fractal' and `Low Resolution' showed the least improvement.

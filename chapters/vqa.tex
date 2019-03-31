@@ -7,10 +7,10 @@ For the task of visual question answering, we propose a network which alters the
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1.165\linewidth]{residual_vqa_better.png}
-\caption{Basic architecture of highway networks for VQA task}
-\label{fig:long}
-\label{fig:onecol}
+   \includegraphics[width=1\linewidth, scale=0.9]{figures/vqa/model.pdf}
+    \caption{Architecture of multi-modal highway networks}
+    \label{fig:long}
+    \label{fig:onecol}
 \end{figure}
 %-------------------------------------------------------------------------
 \subsection{Highway Networks}
@@ -48,9 +48,10 @@ As an experimental model we appended with input questions in reverse order. This
 %-------------------------------------------------------------------------
 \section{Results}
 
-\begin{table}[]
+\begin{table}[H]
 \centering
-\caption{Results VQA Open-Ended and Multiple Choice (MC) on Testdev-2015 and Test-Standard \textit{\tiny{(first four MC scores are from Testdev)}}}
+\rowcolors{1}{White}{Gray}
+\caption{Results of VQAv1}
 \label{my-label}
 \begin{tabular}{|l|l|l|l|l|l| l|}
 \hline

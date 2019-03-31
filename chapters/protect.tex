@@ -1,5 +1,5 @@
 \section{Introduction}
-Deep neural networks (DNNs) have shown tremendous success in image recognition tasks, even surpassing human capability ~\cite{He2016DeepRL}. 
+Deep neural networks (DNNs) have shown tremendous success in image recognition tasks, even surpassing human capability ~\cite{he2015deep}. 
 DNNs have become components of many critical systems, such as self-driving cars ~\cite{bojarski2016end}, medical image segmentation, surveillance, and  malware classification ~\cite{pascanu2015malware}. However, recent research has shown that DNNs are vulnerable to adversarial attacks, in which minute, carefully-chosen image perturbations can result in misclassification of the image by the neural network ~\cite{Goodfellow2014ExplainingAH}.
 In most cases, this change is imperceptible to humans (the resulting image is visually indistinguishable from the original).
 
@@ -370,11 +370,11 @@ Even though JSMA and L-BFGS attack selected pixels, the pixels changed by these 
 \section{Experiments}
 
 We experimented with several adversarial attacks as described in Section ~\ref{attacks}.
-We used Residual Network (ResNet-50) ~\cite{He2016DeepRL}, a state-of-the-art deep CNN as the classification model. 
+We used Residual Network (ResNet-50) ~\cite{he2015deep}, a state-of-the-art deep CNN as the classification model. 
 Our test images are scaled and cropped to $256 \times 256$, and are drawn from the ImageNet dataset, which contains $1000$ classes.
-%ResNet-50 is a fifty layer deep neural network which consists of convolutional layers with skip connections \cite{He2016DeepRL}.
+%ResNet-50 is a fifty layer deep neural network which consists of convolutional layers with skip connections \cite{he2015deep}.
 %This has been shown to improve classification accuracy considerably \cite{He2016IdentityMI}
-%VGG-19 is comparatively less accurate but is known to generalized well in image transfer applications. \cite{Simonyan2014VeryDC}.
+%VGG-19 is comparatively less accurate but is known to generalized well in image transfer applications. \cite{Simonyan2014VeryDCDC}.
 % If space is limited consider removing lines about resnet & vgg
 All the attacks were parametrized to have RMSE distance of $0.02$ compared to the original image.
 Aug-MSROI, like MSROI, requires a one-time off-line training of the model. Encoding of images can be done in parallel for several images on a GPU. Computation of Aug-MSROI map requires multiple perturbations for the same image and thus is somewhat more resource intensive than computing MSROI map. However, these passes can be computed in parallel as the final map is an average of individual maps. On a Titan X Maxwell GPU with 12 GB of memory encoding 300 images, each with five perturbations, took 5 seconds total; the decoding process remains unchanged from standard JPEG.
@@ -387,7 +387,7 @@ Most publications report `Top-5' accuracy, which is calculated by counting the n
 For the purposes of adversarial attacks, we consider an attack to be successful if the model's top predicted class $c'$ for adversarial image $x'$ is not the same as the top predicted class for the original image $x$ i.e `Top-1' accuracy. 
 This is a very generous success metric for the adversary, as the predicted class label for most of the adversarial images are within the `Top-5' of the original image even if not in `Top-1'.
 
-We achieved 76\% accuracy with Residual Network (ResNet-50), which is in accordance with the reported numbers \cite{He2016DeepRL}.
+We achieved 76\% accuracy with Residual Network (ResNet-50), which is in accordance with the reported numbers \cite{he2015deep}.
 In other words, after applying our defense, we recover a level of classification accuracy which is close to the accuracy obtained on non-adversarial images.
 Since the top-1 accuracy of classifier on the original image is limited the metric is biased towards adversary because in many cases adversary does not even have to work to produce a success.
 
