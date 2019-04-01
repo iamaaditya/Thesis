@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.4.16)  31 MAR 2019 17:56
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.4.16)  31 MAR 2019 20:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -909,46 +909,403 @@ File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 
 
 ]
-(./main.toc)
+(./main.toc [4
+
+
+
+
+])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [4
+ [5] (./main.lof [1
 
 
 
-
-] (./main.lof)
+])
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
- [1
+ [2] (./main.lot [3
 
-
-
-] (./main.lot)
+])
 \tf@lot=\write7
 \openout7 = `main.lot'.
 
- [2
-
-] (./main.loa)
+ [4] (./main.loa)
 \tf@loa=\write8
 \openout8 = `main.loa'.
 
- [3
+
+[5
 
 ]
 Chapter 1.
-(./chapters/cmemnn.tex [4
+(./chapters/introduction.tex) [6
 
-] [5] [6] [7]
+]
+Chapter 2.
+(./chapters/semantic.tex [7
+
+] [8] [9]
+File: figures/semantic/arrow_small.png Graphic file (type bmp)
+<figures/semantic/arrow_small.png>
+ [10] [11] [12] [13] [14] [15] [16]
+[17]
+File: figures/semantic/girl_compression.pdf Graphic file (type pdf)
+<use figures/semantic/girl_compression.pdf>
+ [18] [19] [20]
+File: figures/semantic/variable_q_jpeg.png Graphic file (type bmp)
+<figures/semantic/variable_q_jpeg.png>
+ [21] [22]
+File: figures/semantic/all_images_small.png Graphic file (type bmp)
+<figures/semantic/all_images_small.png>
+ [23]
+Overfull \hbox (38.02495pt too wide) in paragraph at lines 352--378
+ [][] 
+ []
+
+[24]
+File: figures/semantic/image_size.pdf Graphic file (type pdf)
+<use figures/semantic/image_size.pdf>
+File: figures/semantic/image_mit.pdf Graphic file (type pdf)
+<use figures/semantic/image_mit.pdf>
+ [25] [26]) [27]
+Chapter 3.
+(./chapters/protect.tex [28
+
+]
+File: figures/protect/ori.pdf Graphic file (type pdf)
+<use figures/protect/ori.pdf>
+File: figures/protect/plus_epsilon.png Graphic file (type bmp)
+<figures/protect/plus_epsilon.png>
+File: figures/protect/noise.pdf Graphic file (type pdf)
+<use figures/protect/noise.pdf>
+File: figures/protect/equals.png Graphic file (type bmp)
+<figures/protect/equals.png>
+File: figures/protect/adv.pdf Graphic file (type pdf)
+<use figures/protect/adv.pdf>
+ [29] [30] [31] [32] [33] [34] [35] [36]
+File: figures/protect/jpeg_study.png Graphic file (type bmp)
+<figures/protect/jpeg_study.png>
+File: figures/protect/drawing_noise.jpg Graphic file (type bmp)
+<figures/protect/drawing_noise.jpg>
+ [37]
+[38]
+File: figures/protect/original_msroi.jpg Graphic file (type bmp)
+<figures/protect/original_msroi.jpg>
+File: figures/protect/adversarial_msroi.jpg Graphic file (type bmp)
+<figures/protect/adversarial_msroi.jpg>
+File: figures/protect/MSROI_after.jpg Graphic file (type bmp)
+<figures/protect/MSROI_after.jpg>
+ [39]
+File: figures/protect/out2_small_small.png Graphic file (type bmp)
+<figures/protect/out2_small_small.png>
+ [40] [41] [42]
+File: figures/protect/ori.pdf Graphic file (type pdf)
+<use figures/protect/ori.pdf>
+File: figures/protect/adv.pdf Graphic file (type pdf)
+<use figures/protect/adv.pdf>
+File: figures/protect/jpg.pdf Graphic file (type pdf)
+<use figures/protect/jpg.pdf>
+File: figures/protect/msroi.pdf Graphic file (type pdf)
+<use figures/protect/msroi.pdf>
+File: figures/protect/results.png Graphic file (type bmp)
+<figures/protect/results.png>
+ [43]) [44] [45]
+Chapter 4.
+(./chapters/pixel.tex [46
+
+] [47] [48] [49] [50]
+Overfull \hbox (11.67303pt too wide) in paragraph at lines 126--128
+[]\TU/lmr/m/n/12 We have not included recently proposed attacks like ‘Projected
+ Gradient Descent’  [[][]Mad+17[][]]
+ []
+
+[51] [52] [53]
+File: figures/pixel/image_corruption_x_50.pdf Graphic file (type pdf)
+<use figures/pixel/image_corruption_x_50.pdf>
+File: figures/pixel/image_corruption_x_100.pdf Graphic file (type pdf)
+<use figures/pixel/image_corruption_x_100.pdf>
+File: figures/pixel/image_corruption_x_500.pdf Graphic file (type pdf)
+<use figures/pixel/image_corruption_x_500.pdf>
+File: figures/pixel/image_corruption_x_2000.pdf Graphic file (type pdf)
+<use figures/pixel/image_corruption_x_2000.pdf>
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--240
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--240
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--240
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--240
+[]
+ []
+
+[54]
+Overfull \vbox (105.41147pt too high) has occurred while \output is active []
+
+
+[55]
+File: figures/pixel/clean_pixel.pdf Graphic file (type pdf)
+<use figures/pixel/clean_pixel.pdf>
+File: figures/pixel/clean_pixel_no_adv.pdf Graphic file (type pdf)
+<use figures/pixel/clean_pixel_no_adv.pdf>
+ [56]
+File: figures/pixel/vis_attack_X.pdf Graphic file (type pdf)
+<use figures/pixel/vis_attack_X.pdf>
+File: figures/pixel/vis_attack_0.pdf Graphic file (type pdf)
+<use figures/pixel/vis_attack_0.pdf>
+File: figures/pixel/vis_attack_1.pdf Graphic file (type pdf)
+<use figures/pixel/vis_attack_1.pdf>
+File: figures/pixel/vis_attack_2.pdf Graphic file (type pdf)
+<use figures/pixel/vis_attack_2.pdf>
+File: figures/pixel/vis_attack_3.pdf Graphic file (type pdf)
+<use figures/pixel/vis_attack_3.pdf>
+File: figures/pixel/vis_attack_4.pdf Graphic file (type pdf)
+<use figures/pixel/vis_attack_4.pdf>
+File: figures/pixel/vis_attack_5.pdf Graphic file (type pdf)
+<use figures/pixel/vis_attack_5.pdf>
+File: figures/pixel/vis_attack_9.pdf Graphic file (type pdf)
+<use figures/pixel/vis_attack_9.pdf>
+ [57] [58] [59]
+File: figures/pixel/robust_cam.pdf Graphic file (type pdf)
+<use figures/pixel/robust_cam.pdf>
+ [60] [61] [62] [63]
+Underfull \hbox (badness 10000) in paragraph at lines 442--443
+
+ []
+
+[64] [65]
+File: figures/pixel/CW.pdf Graphic file (type pdf)
+<use figures/pixel/CW.pdf>
+File: figures/pixel/IGSM.pdf Graphic file (type pdf)
+<use figures/pixel/IGSM.pdf>
+File: figures/pixel/DFool.pdf Graphic file (type pdf)
+<use figures/pixel/DFool.pdf>
+File: figures/pixel/JSMA.pdf Graphic file (type pdf)
+<use figures/pixel/JSMA.pdf>
+File: figures/pixel/FGSM.pdf Graphic file (type pdf)
+<use figures/pixel/FGSM.pdf>
+File: figures/pixel/Clean.pdf Graphic file (type pdf)
+<use figures/pixel/Clean.pdf>
+
+Underfull \hbox (badness 2189) in paragraph at lines 493--499
+[][] []
+ []
+
+
+Underfull \hbox (badness 2189) in paragraph at lines 493--499
+[] []
+ []
+
+[66] [67] [68]
+Underfull \hbox (badness 10000) in paragraph at lines 565--569
+
+ []
+
+[69] [70] [71] [72]
+Overfull \vbox (10.98799pt too high) has occurred while \output is active []
+
+
+[73]
+File: figures/pixel/untargeted.pdf Graphic file (type pdf)
+<use figures/pixel/untargeted.pdf>
+File: figures/pixel/retargeted.pdf Graphic file (type pdf)
+<use figures/pixel/retargeted.pdf>
+ [74] [75] [76] [77] [78]) [79] [80]
+Chapter 5.
+(./chapters/repr.tex [81
+
+]
+File: figures/repr/RePr_Train.pdf Graphic file (type pdf)
+<use figures/repr/RePr_Train.pdf>
+File: figures/repr/RePr_Test.pdf Graphic file (type pdf)
+<use figures/repr/RePr_Test.pdf>
+ [82] [83] [84] [85]
+Overfull \hbox (40.07573pt too wide) in paragraph at lines 133--142
+\TU/lmr/m/n/12 A well-known shortcoming of vanilla convolutional networks is th
+eir correlated feature maps [[][]Cog+16[][];
+ []
+
+[86] [87] [88]
+File: figures/repr/Filter_CCA.pdf Graphic file (type pdf)
+<use figures/repr/Filter_CCA.pdf>
+File: figures/repr/Error_Distribution.pdf Graphic file (type pdf)
+<use figures/repr/Error_Distribution.pdf>
+ [89] [90] [91] [92] [93] [94] [95] [96]
+File: figures/repr/correlation_combined_reduced.pdf Graphic file (type pdf)
+<use figures/repr/correlation_combined_reduced.pdf>
+ [97]
+File: figures/repr/percentage_pruned_X.pdf Graphic file (type pdf)
+<use figures/repr/percentage_pruned_X.pdf>
+ [98]
+File: figures/repr/marginal_returns_no_y.pdf Graphic file (type pdf)
+<use figures/repr/marginal_returns_no_y.pdf>
+ [99] [100]
+[101]
+File: figures/repr/ablation_optimizer_s1s2.pdf Graphic file (type pdf)
+<use figures/repr/ablation_optimizer_s1s2.pdf>
+ [102]
+File: figures/repr/RePr_LR_Staircase.pdf Graphic file (type pdf)
+<use figures/repr/RePr_LR_Staircase.pdf>
+File: figures/repr/RePr_LR_Cycle.pdf Graphic file (type pdf)
+<use figures/repr/RePr_LR_Cycle.pdf>
+ [103]
+File: figures/repr/with_dropout.pdf Graphic file (type pdf)
+<use figures/repr/with_dropout.pdf>
+File: figures/repr/without_dropout.pdf Graphic file (type pdf)
+<use figures/repr/without_dropout.pdf>
+ [104]
+File: figures/repr/orthogonality_distillation.pdf Graphic file (type pdf)
+<use figures/repr/orthogonality_distillation.pdf>
+ [105] [106] [107]
+File: figures/repr/ablation_layers.pdf Graphic file (type pdf)
+<use figures/repr/ablation_layers.pdf>
+ [108] [109]
+File: figures/repr/filter_CCA_3_second_rebuttal.pdf Graphic file (type pdf)
+<use figures/repr/filter_CCA_3_second_rebuttal.pdf>
+ [110] [111]
+Overfull \vbox (80.10835pt too high) has occurred while \output is active []
+
+
+[112]
+File: figures/repr/frisbee.jpg Graphic file (type bmp)
+<figures/repr/frisbee.jpg>
+File: figures/repr/dog.jpg Graphic file (type bmp)
+<figures/repr/dog.jpg>
+
+Overfull \hbox (5.20576pt too wide) in paragraph at lines 782--788
+[][] 
+ []
+
+[113] [114] [115]) [116]
+Chapter 6.
+(./chapters/vqa.tex
+File: figures/vqa/model.pdf Graphic file (type pdf)
+<use figures/vqa/model.pdf>
+ [117
+
+]
+Overfull \vbox (102.93065pt too high) has occurred while \output is active []
+
+
+[118]
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 18.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 18.
+
+
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 20.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 20.
+
+
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 24.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 24.
+
+
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 24.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 24.
+
+
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 24.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 24.
+
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 32.
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 32.
+
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 32.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 32.
+
+
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 32.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 32.
+
+
+[119] [120]) [121] [122]
+Chapter 7.
+(./chapters/paraphrase.tex [123
+
+] [124] [125]
+File: figures/paraphrase/seq2seq.pdf Graphic file (type pdf)
+<use figures/paraphrase/seq2seq.pdf>
+ [126]
+File: figures/paraphrase/lstm.png Graphic file (type bmp)
+<figures/paraphrase/lstm.png>
+ [127] [128]
+File: figures/paraphrase/reslstm.pdf Graphic file (type pdf)
+<use figures/paraphrase/reslstm.pdf>
+ [129] [130]
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 95.
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 95.
+
+[131]
+File: figures/paraphrase/wordlength.pdf Graphic file (type pdf)
+<use figures/paraphrase/wordlength.pdf>
+ [132] [133]
+File: figures/paraphrase/plots.pdf Graphic file (type pdf)
+<use figures/paraphrase/plots.pdf>
+ [134] [135]
+Overfull \hbox (46.53497pt too wide) in paragraph at lines 164--178
+ []|  [] 
+ []
+
+[136] [137]
+Overfull \hbox (47.14856pt too wide) in paragraph at lines 189--224
+[]|  [] 
+ []
+
+[138] [139] [140]) [141]
+Chapter 8.
+(./chapters/cmemnn.tex [142
+
+] [143] [144] [145]
 Overfull \hbox (7.973pt too wide) in paragraph at lines 25--26
 \TU/lmr/m/n/12 The application of neural networks to medical tasks dates back m
 ore than twenty years [[][]Bax90[][]].
  []
 
-[8]
+[146]
 File: figures/cmemnn/image_number_of_diagnosis.png Graphic file (type bmp)
 <figures/cmemnn/image_number_of_diagnosis.png>
 File: figures/cmemnn/image_architecture.pdf Graphic file (type pdf)
@@ -958,7 +1315,7 @@ Overfull \hbox (3.18648pt too wide) in paragraph at lines 84--86
  [][] 
  []
 
-[9] [10] [11] [12] [13] [14] [15] [16] [17]
+[147] [148] [149] [150] [151] [152] [153] [154] [155]
 File: figures/cmemnn/image_plot.pdf Graphic file (type pdf)
 <use figures/cmemnn/image_plot.pdf>
 
@@ -966,35 +1323,85 @@ Overfull \hbox (38.59296pt too wide) in paragraph at lines 209--237
  [][] 
  []
 
-[18] [19] [20]) [21]
-Overfull \hbox (2.36464pt too wide) in paragraph at lines 62--62
-[]\TU/lmr/m/n/12 Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. “Neural ma
-chine trans-
+[156] [157] [158]) [159]
+Missing character: There is no � in font [lmroman12-regular]:mapping=tex-text;!
+ [160
+
+]
+Overfull \hbox (44.77931pt too wide) in paragraph at lines 62--62
+\TU/lmr/m/n/12 translation by jointly learning to align and translate”. In: \TU
+/lmr/m/it/12 arXiv preprint arXiv:1409.0473
+ []
+
+[161] [162] [163]
+Overfull \hbox (0.11557pt too wide) in paragraph at lines 62--62
+\TU/lmr/m/it/12 IEEE Conference on Computer Vision and Pattern Recognition \TU/
+lmr/m/n/12 (2009), pp. 248–
  []
 
 
-Overfull \hbox (9.6913pt too wide) in paragraph at lines 62--62
-\TU/lmr/m/n/12 lation by jointly learning to align and translate”. In: \TU/lmr/
-m/it/12 arXiv preprint arXiv:1409.0473
+Overfull \hbox (10.60332pt too wide) in paragraph at lines 62--62
+\TU/lmr/m/n/12 of the effect of JPG compression on adversarial images”. In: \TU
+/lmr/m/it/12 CoRR \TU/lmr/m/n/12 abs/1608.00853
+ []
+
+[164] [165]
+Overfull \hbox (40.77074pt too wide) in paragraph at lines 62--62
+[]\TU/lmr/m/n/12 A. Graves, G. Wayne, and I. Danihelka. “Neural Turing Machines
+”. In: \TU/lmr/m/it/12 arXiv:1410.5401\TU/lmr/m/n/12 .
+ []
+
+[166] [167] [168]
+Overfull \hbox (6.96472pt too wide) in paragraph at lines 62--62
+[]\TU/lmr/m/n/12 Alistair EW Johnson et al. “MIMIC-III, a freely accessible cri
+tical care database”.
+ []
+
+[169]
+Overfull \hbox (28.37703pt too wide) in paragraph at lines 62--62
+\TU/lmr/m/n/12 sentence Paraphrases from Predicate/Argument Structure Using Lex
+ico-grammatical
+ []
+
+[170] [171]
+Overfull \hbox (28.34308pt too wide) in paragraph at lines 62--62
+[]\TU/lmr/m/n/12 Chenxi Liu et al. “Progressive Neural Architecture Search”. In
+: \TU/lmr/m/it/12 CoRR \TU/lmr/m/n/12 abs/1712.00559
+ []
+
+[172] [173] [174] [175] [176]
+Overfull \hbox (24.25531pt too wide) in paragraph at lines 62--62
+\TU/lmr/m/n/12 toencoders and deep networks”. In: \TU/lmr/m/it/12 NIPS Workshop
+ on Deep Learning \TU/lmr/m/n/12 abs/1406.1831
  []
 
 
-Overfull \hbox (35.2953pt too wide) in paragraph at lines 62--62
-\TU/lmr/m/n/12 ing Clinical Events via Recurrent Neural Networks”. In: \TU/lmr/
-m/it/12 arXiv preprint arXiv:1511.05942
+Overfull \hbox (5.99512pt too wide) in paragraph at lines 62--62
+[]\TU/lmr/m/n/12 Jeffrey Pennington, Richard Socher, and Christopher D Manning.
+ “Glove: Global
  []
 
-
-Overfull \hbox (55.48712pt too wide) in paragraph at lines 62--62
-[]\TU/lmr/m/n/12 Sarath Chandar et al. “Hierarchical Memory Networks”. In: \TU/
-lmr/m/it/12 arXiv preprint arXiv:1605.07427
+[177] [178] [179] [180] [181] [182]
+Overfull \hbox (30.41931pt too wide) in paragraph at lines 62--62
+\TU/lmr/m/n/12 tributes and Their Related External Knowledge”. In: \TU/lmr/m/it
+/12 arXiv preprint arXiv:1603.02814
  []
 
-[22
+[183]
+Overfull \hbox (40.08331pt too wide) in paragraph at lines 62--62
+\TU/lmr/m/n/12 works for Visual and Textual Question Answering”. In: \TU/lmr/m/
+it/12 arXiv preprint arXiv:1603.01417
+ []
 
-] [23]
+[184]
+Overfull \hbox (1.39343pt too wide) in paragraph at lines 62--62
+\TU/lmr/m/n/12 phrasing Model”. In: \TU/lmr/m/it/12 Proceedings of ACL-HLT\TU/l
+mr/m/n/12 . Columbus, Ohio, 2008, pp. 1021–
+ []
+
+[185]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 65.
- [24]
+ [186]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 65.
  (./main.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 65.
@@ -1004,12 +1411,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 20397 strings out of 492970
- 324322 string characters out of 6133938
- 648503 words of memory out of 5000000
- 24111 multiletter control sequences out of 15000+600000
- 19970 words of font info for 92 fonts, out of 8000000 for 9000
+ 21252 strings out of 492970
+ 357371 string characters out of 6133938
+ 802494 words of memory out of 5000000
+ 24857 multiletter control sequences out of 15000+600000
+ 19547 words of font info for 99 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 44i,17n,45p,1717b,4528s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,19n,51p,1743b,4535s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (28 pages).
+Output written on main.pdf (191 pages).

@@ -2,34 +2,248 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Abstract}{iii}{Doc-Start}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}Condensed Memory Networks}{4}{chapter.1}
+\contentsline {chapter}{\numberline {1}Introduction}{6}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Introduction}{4}{section.1.1}
+\contentsline {section}{\numberline {1.1}Introduction to Convolutional Neural Networks}{6}{section.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Related Work}{6}{section.1.2}
+\contentsline {subsection}{\numberline {1.1.1}Object localization}{6}{subsection.1.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.1}Memory Networks}{6}{subsection.1.2.1}
+\contentsline {section}{\numberline {1.2}Limitations of Convolutional Networks}{6}{section.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.2}Neural Networks for Clinical Diagnosis}{8}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.1}Adversarial Images}{6}{subsection.1.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Dataset}{9}{section.1.3}
+\contentsline {subsection}{\numberline {1.2.2}Overalapping Filters}{6}{subsection.1.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.1}Knowledge Base}{12}{subsection.1.3.1}
+\contentsline {chapter}{\numberline {2}Semantic Image Compression}{7}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.4}Condensed Memory Networks}{12}{section.1.4}
+\contentsline {section}{\numberline {2.1}Introduction}{7}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.1}Network Overview}{15}{subsection.1.4.1}
+\contentsline {section}{\numberline {2.2}Review of localization using CNNs}{12}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.2}Averaged Memory Networks}{16}{subsection.1.4.2}
+\contentsline {section}{\numberline {2.3}Multi-Structure Region of Interest}{16}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.3}Memory Addressing}{16}{subsection.1.4.3}
+\contentsline {section}{\numberline {2.4}Integrating MS-ROI map with JPEG}{20}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.4}Document Representation}{17}{subsection.1.4.4}
+\contentsline {section}{\numberline {2.5}Experimental Results}{22}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.5}Experiments}{17}{section.1.5}
+\contentsline {section}{\numberline {2.6}Discussion}{26}{section.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.5.1}Training}{18}{subsection.1.5.1}
+\contentsline {section}{\numberline {2.7}Conclusion}{27}{section.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.5.2}Results and Analysis}{20}{subsection.1.5.2}
+\contentsline {chapter}{\numberline {3}Adversarial Images}{28}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.6}Conclusion}{21}{section.1.6}
+\contentsline {section}{\numberline {3.1}Introduction}{28}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Background}{31}{section.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}Adversarial Attacks}{32}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.1}Fast Gradient Sign Method (FGSM)}{33}{subsection.3.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.2}Iterative Gradient Sign Method}{34}{subsection.3.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.3}Gradient Attack (GA)}{34}{subsection.3.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.4}Deep Fool}{35}{subsection.3.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.5}Jacobian-based Saliency Map Attack}{35}{subsection.3.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.6}L-BFGS}{36}{subsection.3.3.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.4}Defenses}{36}{section.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Limitations of JPEG}{38}{paragraph*.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.5}Semantic Quantization}{38}{section.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.6}Augmented MSROI}{40}{section.3.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.7}Experiments}{42}{section.3.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Metrics for comparison}{42}{paragraph*.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.8}Results}{44}{section.3.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.9}Conclusion}{45}{section.3.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Pixel Deflection}{46}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Introduction}{46}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Adversarial Attacks}{49}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.1}Fast Gradient Sign Method (FGSM)}{49}{subsection.4.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.2}Iterative Gradient Sign Method (IGSM)}{50}{subsection.4.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.3}L-BFGS}{50}{subsection.4.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.4}Jacobian-based Saliency Map Attack (JSMA)}{50}{subsection.4.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.5}Deep Fool (DFool)}{51}{subsection.4.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.6}Carlini \& Wagner (C\&W)}{51}{subsection.4.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}Defenses}{52}{section.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.4}Related Work }{52}{section.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.5}Pixel Deflection }{54}{section.4.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.5.1}Distribution of Attacks}{57}{subsection.4.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.6}Targeted Pixel Deflection }{58}{section.4.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.6.1}Robust Activation Map }{59}{subsection.4.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.7}Wavelet Denoising}{61}{section.4.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.7.1}Hard \& Soft Thresholding}{62}{subsection.4.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.7.2}Adaptive Thresholding }{63}{subsection.4.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.8}Method}{64}{section.4.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.9}Experimental Design}{65}{section.4.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.9.1}Training}{65}{subsection.4.9.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.10}Results \& Discussion }{68}{section.4.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.10.1}Results on various classifiers}{69}{subsection.4.10.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.10.2}Comparison of results}{72}{subsection.4.10.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.10.3}Ablation studies}{75}{subsection.4.10.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.11}Conclusion}{79}{section.4.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Efficient Training}{81}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Introduction}{81}{section.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Related Work}{83}{section.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.1}Training Scheme }{83}{subsection.5.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.2}Model Compression }{84}{subsection.5.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.3}Neuron ranking }{85}{subsection.5.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.4}Architecture Search }{86}{subsection.5.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.5}Feature correlation }{87}{subsection.5.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}Motivation for Orthogonal Features}{87}{section.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.4}Our Training Scheme : RePr}{91}{section.5.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.5}Our Metric : \textit {inter}-filter orthogonality}{95}{section.5.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.6}Ablation study}{99}{section.5.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.6.1}Comparison of pruning criteria }{100}{subsection.5.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.6.2}Percentage of filters pruned }{101}{subsection.5.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.6.3}Number of RePr iterations }{102}{subsection.5.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.6.4}Optimizer and S1/S2 }{102}{subsection.5.6.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.6.5}Learning Rate Schedules}{103}{subsection.5.6.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.6.6}Impact of Dropout}{104}{subsection.5.6.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.7}Orthogonality and Distillation}{106}{section.5.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.8}Results}{108}{section.5.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.8.1}Image Classification}{108}{subsection.5.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.8.2}Visual Question Answering}{113}{subsection.5.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.8.3}Object Detection}{115}{subsection.5.8.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.9}Conclusion}{115}{section.5.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Visual Question Answering}{117}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}Introduction}{117}{section.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.1}Highway Networks}{119}{subsection.6.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.2}Gating for Visual Question Answering}{119}{subsection.6.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.3}Feature space}{120}{subsection.6.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.4}Attention}{120}{subsection.6.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.5}Bi-directional Recurrence}{121}{subsection.6.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.2}Results}{122}{section.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}Paraphrase Generation}{123}{chapter.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.1}Introduction}{123}{section.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.2}Model Description}{125}{section.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.1}Encoder-Decoder Model}{125}{subsection.7.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.2}Deep LSTM}{126}{subsection.7.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.3}Stacked Residual LSTM}{129}{subsection.7.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.3}Datasets}{130}{section.7.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.4}Experimental Settings}{132}{section.7.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.4.1}Data Selection}{132}{subsection.7.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.4.2}Models}{134}{subsection.7.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.4.3}Training}{134}{subsection.7.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.5}Evaluation}{135}{section.7.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.5.1}Metrics}{135}{subsection.7.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.5.2}Results}{137}{subsection.7.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.5.3}Analysis}{138}{subsection.7.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.6}Related Work}{139}{section.7.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.7}Conclusion}{141}{section.7.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {8}Condensed Memory Networks}{142}{chapter.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.1}Introduction}{142}{section.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.2}Related Work}{144}{section.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.1}Memory Networks}{144}{subsection.8.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.2}Neural Networks for Clinical Diagnosis}{146}{subsection.8.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.3}Dataset}{147}{section.8.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.3.1}Knowledge Base}{150}{subsection.8.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.4}Condensed Memory Networks}{150}{section.8.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.4.1}Network Overview}{153}{subsection.8.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.4.2}Averaged Memory Networks}{154}{subsection.8.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.4.3}Memory Addressing}{154}{subsection.8.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.4.4}Document Representation}{155}{subsection.8.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.5}Experiments}{155}{section.8.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.5.1}Training}{156}{subsection.8.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.5.2}Results and Analysis}{158}{subsection.8.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.6}Conclusion}{159}{section.8.6}
