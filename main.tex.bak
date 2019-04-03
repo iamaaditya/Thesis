@@ -15,53 +15,40 @@
 
 \begin{document}
 
-\acknowledgments{\input{ack}}
-\preface{\input{preface}}
-\signaturepage*
+%\signaturepage*
 %\thesisfront[nocopyrightpage,lot,lof]
-\thesisfront[copyrightpage]
-
-
-
+\thesisfront[nocopyrightpage]
 
 \listoffigures
 \listoftables
 \listofalgorithms
 
-% \thesisabstract{Semantic Maps}
+\thesisabstract{Semantic Maps}
 
 
-%1
+
+% 1
 \chapter{Introduction}
-\input{chapters/introduction.tex}
+%\input{chapters/introduction.tex}
 
 % 2
 \chapter{Semantic Image Compression}
-% \input{chapters/semantic.tex}
+%\input{chapters/semantic.tex}
 
 % 3
 \chapter{Adversarial Images}
-% \input{chapters/protect.tex}
+%\input{chapters/protect.tex}
 
 %  4
 \chapter{Pixel Deflection}
-% \input{chapters/pixel.tex}
+%\input{chapters/pixel.tex}
 
 % 5
 \chapter{Efficient Training}
-% \input{chapters/repr.tex}
+%\input{chapters/repr.tex}
 
-%6
-\chapter{Visual Question Answering}
-% \input{chapters/vqa.tex}
-
-%7
-\chapter{Paraphrase Generation}
-% \input{chapters/paraphrase.tex}
-
-%8
-\chapter{Condensed Memory Networks}
-% \input{chapters/cmemnn.tex}
+\chapter{Extension to Languages]
+%\input{chapters
 
 \printbibliography
 
