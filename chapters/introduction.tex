@@ -80,6 +80,31 @@ Final step is to use the error at each neuron to change the weights. Current wei
    \label{fig:weight_update}
 \end{figure}
 
+Learning of the neural networks is summarized in algorithm ~\ref{alg:nn}.
+
+\begin{algorithm}[H]
+	\SetKwInOut{Input}{Input}
+    \SetKwInOut{Output}{Output}
+    \Input{$X$ $\in$ $\mathbb{R}^n$ }
+    \Output{None}
+    Initialize the network weights with random values\\
+    FORWARD PASS \\
+    \For{$ex\gets Training Data$}{
+        Let $z$ $=$ correct output for $ex$ \\
+    	Prediction: $y$ = Output(Network, $ex$) \\
+        Error: $\delta$ $=$ Loss-Function($y-z$) \\
+    } 
+    BACKWARD PASS \\
+    ~~~~~Compute $\delta$ for all the weights in all layers \\
+    UPDATE WEIGHTS \\
+    ~~~~~Update network weights \\
+    IF $\delta < \epsilon$ : STOP
+    
+    \caption[Training of a Neural Network]{Training of a Neural Network}
+    \label{alg:nn}
+\end{algorithm}
+
+
 
 \end{enumerate}
 

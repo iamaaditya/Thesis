@@ -10,246 +10,246 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.1.1}Learning }{7}{subsection.1.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Introduction to Convolutional Neural Networks}{10}{section.1.2}
+\contentsline {section}{\numberline {1.2}Introduction to Convolutional Neural Networks}{11}{section.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.1}Convolution}{11}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.1}Convolution}{12}{subsection.1.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.2}Pooling}{12}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.2}Pooling}{13}{subsection.1.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.3}Normalization}{13}{subsection.1.2.3}
+\contentsline {subsection}{\numberline {1.2.3}Normalization}{14}{subsection.1.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.4}Hierarchical Features}{13}{subsection.1.2.4}
+\contentsline {subsection}{\numberline {1.2.4}Hierarchical Features}{14}{subsection.1.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Multi-structure Regions of Interest}{15}{chapter.2}
+\contentsline {chapter}{\numberline {2}Multi-structure Regions of Interest}{16}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Introduction}{15}{section.2.1}
+\contentsline {section}{\numberline {2.1}Introduction}{16}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Review of localization using CNNs}{20}{section.2.2}
+\contentsline {section}{\numberline {2.2}Review of localization using CNNs}{21}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Multi-Structure Region of Interest}{24}{section.2.3}
+\contentsline {section}{\numberline {2.3}Multi-Structure Region of Interest}{25}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Integrating MS-ROI map with JPEG}{28}{section.2.4}
+\contentsline {section}{\numberline {2.4}Integrating MS-ROI map with JPEG}{29}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Experimental Results}{30}{section.2.5}
+\contentsline {section}{\numberline {2.5}Experimental Results}{31}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}Discussion}{34}{section.2.6}
+\contentsline {section}{\numberline {2.6}Discussion}{35}{section.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.7}Conclusion}{35}{section.2.7}
+\contentsline {section}{\numberline {2.7}Conclusion}{36}{section.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Robust regions of interest}{36}{chapter.3}
+\contentsline {chapter}{\numberline {3}Robust regions of interest}{37}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Introduction}{36}{section.3.1}
+\contentsline {section}{\numberline {3.1}Introduction}{37}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Background}{39}{section.3.2}
+\contentsline {section}{\numberline {3.2}Background}{40}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Adversarial Attacks}{40}{section.3.3}
+\contentsline {section}{\numberline {3.3}Adversarial Attacks}{41}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}Fast Gradient Sign Method (FGSM)}{41}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.1}Fast Gradient Sign Method (FGSM)}{42}{subsection.3.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Iterative Gradient Sign Method}{42}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.2}Iterative Gradient Sign Method}{43}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.3}Gradient Attack (GA)}{42}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.3}Gradient Attack (GA)}{43}{subsection.3.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.4}Deep Fool}{43}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.4}Deep Fool}{44}{subsection.3.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.5}Jacobian-based Saliency Map Attack}{43}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.5}Jacobian-based Saliency Map Attack}{44}{subsection.3.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.6}L-BFGS}{44}{subsection.3.3.6}
+\contentsline {subsection}{\numberline {3.3.6}L-BFGS}{45}{subsection.3.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Defenses}{44}{section.3.4}
+\contentsline {section}{\numberline {3.4}Defenses}{45}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Limitations of JPEG}{46}{paragraph*.26}
+\contentsline {paragraph}{Limitations of JPEG}{47}{paragraph*.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Semantic Quantization}{46}{section.3.5}
+\contentsline {section}{\numberline {3.5}Semantic Quantization}{47}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.6}Augmented MSROI}{48}{section.3.6}
+\contentsline {section}{\numberline {3.6}Augmented MSROI}{49}{section.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.7}Experiments}{50}{section.3.7}
+\contentsline {section}{\numberline {3.7}Experiments}{51}{section.3.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Metrics for comparison}{50}{paragraph*.29}
+\contentsline {paragraph}{Metrics for comparison}{51}{paragraph*.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.8}Results}{52}{section.3.8}
+\contentsline {section}{\numberline {3.8}Results}{53}{section.3.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.9}Conclusion}{53}{section.3.9}
+\contentsline {section}{\numberline {3.9}Conclusion}{54}{section.3.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Pixel Deflection}{54}{chapter.4}
+\contentsline {chapter}{\numberline {4}Pixel Deflection}{55}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Introduction}{54}{section.4.1}
+\contentsline {section}{\numberline {4.1}Introduction}{55}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Adversarial Attacks}{57}{section.4.2}
+\contentsline {section}{\numberline {4.2}Adversarial Attacks}{58}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}Fast Gradient Sign Method (FGSM)}{57}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.1}Fast Gradient Sign Method (FGSM)}{58}{subsection.4.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}Iterative Gradient Sign Method (IGSM)}{58}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.2}Iterative Gradient Sign Method (IGSM)}{59}{subsection.4.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.3}L-BFGS}{58}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.3}L-BFGS}{59}{subsection.4.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.4}Jacobian-based Saliency Map Attack (JSMA)}{58}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.4}Jacobian-based Saliency Map Attack (JSMA)}{59}{subsection.4.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.5}Deep Fool (DFool)}{59}{subsection.4.2.5}
+\contentsline {subsection}{\numberline {4.2.5}Deep Fool (DFool)}{60}{subsection.4.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.6}Carlini \& Wagner (C\&W)}{59}{subsection.4.2.6}
+\contentsline {subsection}{\numberline {4.2.6}Carlini \& Wagner (C\&W)}{60}{subsection.4.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Defenses}{60}{section.4.3}
+\contentsline {section}{\numberline {4.3}Defenses}{61}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Related Work }{60}{section.4.4}
+\contentsline {section}{\numberline {4.4}Related Work }{61}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Pixel Deflection }{62}{section.4.5}
+\contentsline {section}{\numberline {4.5}Pixel Deflection }{63}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.1}Distribution of Attacks}{65}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.1}Distribution of Attacks}{66}{subsection.4.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Targeted Pixel Deflection }{66}{section.4.6}
+\contentsline {section}{\numberline {4.6}Targeted Pixel Deflection }{67}{section.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.1}Robust Activation Map }{67}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.1}Robust Activation Map }{68}{subsection.4.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.7}Wavelet Denoising}{69}{section.4.7}
+\contentsline {section}{\numberline {4.7}Wavelet Denoising}{70}{section.4.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.7.1}Hard \& Soft Thresholding}{70}{subsection.4.7.1}
+\contentsline {subsection}{\numberline {4.7.1}Hard \& Soft Thresholding}{71}{subsection.4.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.7.2}Adaptive Thresholding }{71}{subsection.4.7.2}
+\contentsline {subsection}{\numberline {4.7.2}Adaptive Thresholding }{72}{subsection.4.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.8}Method}{72}{section.4.8}
+\contentsline {section}{\numberline {4.8}Method}{73}{section.4.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.9}Experimental Design}{73}{section.4.9}
+\contentsline {section}{\numberline {4.9}Experimental Design}{74}{section.4.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.9.1}Training}{73}{subsection.4.9.1}
+\contentsline {subsection}{\numberline {4.9.1}Training}{74}{subsection.4.9.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.10}Results \& Discussion }{76}{section.4.10}
+\contentsline {section}{\numberline {4.10}Results \& Discussion }{77}{section.4.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.10.1}Results on various classifiers}{77}{subsection.4.10.1}
+\contentsline {subsection}{\numberline {4.10.1}Results on various classifiers}{78}{subsection.4.10.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.10.2}Comparison of results}{80}{subsection.4.10.2}
+\contentsline {subsection}{\numberline {4.10.2}Comparison of results}{81}{subsection.4.10.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.10.3}Ablation studies}{83}{subsection.4.10.3}
+\contentsline {subsection}{\numberline {4.10.3}Ablation studies}{84}{subsection.4.10.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.11}Conclusion}{87}{section.4.11}
+\contentsline {section}{\numberline {4.11}Conclusion}{88}{section.4.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}RePr}{89}{chapter.5}
+\contentsline {chapter}{\numberline {5}RePr}{90}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Introduction}{89}{section.5.1}
+\contentsline {section}{\numberline {5.1}Introduction}{90}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Related Work}{91}{section.5.2}
+\contentsline {section}{\numberline {5.2}Related Work}{92}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.1}Training Scheme }{91}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.1}Training Scheme }{92}{subsection.5.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.2}Model Compression }{92}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.2}Model Compression }{93}{subsection.5.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.3}Neuron ranking }{93}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.3}Neuron ranking }{94}{subsection.5.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.4}Architecture Search }{94}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.4}Architecture Search }{95}{subsection.5.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.5}Feature correlation }{95}{subsection.5.2.5}
+\contentsline {subsection}{\numberline {5.2.5}Feature correlation }{96}{subsection.5.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Motivation for Orthogonal Features}{95}{section.5.3}
+\contentsline {section}{\numberline {5.3}Motivation for Orthogonal Features}{96}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}Our Training Scheme : RePr}{99}{section.5.4}
+\contentsline {section}{\numberline {5.4}Our Training Scheme : RePr}{100}{section.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.5}Our Metric : \textit {inter}-filter orthogonality}{103}{section.5.5}
+\contentsline {section}{\numberline {5.5}Our Metric : \textit {inter}-filter orthogonality}{104}{section.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.6}Ablation study}{107}{section.5.6}
+\contentsline {section}{\numberline {5.6}Ablation study}{108}{section.5.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6.1}Comparison of pruning criteria }{108}{subsection.5.6.1}
+\contentsline {subsection}{\numberline {5.6.1}Comparison of pruning criteria }{109}{subsection.5.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6.2}Percentage of filters pruned }{109}{subsection.5.6.2}
+\contentsline {subsection}{\numberline {5.6.2}Percentage of filters pruned }{110}{subsection.5.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6.3}Number of RePr iterations }{110}{subsection.5.6.3}
+\contentsline {subsection}{\numberline {5.6.3}Number of RePr iterations }{111}{subsection.5.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6.4}Optimizer and S1/S2 }{110}{subsection.5.6.4}
+\contentsline {subsection}{\numberline {5.6.4}Optimizer and S1/S2 }{111}{subsection.5.6.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6.5}Learning Rate Schedules}{111}{subsection.5.6.5}
+\contentsline {subsection}{\numberline {5.6.5}Learning Rate Schedules}{112}{subsection.5.6.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6.6}Impact of Dropout}{112}{subsection.5.6.6}
+\contentsline {subsection}{\numberline {5.6.6}Impact of Dropout}{113}{subsection.5.6.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.7}Orthogonality and Distillation}{114}{section.5.7}
+\contentsline {section}{\numberline {5.7}Orthogonality and Distillation}{115}{section.5.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.8}Results}{116}{section.5.8}
+\contentsline {section}{\numberline {5.8}Results}{117}{section.5.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.8.1}Image Classification}{116}{subsection.5.8.1}
+\contentsline {subsection}{\numberline {5.8.1}Image Classification}{117}{subsection.5.8.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.8.2}Visual Question Answering}{121}{subsection.5.8.2}
+\contentsline {subsection}{\numberline {5.8.2}Visual Question Answering}{122}{subsection.5.8.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.8.3}Object Detection}{123}{subsection.5.8.3}
+\contentsline {subsection}{\numberline {5.8.3}Object Detection}{124}{subsection.5.8.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.9}Conclusion}{123}{section.5.9}
+\contentsline {section}{\numberline {5.9}Conclusion}{124}{section.5.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Multimodal Highway Networks}{125}{chapter.6}
+\contentsline {chapter}{\numberline {6}Multimodal Highway Networks}{126}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Introduction}{125}{section.6.1}
+\contentsline {section}{\numberline {6.1}Introduction}{126}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.1}Highway Networks}{127}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.1}Highway Networks}{128}{subsection.6.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.2}Gating for Visual Question Answering}{127}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.2}Gating for Visual Question Answering}{128}{subsection.6.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.3}Feature space}{128}{subsection.6.1.3}
+\contentsline {subsection}{\numberline {6.1.3}Feature space}{129}{subsection.6.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.4}Attention}{128}{subsection.6.1.4}
+\contentsline {subsection}{\numberline {6.1.4}Attention}{129}{subsection.6.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.5}Bi-directional Recurrence}{129}{subsection.6.1.5}
+\contentsline {subsection}{\numberline {6.1.5}Bi-directional Recurrence}{130}{subsection.6.1.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Results}{130}{section.6.2}
+\contentsline {section}{\numberline {6.2}Results}{131}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Residual LSTM}{131}{chapter.7}
+\contentsline {chapter}{\numberline {7}Residual LSTM}{132}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.1}Introduction}{131}{section.7.1}
+\contentsline {section}{\numberline {7.1}Introduction}{132}{section.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.2}Model Description}{133}{section.7.2}
+\contentsline {section}{\numberline {7.2}Model Description}{134}{section.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.2.1}Encoder-Decoder Model}{133}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.1}Encoder-Decoder Model}{134}{subsection.7.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.2.2}Deep LSTM}{134}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.2}Deep LSTM}{135}{subsection.7.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.2.3}Stacked Residual LSTM}{137}{subsection.7.2.3}
+\contentsline {subsection}{\numberline {7.2.3}Stacked Residual LSTM}{138}{subsection.7.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.3}Datasets}{138}{section.7.3}
+\contentsline {section}{\numberline {7.3}Datasets}{139}{section.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.4}Experimental Settings}{140}{section.7.4}
+\contentsline {section}{\numberline {7.4}Experimental Settings}{141}{section.7.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.4.1}Data Selection}{140}{subsection.7.4.1}
+\contentsline {subsection}{\numberline {7.4.1}Data Selection}{141}{subsection.7.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.4.2}Models}{142}{subsection.7.4.2}
+\contentsline {subsection}{\numberline {7.4.2}Models}{143}{subsection.7.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.4.3}Training}{142}{subsection.7.4.3}
+\contentsline {subsection}{\numberline {7.4.3}Training}{143}{subsection.7.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.5}Evaluation}{143}{section.7.5}
+\contentsline {section}{\numberline {7.5}Evaluation}{144}{section.7.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.5.1}Metrics}{143}{subsection.7.5.1}
+\contentsline {subsection}{\numberline {7.5.1}Metrics}{144}{subsection.7.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.5.2}Results}{145}{subsection.7.5.2}
+\contentsline {subsection}{\numberline {7.5.2}Results}{146}{subsection.7.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.5.3}Analysis}{146}{subsection.7.5.3}
+\contentsline {subsection}{\numberline {7.5.3}Analysis}{147}{subsection.7.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.6}Related Work}{147}{section.7.6}
+\contentsline {section}{\numberline {7.6}Related Work}{148}{section.7.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.7}Conclusion}{149}{section.7.7}
+\contentsline {section}{\numberline {7.7}Conclusion}{150}{section.7.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Condensed Memory Networks}{150}{chapter.8}
+\contentsline {chapter}{\numberline {8}Condensed Memory Networks}{151}{chapter.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.1}Introduction}{150}{section.8.1}
+\contentsline {section}{\numberline {8.1}Introduction}{151}{section.8.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.2}Related Work}{152}{section.8.2}
+\contentsline {section}{\numberline {8.2}Related Work}{153}{section.8.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2.1}Memory Networks}{152}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.1}Memory Networks}{153}{subsection.8.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2.2}Neural Networks for Clinical Diagnosis}{154}{subsection.8.2.2}
+\contentsline {subsection}{\numberline {8.2.2}Neural Networks for Clinical Diagnosis}{155}{subsection.8.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.3}Dataset}{155}{section.8.3}
+\contentsline {section}{\numberline {8.3}Dataset}{156}{section.8.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.3.1}Knowledge Base}{158}{subsection.8.3.1}
+\contentsline {subsection}{\numberline {8.3.1}Knowledge Base}{159}{subsection.8.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.4}Condensed Memory Networks}{158}{section.8.4}
+\contentsline {section}{\numberline {8.4}Condensed Memory Networks}{159}{section.8.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.4.1}Network Overview}{161}{subsection.8.4.1}
+\contentsline {subsection}{\numberline {8.4.1}Network Overview}{162}{subsection.8.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.4.2}Averaged Memory Networks}{162}{subsection.8.4.2}
+\contentsline {subsection}{\numberline {8.4.2}Averaged Memory Networks}{163}{subsection.8.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.4.3}Memory Addressing}{162}{subsection.8.4.3}
+\contentsline {subsection}{\numberline {8.4.3}Memory Addressing}{163}{subsection.8.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.4.4}Document Representation}{163}{subsection.8.4.4}
+\contentsline {subsection}{\numberline {8.4.4}Document Representation}{164}{subsection.8.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.5}Experiments}{163}{section.8.5}
+\contentsline {section}{\numberline {8.5}Experiments}{164}{section.8.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.5.1}Training}{164}{subsection.8.5.1}
+\contentsline {subsection}{\numberline {8.5.1}Training}{165}{subsection.8.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.5.2}Results and Analysis}{166}{subsection.8.5.2}
+\contentsline {subsection}{\numberline {8.5.2}Results and Analysis}{167}{subsection.8.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.6}Conclusion}{167}{section.8.6}
+\contentsline {section}{\numberline {8.6}Conclusion}{168}{section.8.6}
