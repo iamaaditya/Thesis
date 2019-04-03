@@ -84,12 +84,38 @@ Final step is to use the error at each neuron to change the weights. Current wei
 
 \section{Introduction to Convolutional Neural Networks}
 
-Convolutional Neural Network are like standard neural networks except that not all neurons are connected to every input. 
+Convolutional Neural Network (CNN) are like standard neural networks except that not all neurons are connected to every input. 
 Only local neighbourhood of inputs are shared for some set of neurons as depicted. Figure ~\ref{fig:cnn} shows the difference between standard Neural Networks (left) and Convolutional Neural Neworks (right).
 
 \begin{figure}[H]
 	\centering
-   \includegraphics[scale=0.66]{figures/intro/cnn.png}
-   \caption[Convolutional Neural Network]{Difference between Standard NN and Convolutional NN}
+   \includegraphics[scale=0.46]{figures/intro/cnn.png}
+   \caption[Convolutional Neural Network]{Difference between Standard Neural Network (left) and Convolutional Neural Network (Right)}
    \label{fig:cnn}
+\end{figure}
+
+\subsection{Convolution}
+
+While figure ~\ref{fig:cnn} shows CNN in one-dimensional input, it is most widely used with images which are 2-D.
+For 2-D data the local inputs shared are a smaller 2-D window in the given image. 
+In order to compute the output a smaller 2-D weights (filter) is convolved across the image. 
+Generally, this leads to 2-D output but with slighly smaller spatial dimensions due to lack of enough values during convolving at the extreme points. This kind of convolution is called as 'VALID' convolution. In order to achieve the same spatial output the input can be padded wit zeros. This kind of convolution is commonly referred to as 'SAME' convolution. An example of VALID 2-D convolution is shown in the figure ~\ref{fig:cnn2d}. Resulting outputs are called as activation maps. If a layer learns $k$ filters, then there are $k$ activation maps as the output.
+
+
+\begin{figure}[H]
+	\centering
+   \includegraphics[scale=0.46]{figures/intro/cnn2d.png}
+   \caption[2-D Convolution]{VALID 2-D Convolution}
+   \label{fig:cnn2d}
+\end{figure}
+
+\subsection{Pooling}
+
+Convolutional Neural Networks take in images of some size $H \times W$ and generally, output fixed scalar values in $\mathbb{R}^n$, where $n << H, W$. This, often necessitates decreasing the dimensions of the activation maps signficantly (much more than the loss of edges due to VALID convolution). One common technique used to decrease the spatial dimensions is to pool the values within a smaller window. For all values in the window of $h \times w$ is replaced by a single value. Quite often the aggregate function used is the \textbf{max} operation however some models also use averag of the values. Pooling operation is depicted in the figure ~\ref{fig:pool}.
+
+\begin{figure}[H]
+	\centering
+   \includegraphics[scale=0.46]{figures/intro/pool.png}
+   \caption[Pooling]{Pooling}
+   \label{fig:pool}
 \end{figure}

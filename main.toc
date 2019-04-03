@@ -12,16 +12,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.2}Introduction to Convolutional Neural Networks}{8}{section.1.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Multi-structure Regions of Interest}{10}{chapter.2}% 
+\contentsline {subsection}{\numberline {1.2.1}Convolution}{9}{subsection.1.2.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Robust regions of interest}{11}{chapter.3}% 
+\contentsline {subsection}{\numberline {1.2.2}Pooling}{10}{subsection.1.2.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Pixel Deflection}{12}{chapter.4}% 
+\contentsline {chapter}{\numberline {2}Multi-structure Regions of Interest}{12}{chapter.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}RePr}{13}{chapter.5}% 
+\contentsline {chapter}{\numberline {3}Robust regions of interest}{13}{chapter.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Multimodal Highway Networks}{14}{chapter.6}% 
+\contentsline {chapter}{\numberline {4}Pixel Deflection}{14}{chapter.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Residual LSTM}{15}{chapter.7}% 
+\contentsline {chapter}{\numberline {5}RePr}{15}{chapter.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Condensed Memory Networks}{16}{chapter.8}% 
+\contentsline {chapter}{\numberline {6}Multimodal Highway Networks}{16}{chapter.6}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}Residual LSTM}{17}{chapter.7}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {8}Condensed Memory Networks}{18}{chapter.8}% 
