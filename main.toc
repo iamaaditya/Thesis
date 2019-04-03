@@ -6,26 +6,22 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{4}{chapter.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Introduction to Convolutional Neural Networks}{4}{section.1.1}% 
+\contentsline {section}{\numberline {1.1}Introduction to Neural Networks}{4}{section.1.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.1}Object localization}{4}{subsection.1.1.1}% 
+\contentsline {subsection}{\numberline {1.1.1}Learning}{5}{subsection.1.1.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Limitations of Convolutional Networks}{4}{section.1.2}% 
+\contentsline {section}{\numberline {1.2}Introduction to Convolutional Neural Networks}{6}{section.1.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.1}Adversarial Images}{4}{subsection.1.2.1}% 
+\contentsline {chapter}{\numberline {2}Multi-structure Regions of Interest}{7}{chapter.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.2}Overalapping Filters}{4}{subsection.1.2.2}% 
+\contentsline {chapter}{\numberline {3}Robust regions of interest}{8}{chapter.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Semantic Image Compression}{5}{chapter.2}% 
+\contentsline {chapter}{\numberline {4}Pixel Deflection}{9}{chapter.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Adversarial Images}{6}{chapter.3}% 
+\contentsline {chapter}{\numberline {5}RePr}{10}{chapter.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Pixel Deflection}{7}{chapter.4}% 
+\contentsline {chapter}{\numberline {6}Multimodal Highway Networks}{11}{chapter.6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Efficient Training}{8}{chapter.5}% 
+\contentsline {chapter}{\numberline {7}Residual LSTM}{12}{chapter.7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Visual Question Answering}{9}{chapter.6}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Paraphrase Generation}{10}{chapter.7}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Condensed Memory Networks}{11}{chapter.8}% 
+\contentsline {chapter}{\numberline {8}Condensed Memory Networks}{13}{chapter.8}% 
