@@ -6,7 +6,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Artificial Neuron}}{7}{figure.caption.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Artificial Neuron}}{7}{figure.caption.8}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Artificial Neural Network}}{7}{figure.caption.8}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {1.3}{\ignorespaces Forward pass}}{8}{figure.caption.9}
 \defcounter {refsection}{0}\relax 
@@ -110,6 +110,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {8.1}{\ignorespaces Distribution of classes}}{155}{figure.caption.83}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.2}{\ignorespaces CMeMNN Structure}}{157}{figure.caption.84}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces CMemNN Structure}}{157}{figure.caption.84}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {8.3}{\ignorespaces Precision Plots}}{164}{figure.caption.86}
