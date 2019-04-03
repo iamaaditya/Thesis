@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.0 $
+% $ biblatex bbl format version 2.9 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -449,7 +449,7 @@
       }}%
       {{hash=CBC}{%
          family={Callison-Burch},
-         familyi={C\bibinithyphendelim B\bibinitperiod},
+         familyi={C\bibinitperiod-B\bibinitperiod},
          given={C.},
          giveni={C\bibinitperiod},
       }}%
@@ -1400,7 +1400,7 @@
          family={Chen},
          familyi={C\bibinitperiod},
          given={Shang-Tse},
-         giveni={S\bibinithyphendelim T\bibinitperiod},
+         giveni={S\bibinitperiod-T\bibinitperiod},
       }}%
       {{hash=HF}{%
          family={Hohman},
@@ -1500,7 +1500,7 @@
          family={Li},
          familyi={L\bibinitperiod},
          given={L.-J.},
-         giveni={L\bibinithyphendelim J\bibinitperiod},
+         giveni={L\bibinitperiod-J\bibinitperiod},
       }}%
       {{hash=LK}{%
          family={Li},
@@ -1510,7 +1510,7 @@
       }}%
       {{hash=FFL}{%
          family={Fei-Fei},
-         familyi={F\bibinithyphendelim F\bibinitperiod},
+         familyi={F\bibinitperiod-F\bibinitperiod},
          given={L.},
          giveni={L\bibinitperiod},
       }}%
@@ -1552,7 +1552,7 @@
          family={Li},
          familyi={L\bibinitperiod},
          given={Li-Jia},
-         giveni={L\bibinithyphendelim J\bibinitperiod},
+         giveni={L\bibinitperiod-J\bibinitperiod},
       }}%
       {{hash=LK}{%
          family={Li},
@@ -3265,7 +3265,7 @@
       }}%
       {{hash=STJ}{%
          family={Shawe-Taylor},
-         familyi={S\bibinithyphendelim T\bibinitperiod},
+         familyi={S\bibinitperiod-T\bibinitperiod},
          given={John},
          giveni={J\bibinitperiod},
       }}%
@@ -3303,13 +3303,13 @@
          family={Tai},
          familyi={T\bibinitperiod},
          given={Yu-Wing},
-         giveni={Y\bibinithyphendelim W\bibinitperiod},
+         giveni={Y\bibinitperiod-W\bibinitperiod},
       }}%
       {{hash=TCK}{%
          family={Tang},
          familyi={T\bibinitperiod},
          given={Chi-Keung},
-         giveni={C\bibinithyphendelim K\bibinitperiod},
+         giveni={C\bibinitperiod-K\bibinitperiod},
       }}%
     }
     \strng{namehash}{HH+1}
@@ -3777,8 +3777,7 @@
          family={Lehman},
          familyi={L\bibinitperiod},
          given={Li-wei\bibnamedelima H},
-         giveni={L\bibinithyphendelim w\bibinitperiod\bibinitdelim
-  H\bibinitperiod},
+         giveni={L\bibinitperiod-w\bibinitperiod\bibinitdelim H\bibinitperiod},
       }}%
       {{hash=FM}{%
          family={Feng},
@@ -3910,7 +3909,7 @@
       }}%
       {{hash=FFL}{%
          family={Fei-Fei},
-         familyi={F\bibinithyphendelim F\bibinitperiod},
+         familyi={F\bibinitperiod-F\bibinitperiod},
          given={Li},
          giveni={L\bibinitperiod},
       }}%
@@ -4038,7 +4037,7 @@
       }}%
       {{hash=VSK}{%
          family={Vijay-Shanker},
-         familyi={V\bibinithyphendelim S\bibinitperiod},
+         familyi={V\bibinitperiod-S\bibinitperiod},
          given={K.},
          giveni={K\bibinitperiod},
       }}%
@@ -4655,13 +4654,13 @@
          family={Lin},
          familyi={L\bibinitperiod},
          given={Yen-Chen},
-         giveni={Y\bibinithyphendelim C\bibinitperiod},
+         giveni={Y\bibinitperiod-C\bibinitperiod},
       }}%
       {{hash=LMY}{%
          family={Liu},
          familyi={L\bibinitperiod},
          given={Ming-Yu},
-         giveni={M\bibinithyphendelim Y\bibinitperiod},
+         giveni={M\bibinitperiod-Y\bibinitperiod},
       }}%
       {{hash=SM}{%
          family={Sun},
@@ -4673,7 +4672,7 @@
          family={Huang},
          familyi={H\bibinitperiod},
          given={Jia-Bin},
-         giveni={J\bibinithyphendelim B\bibinitperiod},
+         giveni={J\bibinitperiod-B\bibinitperiod},
       }}%
     }
     \strng{namehash}{LYC+1}
@@ -4696,7 +4695,7 @@
          family={Lin},
          familyi={L\bibinitperiod},
          given={Tsung-Yi},
-         giveni={T\bibinithyphendelim Y\bibinitperiod},
+         giveni={T\bibinitperiod-Y\bibinitperiod},
       }}%
       {{hash=GP}{%
          family={Goyal},
@@ -4893,11 +4892,11 @@
          family={Li},
          familyi={L\bibinitperiod},
          given={Li-Jia},
-         giveni={L\bibinithyphendelim J\bibinitperiod},
+         giveni={L\bibinitperiod-J\bibinitperiod},
       }}%
       {{hash=FFL}{%
          family={Fei-Fei},
-         familyi={F\bibinithyphendelim F\bibinitperiod},
+         familyi={F\bibinitperiod-F\bibinitperiod},
          given={Li},
          giveni={L\bibinitperiod},
       }}%
@@ -5183,7 +5182,7 @@
          family={Luo},
          familyi={L\bibinitperiod},
          given={Jian-Hao},
-         giveni={J\bibinithyphendelim H\bibinitperiod},
+         giveni={J\bibinitperiod-H\bibinitperiod},
       }}%
       {{hash=WJ}{%
          family={Wu},
@@ -5376,9 +5375,9 @@
     \name{author}{3}{}{%
       {{hash=MDSM}{%
          family={Moosavi-Dezfooli},
-         familyi={M\bibinithyphendelim D\bibinitperiod},
+         familyi={M\bibinitperiod-D\bibinitperiod},
          given={Seyed-Mohsen},
-         giveni={S\bibinithyphendelim M\bibinitperiod},
+         giveni={S\bibinitperiod-M\bibinitperiod},
       }}%
       {{hash=FA}{%
          family={Fawzi},
@@ -6232,7 +6231,7 @@
       }}%
       {{hash=CBC}{%
          family={Callison-Burch},
-         familyi={C\bibinithyphendelim B\bibinitperiod},
+         familyi={C\bibinitperiod-B\bibinitperiod},
          given={C.},
          giveni={C\bibinitperiod},
       }}%
@@ -6409,7 +6408,7 @@
       }}%
       {{hash=SDJ}{%
          family={Sohl-Dickstein},
-         familyi={S\bibinithyphendelim D\bibinitperiod},
+         familyi={S\bibinitperiod-D\bibinitperiod},
          given={Jascha},
          giveni={J\bibinitperiod},
       }}%
@@ -6533,7 +6532,7 @@
       }}%
       {{hash=SDJ}{%
          family={Sohl-Dickstein},
-         familyi={S\bibinithyphendelim D\bibinitperiod},
+         familyi={S\bibinitperiod-D\bibinitperiod},
          given={Jascha},
          giveni={J\bibinitperiod},
       }}%
@@ -6573,7 +6572,7 @@
       }}%
       {{hash=SDJ}{%
          family={Sohl-Dickstein},
-         familyi={S\bibinithyphendelim D\bibinitperiod},
+         familyi={S\bibinitperiod-D\bibinitperiod},
          given={Jascha},
          giveni={J\bibinitperiod},
       }}%
@@ -7085,7 +7084,7 @@
       }}%
       {{hash=FFL}{%
          family={Fei-Fei},
-         familyi={F\bibinithyphendelim F\bibinitperiod},
+         familyi={F\bibinitperiod-F\bibinitperiod},
          given={Li},
          giveni={L\bibinitperiod},
       }}%
@@ -8267,30 +8266,6 @@
     \field{year}{2012}
   \endentry
 
-  \entry{2016arXiv160502688short}{article}{}
-    \name{author}{1}{}{%
-      {{hash=T}{%
-         family={{Theano Development Team}},
-         familyi={T\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{T1}
-    \strng{fullhash}{T1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelalpha}{{The}16}
-    \field{sortinit}{T}
-    \field{sortinithash}{T}
-    \field{title}{{Theano: A {Python} Framework for Fast Computation of
-  Mathematical Expressions}}
-    \verb{url}
-    \verb http://arxiv.org/abs/1605.02688
-    \endverb
-    \field{volume}{abs/1605.02688}
-    \field{journaltitle}{arXiv e-prints}
-    \field{year}{2016}
-  \endentry
-
   \entry{toderici2016full}{article}{}
     \name{author}{7}{}{%
       {{hash=TG}{%
@@ -9263,7 +9238,7 @@
       }}%
       {{hash=SDJ}{%
          family={Sohl-Dickstein},
-         familyi={S\bibinithyphendelim D\bibinitperiod},
+         familyi={S\bibinitperiod-D\bibinitperiod},
          given={Jascha},
          giveni={J\bibinitperiod},
       }}%
@@ -9913,7 +9888,7 @@
       }}%
       {{hash=RPB}{%
          family={Romera-Paredes},
-         familyi={R\bibinithyphendelim P\bibinitperiod},
+         familyi={R\bibinitperiod-P\bibinitperiod},
          given={Bernardino},
          giveni={B\bibinitperiod},
       }}%
@@ -10123,7 +10098,7 @@
       }}%
       {{hash=FFL}{%
          family={Fei-Fei},
-         familyi={F\bibinithyphendelim F\bibinitperiod},
+         familyi={F\bibinitperiod-F\bibinitperiod},
          given={Li},
          giveni={L\bibinitperiod},
       }}%
@@ -10184,7 +10159,7 @@
       }}%
       {{hash=SHA}{%
          family={Sorkine-Hornung},
-         familyi={S\bibinithyphendelim H\bibinitperiod},
+         familyi={S\bibinitperiod-H\bibinitperiod},
          given={Alexander},
          giveni={A\bibinitperiod},
       }}%
@@ -10215,6 +10190,30 @@
     \field{title}{Content-aware compression using saliency-driven image
   retargeting}
     \field{year}{2013}
+  \endentry
+
+  \entry{2016arXiv160502688short}{article}{}
+    \name{author}{1}{}{%
+      {{hash=T}{%
+         family={{Theano Development Team}},
+         familyi={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{T1}
+    \strng{fullhash}{T1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{{The}16}
+    \field{sortinit}{{T}}
+    \field{sortinithash}{{T}}
+    \field{title}{{Theano: A {Python} Framework for Fast Computation of
+  Mathematical Expressions}}
+    \verb{url}
+    \verb http://arxiv.org/abs/1605.02688
+    \endverb
+    \field{volume}{abs/1605.02688}
+    \field{journaltitle}{arXiv e-prints}
+    \field{year}{2016}
   \endentry
 \enddatalist
 \endinput
