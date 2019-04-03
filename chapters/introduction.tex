@@ -24,7 +24,8 @@ When multiple of neurons are connected in a layer to all the inputs and the outp
    \label{fig:ann}
 \end{figure}
 
-\subsection{Learning}
+\subsection{Learning \label{lbl:learning}}
+
 
 Learning of Neural Networks is done in four steps --
 
@@ -104,18 +105,39 @@ Generally, this leads to 2-D output but with slighly smaller spatial dimensions 
 
 \begin{figure}[H]
 	\centering
-   \includegraphics[scale=0.46]{figures/intro/cnn2d.png}
+   \includegraphics[scale=0.39]{figures/intro/cnn2d.png}
    \caption[2-D Convolution]{VALID 2-D Convolution}
    \label{fig:cnn2d}
 \end{figure}
 
 \subsection{Pooling}
 
-Convolutional Neural Networks take in images of some size $H \times W$ and generally, output fixed scalar values in $\mathbb{R}^n$, where $n << H, W$. This, often necessitates decreasing the dimensions of the activation maps signficantly (much more than the loss of edges due to VALID convolution). One common technique used to decrease the spatial dimensions is to pool the values within a smaller window. For all values in the window of $h \times w$ is replaced by a single value. Quite often the aggregate function used is the \textbf{max} operation however some models also use averag of the values. Pooling operation is depicted in the figure ~\ref{fig:pool}.
+Convolutional Neural Networks take in images of some size $H \times W$ and generally, output fixed scalar values in $\mathbb{R}^n$, where $n << H, W$. This, often necessitates decreasing the dimensions of the activation maps signficantly (much more than the loss of edges due to VALID convolution). One common technique used to decrease the spatial dimensions is to pool the values within a smaller window. For all values in the window of $h \times w$ is replaced by a single value. Quite often the aggregate function used is the \textbf{max} operation however some models also use averag of the values. Pooling operation is depicted in the figure ~\ref{fig:pool}. In this example pooling window is of the size $2\times2$, which results in the activation halfing in spatial dimensions. 
+It is important to note that Pooling does not add any learnable parameters to the network and is often used to reduce the dimensions of the intermediate features.
 
 \begin{figure}[H]
 	\centering
-   \includegraphics[scale=0.46]{figures/intro/pool.png}
+   \includegraphics[scale=0.30]{figures/intro/pool.png}
    \caption[Pooling]{Pooling}
    \label{fig:pool}
 \end{figure}
+
+\subsection{Normalization}
+
+It is common in Convolutional Neural Networks to include a normalization layer. Normalization layer attempts to rescale the activation values to certain parameters. This is often necessitated due to high variance in the natural images. It has also been shown that normalizing activations leads to faster convergence and sometimes improved performance. In recent times Batch Normmalization has become the preferred choice. If $x$ is the input data and let $\mu$ be the mean of all the activations of the data and $\sigma$ be the standard deviation of the data. Batch normalization first scales the value by subtracting the mean ($\mu$) and dividing by standard deviation $\sigma$. It then adds two learned parameter $\beta$ and $\gamma$, which are used to shift and scale the activations. Thus,
+
+$$
+BN(x) = \frac{x-\mu}{\sigma} \gamma + \beta
+$$
+
+\subsection{Hierarchical Features}
+It has been shown that stacking multiplie layers of convolution operation interspread with pooling leads to learning of hierarchical features. These features become more high-level (semantic) as the layer depth increases. This allows model to learn the semantics in the image and use that to accomplish tasks like classification and detection. Figure ~\ref{fig:features} shows example of filters learned at different depths. One can see that the high-level features are generally observed at filters from higher depth (box on the right) and they look to be formed using the filters from earlier layer (box in the middle), which in turn seems to be compiled from first layer features (left). It has also been shown that first layer filters correspond to edge detectors and gabor filters.
+
+\begin{figure}[H]
+	\centering
+   \includegraphics[scale=0.36]{figures/intro/features.png}
+   \caption[Hierarchy of features]{Hierarchy of features in CNN}
+   \label{fig:features}
+\end{figure}
+
+Training of Convolutional Neural Networks is done simillarly to standard Neural Networks as shown in the section ~\ref{lbl:learning}. However, in practice it has been found that training a CNN with many layers is difficult due to vanishing of gradients (backward pass). Several improvements have been suggested to overcome the problem, augment loss term at intermediate depths (Inception Network) ~\cite{Szegedy2016RethinkingTI}, residual skip connections ~\cite{he2016deep}, Highway Networks ~\cite{srivastava2015highway} etc. In depth discussion of these topics are beyond the scope of this manuscript. Reader is advised to refer to the relevant cited works.
