@@ -33,7 +33,7 @@ Learning of Neural Networks is done in four steps --
 	\item Forward pass
 
 During the forward pass the outputs are computed by multiplying the weights $w$ with the inputs (x). Let $w \times x$ be denoted as $e$ and the activation function be denoted as $f$, then output of a layer $f(e)$ would be $f_1(w_1 \times x_1 + w_2 \times x_2)$. 
-If we consider the network shown in figure ~\ref{fig:ann}, then a single forward pass would be as depicted in the figure ~\ref{fig:forward}.
+If we consider the network shown in figure ~\ref{fig:ann}, then a single forward pass would be as depicted in figure ~\ref{fig:forward}.
 
 \begin{figure}[H]
 	\centering
@@ -58,7 +58,7 @@ This function is task specific and is different for different tasks. For simplic
 
 	\item Backward pass
 
-Backward pass is a phase where error with respect to every neuron is computed. Error at a given layer is the proportion of the error contributed by that layer wrt to the total error. In order to compute error for layer $l$ we need to know error at layer $l+1$. 
+Backward pass is a phase where error with respect to every neuron is computed. Error at a given layer is the proportion of the error contributed by that layer with respect to to the total error. In order to compute error for layer $l$ we need to know error at layer $l+1$. 
 Thus, it is computed from layer layer to the first layer and hence called Backward pass. For the networks shown above, error at neuron $2$ is weighted sum of errors at neuron $4$ and $5$. This is shown in the figure ~\ref{fig:error2}.
 
 \begin{figure}[H]
@@ -71,7 +71,7 @@ Thus, it is computed from layer layer to the first layer and hence called Backwa
 
 	\item Weight update
 
-Final step is to use the error at each neuron to change the weights. Current weight is changed by product of three values - error at the current neuron ($\delta$), gradient of the output wrt to the input at that node ($\frac{df(e)}{de}$)and the output $y$. Generally, this update value is too large and needs to be scaled. This scaling parameter ($\eta$) is called as the \textbf{learning rate} and is generally a hyper-parameter of the network. This step is shown in the figure ~\ref{fig:weight_update}.
+Final step is to use the error at each neuron to change the weights. Current weight is changed by product of three values - error at the current neuron ($\delta$), gradient of the output with respect to to the input at that node ($\frac{df(e)}{de}$)and the output $y$. Generally, this update value is too large and needs to be scaled. This scaling parameter ($\eta$) is called as the \textbf{learning rate} and is generally a hyper-parameter of the network. This step is shown in the figure ~\ref{fig:weight_update}.
 
 \begin{figure}[H]
 	\centering
@@ -125,7 +125,7 @@ Only local neighbourhood of inputs are shared for some set of neurons as depicte
 While figure ~\ref{fig:cnn} shows CNN in one-dimensional input, it is most widely used with images which are 2-D.
 For 2-D data the local inputs shared are a smaller 2-D window in the given image. 
 In order to compute the output a smaller 2-D weights (filter) is convolved across the image. 
-Generally, this leads to 2-D output but with slighly smaller spatial dimensions due to lack of enough values during convolving at the extreme points. This kind of convolution is called as 'VALID' convolution. In order to achieve the same spatial output the input can be padded wit zeros. This kind of convolution is commonly referred to as 'SAME' convolution. An example of VALID 2-D convolution is shown in the figure ~\ref{fig:cnn2d}. Resulting outputs are called as activation maps. If a layer learns $k$ filters, then there are $k$ activation maps as the output.
+Generally, this leads to 2-D output but with slighly smaller spatial dimensions due to lack of enough values during convolving at the extreme points. This kind of convolution is referred to as a 'VALID' convolution. In order to achieve the same spatial output the input can be padded with zeros. This kind of convolution is commonly referred to as 'SAME' convolution. An example of a VALID 2-D convolution is shown in the figure ~\ref{fig:cnn2d}. Resulting outputs are called as activation maps. If a layer learns $k$ filters, then there are $k$ activation maps as the output.
 
 
 \begin{figure}[H]
@@ -137,7 +137,7 @@ Generally, this leads to 2-D output but with slighly smaller spatial dimensions 
 
 \subsection{Pooling}
 
-Convolutional Neural Networks take in images of some size $H \times W$ and generally, output fixed scalar values in $\mathbb{R}^n$, where $n << H, W$. This often necessitates decreasing the dimensions of the activation maps signficantly (much more than the loss of edges due to VALID convolution). One common technique used to decrease the spatial dimensions is to pool the values within a smaller window. For all values in the window of $h \times w$ is replaced by a single value. Quite often the aggregate function used is the \textbf{max} operation however some models also use averag of the values. Pooling operation is depicted in the figure ~\ref{fig:pool}. In this example pooling window is of the size $2\times2$, which results in the activation halfing in spatial dimensions. 
+Convolutional Neural Networks take in images of some size $H \times W$ and generally, output fixed scalar values in $\mathbb{R}^n$, where $n << H, W$. This often necessitates decreasing the dimensions of the activation maps signficantly (much more than the loss of edges due to VALID convolution). One common technique used to decrease the spatial dimensions is to pool the values within a smaller window. For all values in the window of $h \times w$ is replaced by a single value. Quite often the aggregate function used is the \textbf{max} operation however some models also use average of the values. Pooling operation is depicted in the figure ~\ref{fig:pool}. In this example pooling window is of the size $2\times2$, which results in the activation halfing in spatial dimensions. 
 It is important to note that Pooling does not add any learnable parameters to the network and is often used to reduce the dimensions of the intermediate features.
 
 \begin{figure}[H]
@@ -165,4 +165,4 @@ It has been shown that stacking multiplie layers of convolution operation inters
    \label{fig:features}
 \end{figure}
 
-Training of Convolutional Neural Networks is done simillarly to standard Neural Networks as shown in the section ~\ref{lbl:learning}. However, in practice it has been found that training a CNN with many layers is difficult due to vanishing of gradients (backward pass). Several improvements have been suggested to overcome the problem, augment loss term at intermediate depths (Inception Network) ~\cite{Szegedy2016RethinkingTI}, residual skip connections ~\cite{he2016deep}, Highway Networks ~\cite{srivastava2015highway} etc. In depth discussion of these topics are beyond the scope of this manuscript. Reader is advised to refer to the relevant cited works.
+Training of Convolutional Neural Networks is done simillarly to standard Neural Networks as shown in the section ~\ref{lbl:learning}. However, in practice it has been found that training a CNN with many layers is difficult due to vanishing of gradients (backward pass). Several improvements have been suggested to overcome the problem, augment loss term at intermediate depths (Inception Network) ~\cite{Szegedy2016RethinkingTI}, residual skip connections ~\cite{he2016deep}, Highway Networks ~\cite{srivastava2015highway} etc. 

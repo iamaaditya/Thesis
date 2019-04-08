@@ -86,7 +86,7 @@ Next, we present a brief overview of several well-known attacks, which form the 
 % RYAN reordered, but FGSM and IGSM next to each other
 \subsection{Fast Gradient Sign Method (FGSM)}
 \cite{Goodfellow2014ExplainingAH} is a single step attack process.
-It uses the sign of the gradient of the loss function,  $\ell$,  \wrt to the image to find the adversarial perturbation. 
+It uses the sign of the gradient of the loss function,  $\ell$,  with respect to to the image to find the adversarial perturbation. 
 For a given value $\epsilon$, FGSM is defined as:
 \begin{equation}
 \hat{x} = x + \epsilon \text{sign} (\nabla \ell (F(x),x))
@@ -94,7 +94,7 @@ For a given value $\epsilon$, FGSM is defined as:
 
 \subsection{Iterative Gradient Sign Method (IGSM)} 
 \cite{Kurakin2016AdversarialEI} is an iterative version of FGSM. After each iteration the generated image is clipped to be within a $\epsilon L_\infty$ neighborhood of the original and this process stops when an adversarial image has been discovered. 
-Both FGSM and IGSM minimize the $L_\infty$ norm \wrt to the original image. Let $x_0' = x$, then after $m$ iterations, the adversarial image is obtained by:
+Both FGSM and IGSM minimize the $L_\infty$ norm with respect to to the original image. Let $x_0' = x$, then after $m$ iterations, the adversarial image is obtained by:
 \begin{equation}
 x_{m+1}' = \text{Clip}_{x,\epsilon} \Bigl\{x_m' + \alpha \times \text{sign}(\nabla \ell (F(x'_m),x'_m))  \Bigr\} 
 \end{equation}
@@ -105,12 +105,12 @@ L-BFGS optimization is used to minimize $L_2$ distance between the image and the
 
 
 \subsection{Jacobian-based Saliency Map Attack (JSMA)} 
-\cite{papernot2016limitations} estimates the saliency of each image pixel \wrt to the classification output, and modifies those pixels which are most salient. This is a targeted attack, and saliency is designed to find the pixel which increases the classifier's output for the target class while tending to decrease the output for other classes.
+\cite{papernot2016limitations} estimates the saliency of each image pixel with respect to to the classification output, and modifies those pixels which are most salient. This is a targeted attack, and saliency is designed to find the pixel which increases the classifier's output for the target class while tending to decrease the output for other classes.
 
 \subsection{Deep Fool (DFool)}
  ~\cite{MoosaviDezfooli2016DeepFoolAS} is an untargeted iterative attack. 
 This method approximates the classifier as a linear decision boundary and then finds the smallest perturbation needed to cross that boundary.
-This attack minimizes $L_2$ norm \wrt to the original image. 
+This attack minimizes $L_2$ norm with respect to to the original image. 
 
 \subsection{Carlini \& Wagner (C\&W)}
  ~\cite{Carlini2017TowardsET} is a recently proposed adversarial attack, and one of the strongest.
