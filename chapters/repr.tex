@@ -1,22 +1,18 @@
 \section{Introduction}
 
 Convolutional Neural Networks have achieved state-of-the-art results in various computer vision tasks~\cite{he2015deep, Lin2018FocalLF}. 
-%Most of the success is lead by innovation in designing more complex and task-specific networks~\cite{He2017MaskR, Ronneberger2015UNetCN}.
 Much of this success is due to innovations of a novel, task-specific network architectures~\cite{He2017MaskR, Ronneberger2015UNetCN}.
-%All these networks are trained using similar optimization techniques, which are principally designed for a generic neural network which treats each weight as a single entity - \textit{a neuron}.
 Despite variation in network design, the same core optimization techniques are used across tasks.
+All these networks are trained using similar optimization techniques, which are principally designed for a generic neural network which treats each weight as a single entity - \textit{a neuron}.
 These techniques consider each individual weight as its own entity and update them independently.
-%Limited innovation has been made at understanding training process categorically designed for convolutional networks where a single unit is a \textit{filter}. 
 Limited progress has been made towards developing a training process specifically designed for convolutional networks, in which \textit{filters} are the fundamental unit of the network.
 A filter is not a single weight parameter but a stack of spatial kernels.
-%One of the implications of this is that most models are over-parameterized and a lot of the filters are redundant. 
+One of the implications of this is that most models are over-parameterized and a lot of the filters are redundant. 
 
-Because models are typically over-parameterized, a trained convolutional network will contain redundant filters~\cite{Cogswell2015ReducingOI, Li2016PruningFF}. %TODO: cite over-parameterized?
-%This is evident from abundant research in model compression which prunes complete filters~\cite{He2017ChannelPF, Anwar2017StructuredPO, Li2016PruningFF, Molchanov2016PruningCN, Liu2017LearningEC, Luo2017ThiNetAF} rather than just individual parameters~\cite{Han2015DeepCC}.
+Because models are typically over-parameterized, a trained convolutional network will contain redundant filters~\cite{Cogswell2015ReducingOI, Li2016PruningFF}. 
 This is evident from the common practice of pruning filters~\cite{He2017ChannelPF, Anwar2017StructuredPO, Li2016PruningFF, Molchanov2016PruningCN, Liu2017LearningEC, Luo2017ThiNetAF}, rather than individual parameters~\cite{Han2015DeepCC}, to achieve model compression.
 Most of these pruning methods are able to drop a significant number of filters with only a marginal loss in the performance of the model.
 However, a model with fewer filters cannot be trained from scratch to achieve the performance of a large model that has been pruned to be roughly the same size~\cite{Li2016PruningFF, Luo2017ThiNetAF, Zhu2017ToPO}.
-%The current training procedure is not able to find the same efficient filters that are obtained from the pruned models, which suggests there is a room for improvement for the training of Convolutional Neural Networks (ConvNets).
 Standard training procedures tend to learn models with extraneous and prunable filters, even for architectures without any excess capacity.
 This suggests that there is room for improvement in the training of Convolutional Neural Networks (ConvNets).
 
@@ -71,7 +67,8 @@ Our goal is to reduce the redundancy of the filters and increase the expressive 
 
 \section{Related Work}
 
-%We have divided the discussion of related works into categories that broadly cover our area of research.
+We have divided the discussion of related works into categories that broadly cover our area of research.
+
 \subsection{Training Scheme } 
 Many changes to the training paradigm have been proposed to reduce over-fitting and improve generalization.
 Dropout~\cite{Wu2015TowardsDT} is widely used in training deep nets. 
@@ -197,15 +194,13 @@ Is this also true for significantly smaller convolutional networks, which under-
 
 We will consider a simple network with two convolutional layers of $32$ filters each, and a softmax layer at the end.
 Training this model on CIFAR-$10$ for $100$ epochs with an annealed learning rate results in test set accuracy of $58.2$\%, far below the $93.5$\% achieved by VGG-$16$.
-%Given the limited capacity of this model every filter is critical to its performance and any correlation in activation would mean limited expressivity of the features and therefore inefficiency in the training.
+Given the limited capacity of this model every filter is critical to its performance and any correlation in activation would mean limited expressivity of the features and therefore inefficiency in the training.
 In the case of VGG-$16$, we might expect that correlation between filters is merely an artifact of the over-parameterization of the model - the dataset simply does not have a dimensionality high enough to require every feature to be orthogonal to every other.
 On the other hand, our small network has clearly failed to capture the full feature space of the training data, and thus any correlation between its filters is due to inefficiencies in training, rather than over-parameterization.
 
-%, In order to measure the impact of each filter on the current performance we remove \textit{(zero out),} that filter and run the inference on the test set.
 Given a trained model, we can evaluate the contribution of each filter to the model's performance by removing \textit{(zeroing out)} that filter and measuring the drop in accuracy on the test set.
 We will call this metric of filter importance the \emph{"greedy Oracle"}.
 We perform this evaluation independently for every filter in the model, and plot the distribution of the resulting drops in accuracy in Figure~\ref{fig:CCA} (right).
-%We run this independently for all the filters and show the distribution of drop in accuracy due to removing each of the filters in figure~\ref{fig:CCA} (right). This kind of filter importance ranking is known as greedy Oracle.
 Most of the second layer filters contribute less than $1\%$ in accuracy and with first layer filters, there is a long tail. 
 Some filters are important and contribute over $4\%$ of accuracy but most filters are around $1\%$. 
 This implies that even a tiny and under-performing network could be filter pruned without significant performance loss.
@@ -215,10 +210,6 @@ It is evident that in both the layers there is a significant correlation among f
 For a random orthogonal matrix any value above $0.3$ (\textit{lighter than dark blue} $\color{blue} \blacksquare$) is an anomaly.
 The activations are even more correlated if the linear combinations are extended to kernel functions~\cite{Hardoon2004CanonicalCA} or singular values~\cite{Raghu2017SVCCASV}.
 Regardless, it suffices to say that standard training for convolutional filters does not maximize the representational potential of the network.
-
-
-
- 
 
 
 \section{Our Training Scheme : RePr} \label{sec:training}
@@ -231,10 +222,10 @@ Let $\mathcal{\widehat{F}}$ denote a subset of $\mathcal{F}$ filters, such that 
 Our training scheme alternates between training the complete network ($\mathbf{M}_\mathcal{F}$) and the sub-network ($\mathbf{M}_\mathcal{F-\widehat{F}}$).
 This introduces two hyper-parameters.
 First is the number of iterations to train each of the networks before switching over; let this be $S_1$ for the full network and $S_2$ for the sub-network. 
-%If $S_1$ and $S_2$ are equal to $1$, then this scheme becomes stochastic dropout of filters. 
 These have to be non-trivial values so that each of the networks learns to improve upon the results of the previous network.
 The second hyper-parameter is the total number of times to repeat this alternating scheme; let it be $N$. 
 This value has minimal impact beyond certain range and does not require tuning.
+If $S_1$ and $S_2$ are equal to $1$, then this scheme becomes stochastic dropout of filters. 
 
 
 The most important part of our algorithm is the metric used to rank the filters. 
@@ -251,9 +242,7 @@ However, if using an optimizer that has parameters specific learning rates \text
 that are part of the pruned filters ($\mathcal{\widehat{F}}$).
 Corresponding Batch Normalization~\cite{Ioffe2015BatchNA} parameters ($\gamma \& \beta$) must also be re-initialized.
 For this reason, comparisons of our training scheme with standard training are done with a common optimizer.
-%TODO add table for optimizer comparison
-
-%We reinitialize the filters ($\mathcal{\widehat{F}}$) to be orthogonal to its value before being dropped and the current value of non-pruned filters ($\mathcal{F-\widehat{F}}$).
+We reinitialize the filters ($\mathcal{\widehat{F}}$) to be orthogonal to its value before being dropped and the current value of non-pruned filters ($\mathcal{F-\widehat{F}}$).
 
 Our algorithm is training interposed with \textbf{Re}-initializing and \textbf{Pr}uning - \textbf{RePr} \textit{(pronounced: reaper)}.
 We summarize our training scheme in Algorithm~\ref{alg:repr}.
@@ -290,7 +279,6 @@ A shallow model will make it feasible to compute the greedy Oracle ranking for e
 This will allow us to understand the impact of training scheme alone without confounding the results due to the impact of ranking criteria.
 We provide results on larger and deeper convolutional networks in Section Results~\ref{sec:results}.
 
-%Consider a three layer vanilla ConvNet, without a skip or dense connections, as shown below.
 Consider a $n$ layer vanilla ConvNet, without a skip or dense connections, with X filter each, as shown below:
 \begin{equation*}  
     \text{Img} \longmapsto \bigg[ \text{CONV}(X) \rightarrow \text{RELU}  \bigg]^n \longmapsto \text{FC} \longmapsto \text{Softmax}
@@ -328,7 +316,6 @@ Making orthogonal features will maximize the directions captured and thus expres
 In a densely connected layer, orthogonal weights lead to orthogonal features, even in the presence of ReLU~\cite{Vorontsov2017OnOA}.
 However, it is not clear how to compute the orthogonality of a convolutional layer. 
 
-%A parameter of a Convolutional layer is a group of a single kernel, which is only sparsely connected to the previous layer.
 A convolutional layer is composed of parameters grouped into spatial kernels and sparsely share the incoming activations.
 Should all the parameters in a single convolutional layer be considered while accounting for orthogonality?
 The theory that promotes initializing weights to be orthogonal is based on densely connected layers (FC-layers) and popular deep learning libraries follow this guide\footnote{tensorflow:ops/init\_ops.py\#L543 \& pytorch:nn/init.py\#L350} by considering convolutional layer as one giant vector disregarding the sparse connectivity.
@@ -338,7 +325,7 @@ Our empirical study suggests a strong preference for requiring orthogonality of 
 
 A filter of kernel size $k\times k$ is commonly a $3$D tensor of shape $k \times k \times c$, where $c$ is the number of channels in the incoming activations.
 Flatten this tensor to a $1$D vector of size $k*k*c$, and denote it by $f$.
-%A convolutional layer usually has more than one filter per layer. 
+A convolutional layer usually has more than one filter per layer. 
 Let $J_\ell$ denote the number of filters in the layer $\ell$, where $\ell \in \mathbf{L}$, and $\mathbf{L}$ is the number of layers in the ConvNet.
 Let $\boldsymbol{W}_\ell$ be a matrix, such that the individual rows are the flattened filters ($f$) of the layer $\ell$.
 
@@ -433,8 +420,8 @@ Soft regularization penalizes all the filters and changes the loss surface to en
 \end{table}
 
 \section{Ablation study} \label{sec:ablation}
-%There are some hyper-parameters and function choices in our scheme. 
-%We present a short study of the parameters in our scheme.
+There are some hyper-parameters and function choices in our scheme. 
+We present a short study of the parameters in our scheme.
 
 \begin{figure}[H]
 \center
@@ -505,14 +492,10 @@ We experimented with various values of $S1$ and $S2$, and there is not much diff
 \end{figure}
 
 \subsection{Learning Rate Schedules}
-%Optimal accuracy on SGD is not achieved at a fixed learning rate. 
 SGD with a fixed learning rate does not typically produce optimal model performance.
-%It is well-known that gradually annealing the learning rate finds better test accuracy.
 Instead, gradually annealing the learning rate over the course of training is known to produce models with higher test accuracy.
 State-of-the-art results on ResNet, DenseNet, Inception were all reported with a predetermined learning rate schedule.
-%However, finding the right schedule is a hyper-parameter, and what works for some models may not work for others. 
 However, the selection of the exact learning rate schedule is itself a hyperparameter, one which needs to be specifically tuned for each model.
-%Cyclical learning rates\footnote{Smith, Leslie N.. “Cyclical Learning Rates for Training Neural Networks.” WACV (2017)} reduce the need to tune the frequency and rate for LR schedule.
 Cyclical learning rates~\cite{Smith2017CyclicalLR} can provide stronger performance without exhaustive tuning of a precise learning rate schedule.
 Figure~\ref{fig:LR} shows the comparison of our training technique when applied in conjunction with fixed schedule learning rate scheme and cyclical learning rate. 
 Our training scheme is not impacted by using these schemes, and improvements over standard training is still apparent.
@@ -619,7 +602,7 @@ We present a brief comparison of the techniques and show that they can be combin
 RePr repetitively drops the filters with most overlap in the directions of the weights using the \textit{inter}-filter orthogonality, as shown in the equation~\ref{eqn:ortho}. 
 Therefore, we expect this value to gradually reduce over time during training.
 Figure~\ref{fig:orthodistill} (left) shows the sum of this value over the entire network with three training schemes.
-%\textcolor{red}{Base Model} is the standard training which does not involve our RePr scheme.
+\textcolor{red}{Base Model} is the standard training which does not involve our RePr scheme.
 We show RePr with two different filter ranking criteria - \textcolor{green}{Ortho} and \textcolor{blue}{Oracle}. 
 It is not surprising that RePr training scheme with Ortho ranking has lowest Ortho sum but it is surprising that RePr training with Oracle ranking also reduces the filter overlap, compared to the standard training.
 Once the model starts to converge, the least important filters based on Oracle ranking are the ones with the most overlap.
@@ -666,7 +649,6 @@ All three schemes were trained for three iterations \ie N=3.
 All models were trained for 150 epochs with similar learning rate schedule and initialization.
 DSD and RePr (Weights) perform roughly the same function - sparsifying the model guided by magnitude, with the difference that DSD acts on individual weights, while RePr (Weights) acts on entire filters.
 Thus, we observe similar performance between these techniques.
-%The primary difference between DSD and RePr (Weights) is that DSD applies sparsity at the level of individual weights, while RePr does so the level of blocks (filters), and thus results are not too different. 
 RePr (Ortho) outperforms the other techniques and is significantly cheaper to train compared to BAN, which requires N full training cycles.
 
 Compared to modern architectures, vanilla ConvNets show significantly more inefficiency in the allocation of their feature representations. 
@@ -676,9 +658,7 @@ Vanilla CNNs with 32 filters each have high error compared to DenseNet or ResNet
 RePr training improves the relative accuracy of vanilla CNNs by $~8\%$ on CIFAR-10 and $~25\%$ on CIFAR-100.
 The performance of baseline DenseNet and ResNet models is still better than vanilla CNNs trained with RePr, but these models incur more than twice the inference cost.
 For comparison, we also consider a reduced DenseNet model with only $5$ layers, which has similar inference time to the 3-layer vanilla ConvNet. 
-%Compare DenseNet with $5$ layers (not part of the original paper), which has similar inference time with 3 layer vanilla CNN.
 This model has many fewer parameters (by a factor of $11\times$) than the vanilla ConvNet, leading to significantly higher error rates, but we choose to equalize inference time rather than parameter count, due to the importance of inference time in many practical applications.
-%This model is much weaker than the vanilla CNN, which could be attributed to reduced capacity ($11\times$ fewer parameters), but for many practical applications, low inference time is more important than the model capacity.
 Figure~\ref{fig:ablation_layers} shows more results on vanilla CNNs with varying depth.
 Vanilla CNNs start to overfit the data, as most filters converge to similar representation.
 Our training scheme forces them to be different which reduces the overfitting (Figure~\ref{fig:ablation_percent} - right).
@@ -829,17 +809,16 @@ RePr (Ortho) &   {\color[HTML]{3166FF} 41.1}  & {\color[HTML]{3166FF} 42.3}     
 \section{Conclusion} \label{sec:conclusion}
 We have introduced RePr, a training paradigm which cyclically drops and relearns some percentage of the least expressive filters.
 After dropping these filters, the pruned sub-model is able to recapture the lost features using the remaining parameters, allowing a more robust and efficient allocation of model capacity once the filters are reintroduced.
-%Our model parameterizes the frequency and timing of filter dropping, and demonstrate significant improvement from proper settings for these parameters.
+Our model parameterizes the frequency and timing of filter dropping, and demonstrate significant improvement from proper settings for these parameters.
 We show that a reduced model needs training before re-introducing the filters, and careful selection of this training duration leads to substantial gains. 
 We also demonstrate that this process can be repeated with diminishing returns.
-%By choosing the frequency and the timing of dropping the filters, we demonstrate significant improvement in generalization ability over standard training.
-%Unlike previous approaches, our model takes a parametric approach to the frequency and the timing of the drop. 
-%This has a significant impact on performance, as the sub-model is able to learn the dropped representation leading to better allocation of reintroduced filters.
+By choosing the frequency and the timing of dropping the filters, we demonstrate significant improvement in generalization ability over standard training.
+Unlike previous approaches, our model takes a parametric approach to the frequency and the timing of the drop. 
+This has a significant impact on performance, as the sub-model is able to learn the dropped representation leading to better allocation of reintroduced filters.
 
 Motivated by prior research which highlights inefficiencies in the feature representations learned by convolutional neural networks, we further introduce a novel \textit{inter}-filter orthogonality metric for ranking filter importance for the purpose of RePr training, and demonstrate that this metric outperforms established ranking metrics.
-%We show that instead of using stochastic dropping or well-known filter pruning criteria, our proposed \textit{inter}-filter orthogonality ranking yields the best result. 
-%Our ranking is motivated by the research in the inefficiency of feature representation in convolutional neural networks.
-%Our metric is motivated by prior research which highlights inefficiencies in the feature representations learned by convolutional neural networks.
-%Our training technique significantly improves the performance of smaller and simpler ConvNets and is complementary to Knowledge Distillation.
+We show that instead of using stochastic dropping or well-known filter pruning criteria, our proposed \textit{inter}-filter orthogonality ranking yields the best result. 
+Our ranking is motivated by the research in the inefficiency of feature representation in convolutional neural networks.
+Our training technique significantly improves the performance of smaller and simpler ConvNets and is complementary to Knowledge Distillation.
 Our training method is able to significantly improve performance in under-parameterized networks by ensuring the efficient use of limited capacity, and the performance gains are complementary to knowledge distillation.
 Even in the case of complex, over-parameterized network architectures, our method is able to improve performance across a variety of tasks.

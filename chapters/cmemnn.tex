@@ -87,7 +87,6 @@
 \end{figure}
 
 As shown in Table 1, medical notes contain several details about the patient but the sections are not uniform. We do not separate the sections other than the \emph{DIAGNOSIS}, which is our label. There are multiple labels (diagnoses) for a given note, and a note can belong to multiple classes of diagnoses, thus we formulate our task as a multiclass-multilabel classification problem. The number of diagnoses per note is also not consistent and shows a long tail (Figure~\ref{number_of_diagnosis}). We have taken measures to counteract these issues, which are discussed in the \emph{Memory addressing} section. 
-% DONE cross-ref the experiment section
 
 Some diagnoses are less frequent in the data set. Without enough training instances, a model is not able to learn to recognize these diagnoses. Therefore, we experiment with a varying number of labels in this work (see details in the \emph{Experiments} section). % DONE table for the results
 

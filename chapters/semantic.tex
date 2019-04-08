@@ -74,8 +74,7 @@ We produce a single class-invariant feature map by learning separate feature map
 Because this task does not require precise identification of object boundaries, our system is able to capture multiple salient regions of an image in a single pass, as opposed to standard object detection \textsc{cnn}s, which require multiple passes over the image to identify and locate multiple objects.
 Model training need only be done offline, and encoding with our model employs a standard \textsc{jpeg} encoder combined with efficient computation of saliency maps (over 60 images per second for 1920x1080 using a Titan X Maxwell \textsc{gpu}).
 A key advantage of our approach is that its compressed output can be decoded by any standard off-the-shelf \textsc{jpeg} implementation.  It serves to maintain the existing decoding complexity, the primary issue for distribution of electronic media.
-% done: Move this citation to past work, make it not be negative -- decided against adding this line
-%In contrast to grid based features as described by Yuri et al \cite{reznik2013coding} our features are scale and translation invariant, which allows application of the model to a wider class of images.
+In contrast to grid based features as described by Yuri et al \cite{reznik2013coding} our features are scale and translation invariant, which allows application of the model to a wider class of images.
 
 
 % TODO fix section numbers
@@ -102,16 +101,15 @@ Given an image $x$, and a convolution filter of size $n \times n$, then a convol
 In practice, multiple filters are learned in parallel within each layer, and thus the output of a convolution layer is a 3-\textit{d} feature map, where the depth represents the number of filters. The number of features in a given layer is a design choice, and may differ from layer to layer.
 \textsc{cnn}s include a max pooling \cite{lecun1995convolutional} step after every or every other layer of convolution, in which the height and width of the feature map (filter response) are reduced by replacing several neighboring activations (coefficients), generally within a square window, with a single activation equal to the maximum within that window.  This pooling operation is strided, but the size of the pooling window can be greater than the stride, so windows can overlap.
 This results in down-sampling of input data, and filters applied to such a map will have a larger receptive field (spatial support in the pixel space) for a given kernel size, thus reducing the number of parameters of the \textsc{cnn} model and allowing the training of much deeper networks.
-%Max pooling performed with a stride of $ k \times k $ will reduce a feature matrix of size $ N \times N $ to $ \frac{N}{k} \times \frac{N}{k}$.
+Max pooling performed with a stride of $ k \times k $ will reduce a feature matrix of size $ N \times N $ to $ \frac{N}{k} \times \frac{N}{k}$.
 This does not change the depth of the feature map, but only its width and height.
 In practice, pooling windows are typically of size $2 \times 2$ or $4 \times 4$, with a stride of two, which reduces the number activations by 75\%.
 \textsc{cnn}s apply some form of non-linear operation such as sigmoid $ (1-e^{-x})^{-1} $ or linear rectifier $max(0,x)$ on the output of each convolution operation.
 
 
 Region-based \textsc{cnn}s use a moving window to maximize the posterior of the presence of an object \cite{girshick2015fast}.
-%However, this is computationally expensive as it requires looking for all possible classes in all possible regions.
+However, this is computationally expensive as it requires looking for all possible classes in all possible regions.
 Faster \textsc{rcnn}s \cite{ren2015faster} have been proposed, but they are still computationally expensive and are limited to determining the presence or absence of a single class of object within the entire image.
-%Moving-window methods are also limited in their ability to provide tight bounds on the location of an object.
 Moving-window methods are able to produce rectangular bounding boxes, but cannot produce object silhouettes.
 In contrast, recent deep learning models proposed for semantic segmentation \cite{long2015fully}, \cite{girshick2014rich}, \cite{zheng2015conditional} are very good at drawing a close border around the objects.
 However, these methods do not scale well to more than a small number of object categories (e.g. $20$) \cite{everingham2010pascal}.
@@ -120,27 +118,26 @@ In contrast, class activation mapping produces a fuzzy boundary and is therefore
 Segmentation techniques are also currently limited by the requirement for strongly-labeled data for training.
 Obtaining training data where the locations of all the objects in the images are tagged is expensive and not scalable \cite{everingham2010pascal}. Our approach only requires image-level labels of object classes, without pixel-level annotation or bounding-box localization.
 
-%\section{Class Activation Mapping}
+\subsection{Class Activation Mapping}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Convolution filters learned from natural images are sensitive to the object classes in the training data \cite{oquab2015object}, \cite{lin2013network}.
-%In other words, regions of an image which contain relevant objects tend to produce high activations when convolved with learned filters, while regions that do not contain any object class have lower activations, and this is particularly true for the deeper levels of the \textsc{cnn}.
+Convolution filters learned from natural images are sensitive to the object classes in the training data \cite{oquab2015object}, \cite{lin2013network}.
+In other words, regions of an image which contain relevant objects tend to produce high activations when convolved with learned filters, while regions that do not contain any object class have lower activations, and this is particularly true for the deeper levels of the \textsc{cnn}.
 In a traditional \textsc{cnn}, there are two fully-connected (non-convolutional) layers as the final layers of the network. 
 %neurons at end of the pipeline, with connections to every activation from the feature map of the previous layer.
 The final layer has one neuron for every class in the training data, and the final step in the inference is to normalize the activations of the last layer to sum to one.
 The second to last layer, however, is fully connected to the last convolution layer, and a non-linearity is applied to its activations.
 The authors of \cite{oquab2015object}, \cite{zhou2015learning} modify this second to last layer to allow for class localization.
 In their architecture, the second to last layer is not learned, but consists of one neuron for each feature map, which has fixed  equally-weighted connections to each activation of its corresponding map.
-%They suggest one neuron for each feature map from the last convolution layer, and this neuron has connections of equal weight to every activation of its feature map and no connections to any other feature map.
+They suggest one neuron for each feature map from the last convolution layer, and this neuron has connections of equal weight to every activation of its feature map and no connections to any other feature map.
 No non-linearity is applied to the outputs of these neurons, so that each activation in this layer represents the global spatial average of one feature map from the previous layer.
 Since the output of this layer is connected directly to the classification layer, each class will in essence learn a weight for each feature map from the final convolution layer.
 Thus, given an image and a class, the classification weights for that class can be used to re-weight the layers of activations of the final convolution layer on that image.
 These activations can be collapsed along the feature axis to create a class activation map, spatially localizing the best evidence for that class within that image. 
-% done discuss the definition
-%Taking the spatial average of the feature map (global average pooling) at the last convolution layer reveals possible locations of objects within the image \cite{oquab2015object}, \cite{zhou2015learning}. 
+Taking the spatial average of the feature map (global average pooling) at the last convolution layer reveals possible locations of objects within the image \cite{oquab2015object}, \cite{zhou2015learning}. 
 This is used to make Class Activation Maps (CAM), which shows the probability distribution of the most likely class.
 
 While standard max pooling combines spatially local activations for each feature independently, `global max pooling' instead combines the activations of all features for each spatial location.  
-%This collapses the feature map to two spatial dimensions by reducing the $D$ features at each location to a single maximum value.
+This collapses the feature map to two spatial dimensions by reducing the $D$ features at each location to a single maximum value.
 If the activation of a convolution layer is of size $ M \times N \times D $ where $M$ and $N$ are the spatial dimensions of feature activations and $D$ denotes the number of features in the feature map, then after `global max pooling', the size of activations becomes $M \times N$.
 It is important to note that global average pooling is performed in lieu of a final fully-connected layer (or perceptron), which is often used in image classification tasks \cite{Simonyan2014VeryDC}.
 Fully-connected layers have dense connections across all neurons and thus do not preserve spatial locality of activations.
@@ -150,11 +147,9 @@ If we plot the activation of each feature on the $2$-dimensional map and overlay
 This means taking a `global max pooling' would lead to missing some. 
 Zhou \cite{zhou2015learning} reported that they obtained better localization by performing `global average pooling' instead of `global max pooling'. 
 This is because taking an average across the feature map ensures each detected object has consistently high activations across many features, instead of a single maximal activation of one feature.
-%The application of GAP after the final layer of convolution $ y_{ij} $ over $\mathbf{D}$ features would result in --
-%CAM is obtained by taking output of the last convolution layer $f(x,y)$, and taking a weighted sum across the feature map.
-% todo: what class is the CAM in the figure for?
+The application of GAP after the final layer of convolution $ y_{ij} $ over $\mathbf{D}$ features would result in --
+CAM is obtained by taking output of the last convolution layer $f(x,y)$, and taking a weighted sum across the feature map.
 Figure~\ref{fig_comparison_of_map} (c) shows an example of such a map, the equation of which is given by
-%the CAM for the class girl overlayed on the original image, where each pixel value is given by
 
 \begin{equation}
     M_c(x,y) = \sum_{d \; \epsilon \; \mathbf{D}} w^{c}_{d} \; f_d(x,y)
@@ -163,8 +158,8 @@ Figure~\ref{fig_comparison_of_map} (c) shows an example of such a map, the equat
 
 {\setlength{\parindent}{0cm} where $ w^{c}_{d} $ is the learned weight of class $c$ for feature map $d$.
 %in the supervised training, and $\mathbf{D}$ the set of the numbers of filters for each layer.
-% M is referred to as class activation mapping (CAM) ~\ref{fig_comparison_of_map}.
-% It is used to generate discriminative localization for the most probable class.
+M is referred to as class activation mapping (CAM) ~\ref{fig_comparison_of_map}.
+ It is used to generate discriminative localization for the most probable class.
 Training for \textsc{cam} minimizes the cross entropy between objects' true probability distribution over classes (all mass given to the true class) and the predicted distribution, which is obtained as }
 
 \begin{equation}
@@ -194,8 +189,6 @@ This is computationally very expensive, and not practical for real world data.
 \textsc{cnn}s designed for full-scale color images have many filters per layer and are several layers deep.
 For such networks, learning a model with that many parameters would be unfeasible in terms of computational requirements.
 We propose two techniques to make this idea feasible for large networks: 
-% (i) reduce the number of classes and increase the inter-class variance by combining similar classes, and  
-% (ii) share feature maps across classes to jointly learn lower level features.
 
 \begin{enumerate}[i]
 	 \item Reduce the number of classes and increase the inter-class variance by combining similar classes
@@ -395,7 +388,6 @@ Our model & 39.6  & 28.67  & 34.63 & 44.89     & 0.915 & 0.991 & 0.522     \\
 While the comparison of metrics in Table~\ref{tbl_results} on standard \textsc{jpeg} and variable quality \textsc{jpeg} using our  generated map is similar, it should be noted that these metrics still lack ability to judge human perception. 
 It is evident from the results that the salient objects have significantly higher \texttt{PSNR-S}, yet maintains overall \texttt{PSNR} and the file size.
 We believe we have effectively created a model to make \textsc{jpeg} semantically aware without sacrificing overall image quality.
-% done  fix "better" -- no need, commented that section
 We know from the \textsc{jpeg} standard that images compressed with higher $Q$ better, and by design our model compresses the salient objects with higher $Q$; see Figure~\ref{fig_compressing_demo} for qualitative evaluation.
 
 The results in Table~\ref{tbl_results} show the success of our method in maintaining or improving performance on traditional image quality metrics.
@@ -416,13 +408,12 @@ Our model preserves this feature even when looking for multiple objects.
 
     
 
-%% Storer's version
 \section{Conclusion}
 We have presented a model which can learn to detect multiple objects at any scale and generate a map of multiple semantically salient image regions.
 This provides sufficient information to perform variable-quality image compression, without providing a precise semantic segmentation.
 Unlike region-based models, our model does not have to iterate over many windows.
 We sacrifice exact localization for the ability to detect multiple salient objects.
-%Using the output of our model as a map to perform variable-quality compression preserves the overall quality and size of the image, yet improves the visual quality of salient objects.
+Using the output of our model as a map to perform variable-quality compression preserves the overall quality and size of the image, yet improves the visual quality of salient objects.
 Our variable compression improves upon visual quality without sacrificing compression ratio. 
 Encoding requires a single inference over the pre-trained model, the cost of which is reasonable when performed using a \textsc{gpu}, along with a standard \textsc{jpeg} encoder. The cost of decoding, which employs a standard, off-the-shelf \textsc{jpeg} decoder remains unchanged.
 We believe it will be possible to incorporate our approach into other lossy compression methods such as \textsc{jpeg} 2000 and vector quantization, a subject of future work.

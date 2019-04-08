@@ -21,12 +21,10 @@ The second approach, \emph{adaptive soft-thresholding} in the wavelet domain, wh
 This thresholding process smooths adversarially-perturbed images in such a way so as to reduce the effects of the attacks.
 
 Experimentally, we show that the combination of these approaches can effectively defend against state-of-the-art attacks ~\cite{Szegedy2013IntriguingPO, Goodfellow2014ExplainingAH,Carlini2017TowardsET,MoosaviDezfooli2016DeepFoolAS,papernot2016limitations,Kurakin2016AdversarialEI}
-%DONE: List of citations
 Additionally, we show that these transformations do not significantly decrease the classifier's accuracy on non-adversarial images.
 
 In Section ~\ref{sec:advattacks}, we discuss the various attack techniques against which we will test our defense.  In Sections ~\ref{sec:defenses} and ~\ref{sec:related} we discuss the established defense techniques against which we will compare our technique.  In Sections ~\ref{sec:pdrop}, ~\ref{sec:tpd} and ~\ref{sec:wavelet} we lay out the components of our defense and provide the intuition behind them.  In Sections ~\ref{sec:exp} and ~\ref{sec:results_pixel}, we provide experimental results on a subset of ImageNet.
 
-%TODO: fill in
 
 
 
@@ -51,7 +49,7 @@ It is difficult to incorporate our technique as a an augmentation process for ad
 White-box attacks are based on the ability to find the gradient of image with respect to the classification error. 
 Our defense technique stochastically changes the pixel values, in a way which is non-differentiable, thereby reducing a white-box attack to a grey-box attack.
 
-%Most denoising based defense methods ~\cite{Dziugaite2016ASO,Das2017KeepingTB} come at cost of reduced accuracy of the classifier on the clean images.
+Most denoising based defense methods ~\cite{Dziugaite2016ASO,Das2017KeepingTB} come at cost of reduced accuracy of the classifier on the clean images.
 This is a limitation of hard and fixed quantization. 
 Our method uses adaptive and soft quantization and therefore, accuracy of clean images remains unchanged.
 
@@ -60,7 +58,6 @@ Our method uses adaptive and soft quantization and therefore, accuracy of clean 
 
 
 \section{Adversarial Attacks\label{sec:advattacks}}
-%RYAN
 It has been established that most image classification models can easily be fooled ~\cite{Szegedy2013IntriguingPO,Goodfellow2014ExplainingAH}. 
 Several techniques have been proposed which can generate an image that is perceptually indistinguishable from another image but is classified differently. 
 This can be done robustly when model parameters are known, a paradigm called \textit{white-box attacks} ~\cite{Goodfellow2014ExplainingAH,Kurakin2016AdversarialEI,Madry2017TowardsDL,Carlini2017TowardsET}.
@@ -68,22 +65,16 @@ In the scenario where access to the model is not available, called \textit{black
 It has been shown that the adversarial examples generated using these substitute models are transferable to the original classifiers ~\cite{Papernot2016PracticalBA,Liu2016DelvingIT}.
 
 Consider a given image $x$ and a classifier $F_\theta(\cdot)$ with parameters $\theta$.
-%Then an adversarial example for $x$ is an image $\hat{x}$ such that, under a certain $L_P$ norm, they are very close (\ie $||x-\hat{x}||_{L_P}$ is small),  but the classifier's prediction for each of them is different, \ie $F(x) \neq F(\hat{x})$. 
 Then an adversarial example for $F_\theta(\cdot)$ is an image $\hat{x}$ which is close
-% RYAN I just removed the L_P to make it just any old norm
 to $x$ (\ie $||x-\hat{x}||$ is small, where the norm used differs between attacks),  but the classifier's prediction for each of them is different, \ie $F(x) \neq F(\hat{x})$. 
-% RYAN plural "attack"
 \textit{Untargeted attacks} are  methods to produce such an image, given $x$ and $F_\theta(\cdot)$. 
-%As long as the model mis-classifies $\hat{x}$, the attack is considered a success.
-%Such attacks are called , in which the value of $F(\hat{x})$ is unconstrained beyond the requirement that it differ from $F(x)$.
-%A stronger form of an attack is a {targeted attack}, in which the attacker is given $x$, $F(\cdot)$, and a specific target class $\hat{y}$, and produces $\hat{x}$ such that $F(\hat{x}) = \hat{y} \neq F(x)$.
-%RYAN untargeted => targeted, also made structural parallel
+As long as the model mis-classifies $\hat{x}$, the attack is considered a success.
+Such attacks are called , in which the value of $F(\hat{x})$ is unconstrained beyond the requirement that it differ from $F(x)$.
+A stronger form of an attack is a {targeted attack}, in which the attacker is given $x$, $F(\cdot)$, and a specific target class $\hat{y}$, and produces $\hat{x}$ such that $F(\hat{x}) = \hat{y} \neq F(x)$.
 \emph{Targeted attacks}, however, seek a $\hat{x}$ such that $F(\hat{x}) = \hat{y}$ for some specific choice of $\hat{y} \neq F(x)$, i.e. targeted attacks try to induce a specific class label, whereas untargeted attacks simply try to destroy the original class label.
 
-% RYAN phrasing
 Next, we present a brief overview of several well-known attacks, which form the basis for our experiments.
 
-% RYAN reordered, but FGSM and IGSM next to each other
 \subsection{Fast Gradient Sign Method (FGSM)}
 \cite{Goodfellow2014ExplainingAH} is a single step attack process.
 It uses the sign of the gradient of the loss function,  $\ell$,  with respect to to the image to find the adversarial perturbation. 
@@ -101,7 +92,7 @@ x_{m+1}' = \text{Clip}_{x,\epsilon} \Bigl\{x_m' + \alpha \times \text{sign}(\nab
 
 \subsection{L-BFGS} ~\cite{Szegedy2013IntriguingPO} tries to find the adversarial input as a box-constraint minimization problem.
 L-BFGS optimization is used to minimize $L_2$ distance between the image and the adversarial example while keeping a constraint on the class label for the generated image.
-%This is a slow and iterative targeted attack which generally produces images with small perturbations and strong classifier confidence in the misclassification.
+This is a slow and iterative targeted attack which generally produces images with small perturbations and strong classifier confidence in the misclassification.
 
 
 \subsection{Jacobian-based Saliency Map Attack (JSMA)} 
@@ -114,7 +105,6 @@ This attack minimizes $L_2$ norm with respect to to the original image.
 
 \subsection{Carlini \& Wagner (C\&W)}
  ~\cite{Carlini2017TowardsET} is a recently proposed adversarial attack, and one of the strongest.
-%RYAN what loss function? Is this an explanation ppl in CV will understand? 
 C\&W updates the loss function, such that it jointly minimizes $L_p$ and a custom differentiable loss function that uses the unnormalized outputs of the classifier (\textit{logits}). 
 Let $Z_k$ denote the logits of a model for a given class $k$, and $\kappa$ a margin parameter. Then C\&W tries to minimize:
 \begin{equation}
@@ -126,19 +116,17 @@ Limited success has been observed with $L_0$ and $L_\infty$ for images beyond CI
 We have not included recently proposed attacks like `Projected Gradient Descent' ~\cite{Madry2017TowardsDL} and `One Pixel Attack' ~\cite{Su2017OnePA} because although they have been shown to be robust on datasets of small images like CIFAR10 and MNIST, they do not scale well to large images. 
 Our method is targeted towards large natural images where object localization is meaningful, i.e. that there are many  pixels outside the region of the image where the object is located.
 
-%TODO, maybe PGD.
 
 \section{Defenses\label{sec:defenses}}
 
-%When an image is provided, which may or may not have adversarial perturbations, the goal of the defense method is to classify the images with same predictions.
-%If $F(x)=F(\hat{x})$ then defense is considered as successful. 
-%Defense strategies are based on either building a robust classifier such that it is harder to find an adversarial example, or they are based on some transformation $\mathcal{T}$ such that $F(\mathcal{T}(\hat{x}))=F(\mathcal{T}(x))=F(x)$. 
+When an image is provided, which may or may not have adversarial perturbations, the goal of the defense method is to classify the images with same predictions.
+If $F(x)=F(\hat{x})$ then defense is considered as successful. 
+Defense strategies are based on either building a robust classifier such that it is harder to find an adversarial example, or they are based on some transformation $\mathcal{T}$ such that $F(\mathcal{T}(\hat{x}))=F(\mathcal{T}(x))=F(x)$. 
 Given a classification model $F$ and an image $\tilde{x}$, which may either be an original image $x$, or an adversarial image $\hat{x}$, the goal of a defense method is to either augment either $F$ as $F'$ such that $F'(\tilde{x}) = F(x)$, or transform $\tilde{x}$ by a transformation $\mathcal{T}$ such that $F(\mathcal{T}(\tilde{x}))=F(x)$.
 
 One method for augmenting $F$ is called Ensemble Adversarial training ~\cite{Tramr2017EnsembleAT},  which augments the training of  deep convolutional networks to include various potential adversarial perturbations. 
 This expands the decision boundaries around training examples to include some nearby adversarial examples, thereby making the task of finding an adversary within a certain $\epsilon$ harder than conventional models.
 Another popular technique uses distillation from a larger network by learning to match the 
-%RYAN is "to match the softmax" clear, or does this need to say "to match the softmax output layer"?
 softmax ~\cite{Papernot2016DistillationAA}.
 This provides smoother decision boundaries and thus makes is harder to find an adversarial example which is imperceptible.
 There are methods that proposes to detect the adversarial images as it passes through the classifier model ~\cite{Meng2017MagNetAT,akhtar2017defense}.
@@ -147,35 +135,29 @@ Most transformation-based defense strategies suffer from accuracy loss with clea
 This is an undesirable side effect of the transformation process, and we propose a transformation which tries to minimize this loss while also recovering the classification of an adversarial image. 
 Detailed discussion on various kinds of transformation based defenses is provided in section ~\ref{sec:related}.
 
-%Model based defenses:
-%1. Feature Squeezing \cite{FeatureSqueezingXu2017}
-%TODO:
 \section{Related Work \label{sec:related}}
 
 Transformation-based defenses are a relatively recent and unexplored development in adversarial defense. 
 The biggest obstacle facing most transformation-based defenses is that the transformation degrades the quality of non-adversarial images, leading to a loss of accuracy.
-%Most transformations results in some undesirable loss of accuracy on clean images. 
-%Thus, transformations are not considered to be a strong defense against adversarial systems.
+Most transformations results in some undesirable loss of accuracy on clean images. 
+Thus, transformations are not considered to be a strong defense against adversarial systems.
 This has limited the success of transformations as a practical defense, as even those which are effective at removing adversarial transformations struggle to maintain the model's accuracy on clean images.
-%TODO: Guo et al needs a cite
 Our work is most similar to Guo ~\etal's ~\cite{CounteringAIGuo17} recently proposed transformation of image by quilting and Total Variance Minimization (TVM). 
-%Image quilting is the technique of patching regions of image from different source.
+Image quilting is the technique of patching regions of image from different source.
 Image quilting is performed by replacing patches of the input image with similar patches drawn from a bank of images.
 They collect one million image patches from clean images and use a $k$-nearest neighbor algorithm to find the best match.
 Image quilting in itself does not yield satisfactory results, so it is augmented with TVM.
 In Total Variance Minimization, a substitute image is constructed by optimization such that total variance is minimized.
 Total variation minimization has been widely used ~\cite{Getreuer2012RudinOsherFatemiTV} as an image denoising technique. 
-%In section ~\ref{sec:results_pixel} we have compared the results. 
+In section ~\ref{sec:results_pixel} we have compared the results. 
 Our method uses semantic maps to obtain a better pixel to update and our update mechanism does not require any optimization and thus is significantly faster.
 
 Another closely related work is from Luo \etal ~\cite{FoveationbasedMALuo2015}. They propose a foveation-based mechanism.
-% RYAN I rewrote this sentence... I'm not sure this is good, though.
-%They obtain ground-truth data about object coordinates, and then crop the image to and scale the image back to the same dimensions.
+They obtain ground-truth data about object coordinates, and then crop the image to and scale the image back to the same dimensions.
 Using ground-truth data about object coordinates, they crop the image around the object, and then scale it back to the original size.
 
-%RYAN old: Our model makes is based on similar hypothesis that not all regions of the image are equally important for a classifier.
 Our model shares the hypothesis that not all regions of the image are equally important to a classifier.
-%However, we take a different approach to hardening an image such that salient parts are more representative of the image.
+However, we take a different approach to hardening an image such that salient parts are more representative of the image.
 Further, foveation-based methods can be fooled by finding an adversarial perturbation within the object bounding box.
 Our model does not rely on a ground-truth bounding box, and the stochastic nature of our approach means that it is not restricted to only modifying a particular region of the input.
 
@@ -195,16 +177,6 @@ We introduce a form of artificial noise and show that most models are similarly 
 We randomly sample a pixel from an image, and replace it with another randomly selected pixel from within a small square neighborhood.  We also experimented with other neighborhood types, including sampling from a Gaussian centered on the pixel, but these alternatives were less effective.
  
 
-
-%The process of pixel deflection, as formalized in Algorithm ~\ref{alg:swap}, results in a similar distortion to those caused by natural noise sources.
-%DONE change Algorithm 1 to a real reference
-% RYAN: I agree with the TODOs below very strongly. This currently reads as an extremely ad-hoc procedure with a small experiment to show it doesn't *not* work
-
-%TODO:IMP does the above assertion need to be justified?
-%TODO: Imp, give some range here, once the figure is plotted.
-%We will use the term \textit{pixel dropout} to signify loss of certain percentage of pixels from the image. 
-%TODO: Move notational definitions either into the algorithm box, or after it?
-%TODO: justify square neighborhood as simple, efficient alternative to gaussian
 We term this process \textit{pixel deflection}, and give a formal definition in Algorithm ~\ref{alg:swap}.
 Let $R^r_{p}$ be a square neighborhood with apothem $r$ centered at a pixel $p$.
 Let $\mathcal{U}(R)$ be the uniform distribution over all pixels within $R$.
@@ -249,15 +221,13 @@ If $r>\text{min}(H,W)$, then whole image is the neighbor. %TODO: unnecessary sen
 \end{figure}
 
 
-%We will briefly demonstrate that state-of-the-art classifiers are robust to this sort of pixel-level corruption.
-%TODO: Maybe move this to the experiments section?
 As shown in Figure ~\ref{fig:pixelloss}, even changing as much as $1\%$ (\ie $10$ times the amount changed in our experiments) of the original pixels does not alter the classification of a clean image.
 However, application of pixel deflection enables the recovery of a significant portion of correct classifications.
 
 \subsection{Distribution of Attacks}
 
 Most attacks search the entire image plane for adversarial perturbations, without regard for the location of the image content.
-%The attack models have no special preference for changing pixels which belong to the object in the image. 
+The attack models have no special preference for changing pixels which belong to the object in the image. 
 This is in contrast with the classification models, which show high activation in regions where an object is present ~\cite{Yosinski2015UnderstandingNN,Chattopadhyay2017GradCAMGG}. %RYAN: might as well cite yourself here too!
 This is especially true for attacks which aim to minimize the $L_p$ norm of their changes for large values of $p$, as this gives little to no constraint on the total number of pixels perturbed.
 In fact, Lou \etal \cite{FoveationbasedMALuo2015} use the object coordinates to mask out the background region and show that this defends against some of the known attacks. 
@@ -281,7 +251,6 @@ In fact, Lou \etal \cite{FoveationbasedMALuo2015} use the object coordinates to 
 \end{figure}
 
 In Figure ~\ref{fig:visattack} we show the average spatial distribution of perturbations for several attacks, as compared to the distribution of object locations (top left). 
-%TODO:IMP
 Based on these ideas, we explore the possibility of updating the pixels in the image such that the probability of that pixel being updated is inversely proportional to the likelihood of that pixel containing an object.
 
 
@@ -289,12 +258,10 @@ Based on these ideas, we explore the possibility of updating the pixels in the i
 
 As we have shown in section ~\ref{sec:pdrop}, image classification is robust against the loss of a certain number of pixels. 
 
-% RYAN: "to do correspond to a relevant" is a grammar error. Not sure what it is trying to say.  Fixed ~Nick
 In natural images, many pixels do not correspond to a relevant semantic object and are therefore not salient to classification.
-%TODO:IMP use the ImageNet to calculate this ratio
 Classifiers should then be more robust to pixel deflection if more pixels corresponding to the background are dropped as compared to the salient objects.
 Luo \etal \cite{FoveationbasedMALuo2015} used this idea to mask the regions which did not contain the object,
-%They use the ground truth co-ordinates from image localization dataset to obtain a mask.
+They use the ground truth co-ordinates from image localization dataset to obtain a mask.
 however, their method has two limitations which we will seek to overcome.
 
 First, it requires ground-truth object coordinates and it is, therefore, difficult to apply to unlabeled inputs at inference time. 
@@ -302,14 +269,12 @@ We solve this by using a variant of class activation maps to obtain an approxima
 Class activation maps ~\cite{CAMZhou2016LearningDF}  are a weakly-supervised localization ~\cite{WeaklyOquab2015IsOL} technique in which
 the last layer of a CNN, often a fully connected layer, is replaced with a global average pooling layer. 
 This results in a heat map which lacks pixel-level precision but is able to approximately localize objects by their class.
-%TODO: DONE I am not sure if the sentence above is grammatically correct. Please check and rephrase if necessary.
 We prefer to use weakly supervised localization over saliency maps ~\cite{SALICONHuang2015}, as saliency maps are trained on human eye fixations 
 and thus do not always capture object classes ~\cite{DeepGazeKmmerer2014DeepGI}. 
 Other weakly supervised localization techniques, such as regions-of-interest ~\cite{Prakash2017SemanticPI}, capture more than a single object and thus are not suitable for improving single-class classification.
 
 Second, completely masking out the background deteriorates classification of classes for which the model has come to rely on the co-occurrence of non-class objects.
 For instance, airplanes are often accompanied by a sky-colored background, and most classifiers will have lower confidence when trying to classify an airplane outside of this context.
-%RYAN: perhaps say "our approach can be interpreted as a Bayesian one, in which..."
 We take a Bayesian approach to this problem and use stochastic re-sampling of the background. 
 This preserves enough of the background to protect classification and drops enough pixels to weaken the impact of adversarial input. 
 
@@ -317,7 +282,6 @@ This preserves enough of the background to protect classification and drops enou
 \subsection{Robust Activation Map \label{sec:robustmap}}
 
 Class activation maps ~\cite{CAMZhou2016LearningDF} are a valuable tool for approximate semantic object localization.
-%visualization tool to depict the likelihood of the presence of an object class for a given image.
 Consider a convolutional network with $k$ output channels on the final convolution layer ($f$) with spatial dimensions of $x$ and $y$, and let $\boldsymbol{w}$ be a vector of size $k$ which is the result of applying a global max pool on each channel. 
 This reduces channel to a single value, $\boldsymbol{w_k}$.
 The class activation map, $M_c$ for a class $c$ is given by:
@@ -329,14 +293,13 @@ However, in the presence of adversarial perturbations to the input, the highest-
 Fortunately, our experiments show that an adversary which successfully changes the most likely class tends to leave the rest of the top-k classes unchanged.
 Our experiments show that $38\%$ of the time the predicted class of adversarial images is the second highest class of the model for the clean image. 
 Figure ~\ref{fig:untarget} shows how the class of adversarial image relates to predictions on clean images.
-%TODO: numbers, tables anything to validate this
 ImageNet has one thousand classes, many of which are fine-grained. 
 Frequently, the second most likely class is a synonym or close relative of the main class (\eg ``Indian Elephant'' and ``African Elephant'').
 To obtain a map which is robust to fluctuations of the most likely class, we take an exponentially weighted average of the maps of the top-$k$ classes. 
 \begin{equation}
 	\widehat{M}(x,y) = \sum_i^k \frac{M_{c_i}(x,y)}{2^i}
 \end{equation}
-%We will refer to this robust activation maps as $\widehat{M}(x,y)$. 
+We will refer to this robust activation maps as $\widehat{M}(x,y)$. 
 We normalize the map by diving it by its max so that values are in the range of $[0,1]$. %TODO: include this in the formula?
 Even if the top-1 class is incorrect, this averaging reduces the impact of mis-localization of the object in the image. 
 \begin{figure}[H]
@@ -356,50 +319,32 @@ Therefore, Robust Activation Map (R-CAM) is trained once on ImageNet but can als
 Because both pixel deflection and adversarial attacks add noise to the image, it is desirable to apply a denoising transform to lessen these effects.
 Since adversarial attacks do not take into account the frequency content of the perturbed image, they are likely to pull the input away from the class of likely natural images in a way which can be detected and corrected using a multi-resolution analysis. 
 
-%RYAN: combined these cites into one, not sure if that's what was wanted
 Works such as  ~\cite{BayesShrinkChang2000,Simoncelli1999BayesianDO,field1987relations} have shown that natural images exhibit regularities in their wavelet responses which can be learned from data and used to denoise images.
 These regularities can also be exploited to achieve better lossy image compression, the basis of JPEG2000.
 Many vision and neuroscience researchers  ~\cite{Marcelja1980MathematicalDO,Rust2005SpatiotemporalEO,Hubel1959ReceptiveFO} have suggested that the visual systems of many animals take advantage of these priors, as the simple cells in the primary visual cortex have been shown to have Gabor-like receptive fields.
 
 Swapping pixels within a window will tend to add noise with unlikely frequency content to the image, particularly if the window is large.
-% RYAN: I would remove this dicussion of JPEG, unless you plan to cite your DCC paper, that starts HERE------------
 This kind of noise can be removed by image compression techniques like JPEG, however, the quantization process in JPEG uses fixed tables that are agnostic to image content, and it quantizes responses at all amplitudes while the important image features generally correspond to large frequency responses.
 This quantization reduces noise but also gets rid of some of the signal. % (This can be observed as reduced PSNR of JPEG image as compared to original image).
 
 Therefore, it is unsurprising that JPEG compression recovers correct classification on some of the adversarial images but  also reduces the classification accuracy on clean images \cite{Kurakin2016AdversarialEI,Das2017KeepingTB,Dziugaite2016ASO,CounteringAIGuo17}. 
 Dziugaite \etal \cite{Dziugaite2016ASO} reported loss of $8$\% accuracy on clean images after undergoing JPEG compression. 
-%TODO, if we decide to cite our current DCC paper, maybe we can cite that here. We provide more clear answer on that.
-%We attribute the success of JPEG against adversarial images to the nonuniform quantization of spatially localized DCT block coefficients, reflecting similar assumptions about the local frequency content of natural images to wavelet denoising.
+We attribute the success of JPEG against adversarial images to the nonuniform quantization of spatially localized DCT block coefficients, reflecting similar assumptions about the local frequency content of natural images to wavelet denoising.
 
-We, therefore, seek filters with frequency response better suited to joint space-frequency analysis than the DCT blocks (and more closely matching representations in the early ventral stream, so that features which have a small filter response are less perceptible) and quantization techniques more suited to denoising. %TODO: DONE reword
-%RYAN: AND ENDS HERE --------------------
-%RYAN: ... then describe why the wavelet is good independent of JPEG. If not, I think you need to show that JPEG is effective.
+We, therefore, seek filters with frequency response better suited to joint space-frequency analysis than the DCT blocks (and more closely matching representations in the early ventral stream, so that features which have a small filter response are less perceptible) and quantization techniques more suited to denoising. 
 Wavelet denoising uses wavelet coefficients obtained using \textit{Discrete Wavelet Transform} \cite{DWTantonini1992image}.
 The wavelet transform represents the signal as a linear combination of orthonormal wavelets.
 These wavelets form a basis for the space of images and are separated in space, orientation, and scale.
-%TODO maybe specify DWT for discrete wavelet transform and use that after that first time?
 The Discrete Wavelet Transform is widely used in image compression ~\cite{JPEG2000Adams2001} and image denoising ~\cite{BayesShrinkChang2000,WaveletDenoisingRangarajan2002,Simoncelli1999BayesianDO}.
 
-%It has benefits over Discrete Cosine Transform as it tries to recover signal regardless of the frequency content. %TODO what does this mean?
+It has benefits over Discrete Cosine Transform as it tries to recover signal regardless of the frequency content. 
 While the noise introduced by dropping a pixel is mostly high-frequency, the same cannot be said about the adversarial perturbations.
 Several attempts have been made to quantify distribution of adversarial perturbations \cite{DropoutFeinman2017,ForesightLin2017DetectingAA} but recent work by Carlini and Wagner \cite{EasilyDetectedCarlini2017} has shown that most techniques fail to detect adversarial examples.
 We have observed that for the perturbations added by well-known attacks, wavelet denoising yields superior results as compared to block DCT. %TODO maybe just say JPEG
-%TODO compare DCT/shrinkage to show benefit of wavelet, SOLOMON: add intuition
 
 \subsection{Hard \& Soft Thresholding}
-%The Wavelet Transform alone is a linear and a lossless process. 
-%Therefore, the noise reduction happens only if we threshold the wavelet coefficients.
-%Most compression techniques use hard-thresholding, in which values below a threshold are set to zero.
-%Jansen \etal \cite{ThresholdingJansen2012noise} observed that hard-thresholding of wavelets introduces other forms of noise %in the output, and soft-thresholding maintains better PSNR.
-%Thus, we use soft-thresholding for the purposes of our experiment.
 
-%Let the Discrete Wavelet Transform and its inverse be represented as $\mathcal{T}$ and $\mathcal{T}^{-1}$. 
-%We will represent the transformation of image $X$ using $\mathcal{T}$ as $\hat{X}$.   
-%If $Q$ be the thresholding function with $T_h$ as the threshold.
-%Then the hard-threshold is obtained by $Q(\hat{X}) = \hat{X} \; \forall \; |\hat{X}| > T_h$ and soft-thresholding is computed as $Q(\hat{X}) = \text{sign}(\hat{X})\times \text{max}(0,|\hat{X}| - T_h) $.
-%Soft-threshold is able to shrink the values below the $T_h$ which avoids the noise introduced by hard threshold.
 
-%NEW
 The process of performing a wavelet transform and its inverse is lossless and thus does not provide any noise reduction.
 In order to reduce adversarial noise, we need to apply thresholding to the wavelet coefficients before inverting the transform.
 Most compression techniques use a hard thresholding process, in which all coefficients with magnitude below the threshold are set to zero: $Q(\hat{X}) = \hat{X} \; \forall \; |\hat{X}| > T_h$, where $\hat{X}$ is the wavelet transform of $X$, and $T_h$ is the threshold value.
@@ -407,11 +352,9 @@ The alternative is soft thresholding, in which we additionally subtract the thre
 Jansen \etal \cite{ThresholdingJansen2012noise} observed that hard thresholding results in over-blurring of the input image, while soft thresholding maintains better PSNR.
 By reducing all coefficients, rather than just those below the threshold, soft thresholding avoids introducing extraneous noise.
 This allows our method to preserve classification accuracy on non-adversarial images.
-%NEW
 
 
 \subsection{Adaptive Thresholding \label{sec:contentthresholding}}
-% TODO: Is content-aware confusing term? I had adaptive but that undersells what we do. 
 Determining the proper threshold is very important, and the efficacy of our method relies on the ability to pick a threshold in an adaptive, image specific manner.
 The standard technique for determining the threshold for wavelet denoising is to use a universal threshold formula called \textit{VisuShrink}. 
 For an image $X$ with $N$ pixels, this is given by $\sigma\sqrt{2\log N}$, where $\sigma$ is the variance of the noise to be removed and is a hyper-parameter. 
@@ -426,12 +369,11 @@ In practice, an approximation, as shown on right side of equation ~\ref{eqn:baye
 This ratio, also called $T_{\text{Bayes}}$, adapts to the amount of noise in the given image.
 Within a certain range of $\beta$ values, BayesShrink has been shown to effectively remove artificial noise while preserving the perceptual features of natural images ~\cite{BayesShrinkChang2000,WaveletDenoisingRangarajan2002}.
 As our experiments are carried out with images from ImageNet, which is a collection of natural images, we believe this is an appropriate thresholding technique to use.
-% RYAN: this next paragraph might fit better with the experiments section
 Yet another popular thresholding technique is Stein's Unbiased Risk Estimator (SUREShrink), which computes unbiased estimate of $E(\hat{X} - X)^2 $. SUREShrink requires optimization to learn $T_h$ for a given coefficient. We empirically evaluated results and SUREShrink did not perform as well as BayesShrink. Comparative results are  shown in Table ~\ref{tblshrink}.
 
 \section{Method}
 
-The first step of our method is to corrupt the adversarial noise by applying targeted pixel deflection as follows: %RYAN this method really seems more like it is part of your algorithm. Maybe you need a section about combining pixel deflection with the adaptive denoising.
+The first step of our method is to corrupt the adversarial noise by applying targeted pixel deflection as follows: 
 
 (a) Generate a robust activation map $\widehat{M}$, as described in section ~\ref{sec:robustmap}.
 
@@ -468,26 +410,26 @@ As such, we restrict our experiments to those images which are correctly classif
 Our attack models are based on the Cleverhans  ~\cite{papernot2017cleverhans} library\footnote{https://github.com/tensorflow/cleverhans} with model parameters that aim to achieve the highest possible misclassification score with a normalized RMSE ($|\bm{L}_2|$) budget of $0.02-0.04$.
 
 We will publicly release  our implementation code.
-%Impact of adversary can only be detected when there is a diff
-%We reject the images from our set which yields incorrect classification on the clean image. 
+Impact of adversary can only be detected when there is a difference in predicted results.
+We reject the images from our set which yields incorrect classification on the clean image. 
 
 \subsection{Training}
 
-%Unlike models that train a new network  ~\cite{Tramr2017TheSO,Meng2017MagNetAT} our model has very few hyper-parameters.
+Unlike models that train a new network  ~\cite{Tramr2017TheSO,Meng2017MagNetAT} our model has very few hyper-parameters.
 Our defense model has three hyper-parameters, which is significantly fewer than the classification models it seeks to protect, making it preferable over defenses which require retraining of the classifier such as  ~\cite{Tramr2017TheSO,Meng2017MagNetAT}.
 These three hyper-parameters are: $\sigma$, a coefficient for \textit{BayesShrink}, $r$, the window size for pixel deflection, and $K$, the number of pixel deflections to perform.
 Using a reduced set of $300$ images from ImageNet Validation set, We perform a linear search over a small range of these hyper-parameters. 
-%We use $300$ images from ImageNet Validation set to search for optimal hyper-parameters. 
+We use $300$ images from ImageNet Validation set to search for optimal hyper-parameters. 
 These images are not part of the set used to show the results of our model.
 A particular set of hyper-parameters may be optimal for one attack model, but not for another.  
 This is primarily because attacks seek to minimize different $L_p$ norms, and therefore generate different types of noise.
-%Different values of these parameters perform best on different attack strategies. 
-%Primarily because attacks are minimizing different $L_p$ norms. 
+Different values of these parameters perform best on different attack strategies. 
+Primarily because attacks are minimizing different $L_p$ norms. 
 To demonstrate the robustness of our defense, we select a single setting of the hyper-parameters to be used against all attack models.
 Figure ~\ref{fig:hyperparam} shows a visual indication of the variations in performance of each model across various hyper-parameter settings. 
 In general, as the $K$ and $r$ increase, the variance of the resulting classification accuracy increases.  
 This is primarily due to the stochastic nature of pixel deflection - as more deflections are performed over a wider window, a greater variety of transformed images can result.
-%Variance in the accuracy increases with the increase in window size and number of iterations, this is due to stochastic nature of pixel deflection.
+Variance in the accuracy increases with the increase in window size and number of iterations, this is due to stochastic nature of pixel deflection.
 
 \begin{figure}[H]
    \includegraphics[width=0.49\linewidth]{figures/pixel/CW.pdf}
@@ -534,14 +476,12 @@ Results for other classifiers are provided in Table ~\ref{tblmodels}.
 The accuracy on clean images without any defense is 100\% because we didn't test our defense on images which were misclassified before any attack.
 We do not report results for targeted attacks as they are harder to generate ~\cite{Carlini2017TowardsET} and easier to defend. 
 Due to the stochastic nature of our model, we benefit from taking the majority prediction over ten runs; this is reported in Table ~\ref{tblresults} as Ens-10.
-%The benefits of doing majority ensemble are particularly pronounced against attacks such as JSMA which are based on activation intensity, thus different set of deflected pixels combine to weaken the adversary.
+The benefits of doing majority ensemble are particularly pronounced against attacks such as JSMA which are based on activation intensity, thus different set of deflected pixels combine to weaken the adversary.
 
-%\subsection{Results on larger samples}
+\subsection{Results on larger samples}
 We randomly sampled 10K images from ILSVRC2012 validation set; this contained all 1000 classes with minimum of $3$ images per class.
 
-%\vspace{-2mm}
 \begin{table}[H]
-%\vspace{-1mm}
 \centering
 \rowcolors{1}{White}{Gray}
 %\setlength{\tabcolsep}{0.6em}
@@ -556,9 +496,7 @@ We randomly sampled 10K images from ILSVRC2012 validation set; this contained al
 \small{LBFGS} & 0.02 & 11.6 & 90.3 & \textbf{93.6} \\
 \small{C\&W} & 0.04 & 05.2 & 93.1 & \textbf{98.3}   \\ \hline
 \end{tabular}
-%\vspace{-3mm}
 \caption[Accuracy Under Various Attacks]{Top-1 accuracy of our model on various attack models.}
-%\vspace{-2mm}
 \end{table}
 
 \subsection{Results on various classifiers}
@@ -586,8 +524,6 @@ Weights for each classifier were obtained from Tensorflow GitHub repository
 \caption[ResNet-50 under Pixel Deflection]{Top-1 accuracy of ResNet-50 with pixel deflection on various attack models. 
  \label{tblmodels}}
 \end{table}
- 
- 
  
  
  
@@ -650,7 +586,6 @@ Value of $1$ means all the misclassified images due to the adversary are correct
 \centering
 \rowcolors{1}{White}{Gray}
 \setlength{\tabcolsep}{0.4em}
-%\vspace{-2mm}
 \begin{tabular}{lllll}
 \textbf{Defense}              & \textbf{FGSM}  & \textbf{IGSM}  & \textbf{DFool} & \textbf{C\&W}  \\ \hline
 \multicolumn{5}{c}{Feature Squeezing (Xu et al \cite{FeatureSqueezingXu2017})}                                                \\ \hline
@@ -675,7 +610,6 @@ Value of $1$ means all the misclassified images due to the adversary are correct
 \small{PD + R-CAM + DCT}       & 0.737          & 0.906          & 0.874         & 0.930          \\
 \small{PD + R-CAM + DWT}  & \textbf{0.769} & \textbf{0.927} & 0.948          & \textbf{0.981} \\ \hline
 \end{tabular}
-%\vspace{-3mm}
 \caption[Destruction Rate]{Destruction Rate of various defense techniques. $|L_2|$ lies between $0.02 - 0.06$ and classifier accuracy is $76\%$.
 We only include the Black-box attacks, where the attack model is not aware of the defense techniques. Single Pattern Attack and Ensemble pattern attack as reported in Xie et al \cite{MitigatingAnon208} are not reported.}
 \end{table}
@@ -687,20 +621,19 @@ We only include the Black-box attacks, where the attack model is not aware of th
    \caption[Overlap of Classes under Adversary]{Left: Rank of adversarial class within the top-5 predictions for original images.  Right: Rank of original class within the top-5 predictions for adversarial images.  In both cases, 0 means the class was not in the top-5.}
    \label{fig:untarget}
 \end{figure}
-%We do not report Top-5 accuracy for these evaluations as reported by Kurakin\etal ~\cite{Kurakin2016AdversarialEI}, as the adversary often targets the second most likely class, leaving top-5 accuracy unaffected.
-%In $64\%$ of the cases the mis-classified class was still within Top-5 picks barring the most likely class. 
+We do not report Top-5 accuracy for these evaluations as reported by Kurakin\etal ~\cite{Kurakin2016AdversarialEI}, as the adversary often targets the second most likely class, leaving top-5 accuracy unaffected.
+In $64\%$ of the cases the mis-classified class was still within Top-5 picks barring the most likely class. 
 As seen in Figure ~\ref{fig:untarget}, the predicted class of the perturbed image is very frequently among the classifier's top-5 predictions for the original image.
 In fact, nearly $40\%$ of the time, the adversarial class was the second most-probable class of the original image.
 Similarly, the original classification will often remain in the top-5 predictions for the adversarial image.
 Unlike Kurakin \etal ~\cite{Kurakin2016AdversarialEI}, our results are in terms of top-1 accuracy, as this matches the objective of the attacker.
 While top-1 accuracy is a more lenient metric for an attack method (due to the availability of nearly-synonymous alternatives to most classes in ImageNet-1000), it is a more difficult metric for a defense, as we must exactly recover the correct classification.
 These facts render top-5 accuracy an unsuitable metric for measuring the efficacy of a defense.
-%While evaluating an adversarial system this might be considered as a weaker result, however for a defense model this is a harder task, as the semantic difference in the classes between clean image and adversarial image is very low.
+While evaluating an adversarial system this might be considered as a weaker result, however for a defense model this is a harder task, as the semantic difference in the classes between clean image and adversarial image is very low.
 When evaluating stochastic transformations, it is quite common to use an ensemble of predictions to get a more generalized version of the model's performance.
 We perform pixel deflection on a given image ten times and do a majority vote of the predicted classes to report the accuracy numbers. 
 Results reported for Carlini \& Wagner ~\cite{Carlini2017TowardsET} attacks are only for $L_2$ loss, even though they can be applied for $L_0$ and $L_\infty$. 
 Carlini \& Wagner attack has been shown to be effective with MNIST and CIFAR but their efficacy against large images is limited due to expensive computation. 
-
 
 
 \subsection{Ablation studies}
@@ -708,10 +641,8 @@ Carlini \& Wagner attack has been shown to be effective with MNIST and CIFAR but
 Previous work ~\cite{Kurakin2016AdversarialEI,Dziugaite2016ASO} has demonstrated the efficacy of JPEG compression as a defense against adversarial attacks due to its denoising properties.
 Das \etal ~\cite{Das2017KeepingTB} demonstrate that increasing the severity of JPEG compression defeats a larger percentage of attacks, but at the cost of accuracy on clean image.
 As our method employs a conceptually similar method to reduce adversarial noise via thresholding in a wavelet domain, we use JPEG as a baseline for comparison.
-%JPEG can also be considered as a method to reduce image noise. 
-%Therefore, it is no surprise that JPEG has been shown to recover some of the attacks ~\cite{Kurakin2016AdversarialEI,Dziugaite2016ASO}.
-%
-%Thus we consider JPEG as control to demonstrate efficacy of wavelet denoising.
+Thus we consider JPEG as control to demonstrate efficacy of wavelet denoising.
+
 In Table ~\ref{tblimpact}, we report accuracy with and without wavelet denoising with soft thresholding.
 While JPEG alone is effective against only a few attacks, the combination of JPEG and pixel deflection performs better than pixel deflection alone.
 The best results are obtained from pixel deflection and wavelet denoising.
@@ -751,7 +682,7 @@ Comparison of various thresholding techniques, after application of pixel deflec
 \end{table}
 
 In Table ~\ref{tblshrink} we present a comparison of various shrinkage methods on wavelet coefficients after pixel deflection.
-%All the results reported are for applying the given thresholding after pixel deflection.
+All the results reported are for applying the given thresholding after pixel deflection.
 For the impact of coefficient thresholding in the absence of pixel deflection, see Table ~\ref{tblimpact}.
 BayesShrink, which learns separate Gaussian parameters for each coefficient, does better than other soft-thresholding techniques.
 A brief overview of these shrinkage techniques are provided in Section ~\ref{sec:contentthresholding}, for more thorough review on BayesShrink, VisuShrink and SUREShrink we refer the reader to ~\cite{BayesShrinkChang2000}  ~\cite{VISUDonoho1994IdealSA} and  ~\cite{SUREDonoho1992AdaptingTU} respectively. 
@@ -760,24 +691,10 @@ SUREShrink has been shown to perform well with compression but as evident, in ou
 
 
 
-%\section{Evaluation on 10,000 images}
-%As per the suggestions we are including evaluation of our technique on 10K images. 
 
-%\section{Head-to-head comparison}
-%\vspace{-1mm}
-%To overcome the differences in strength of adversary ($|L_2|$) and accuracy of the classifier we measure the fraction of images which are no longer misclassified after the transformation. 
-
-%Attack model is not aware of the defense techniques.
-%\vspace{-4mm}
-
-%\vspace{-3mm}
-
-%We presented some ablation studies of various parameters in Table 2 and 3 of the original paper, and Table 1 of the supplementary. Here, we provide additional studies.
 \begin{table}[H]
-%\vspace{-2mm}
 \centering
 \rowcolors{1}{White}{Gray}
-%\setlength{\tabcolsep}{0.6em}
 \begin{tabular}{llcllll}
 \multicolumn{1}{c}{\textbf{Attack}} & \multicolumn{1}{c}{\textbf{$|L_2$}} & \multicolumn{1}{c}{\textbf{No Defense}} & \multicolumn{4}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}With Defense\end{tabular}}} \\ \hline
                                    \multicolumn{3}{r}{Window=10, Deflections $\longrightarrow$}                               & \textbf{10}                    & \textbf{100}                    & \textbf{1K}                    & \textbf{10K}                    \\ \hline
@@ -789,17 +706,13 @@ SUREShrink has been shown to perform well with compression but as evident, in ou
 \textbf{LBFGS}                              & 0.02                            &  11.6                                   & 85.0                  & \textbf{90.3}               & 82.4                    & 73.0                     \\
 \textbf{C\&W}                               & 0.04                            &  05.2                                   & 89.4                  &\textbf{93.1}                & 86.8                    & 69.7                    \\ \hline
 \end{tabular}
-%\vspace{-3mm}
 \caption[Number of Delfections]{Top-1 accuracy with different deflections.}
-%\vspace{-3mm}
 \end{table}
 
 
 \begin{table}[H]
-%\vspace{-3mm}
 \centering
 \rowcolors{1}{White}{Gray}
-%\setlength{\tabcolsep}{0.6em}
 \begin{tabular}{lllllll}
 \multicolumn{1}{c}{\textbf{Attack}} & \multicolumn{1}{c}{\textbf{L2}} & \multicolumn{1}{c}{\textbf{No Defense}} & \multicolumn{4}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}With Defense\end{tabular}}} \\ \hline
                                    \multicolumn{3}{r}{Deflections=100, Window $\longrightarrow$}                                         & \textbf{5}                     & \textbf{10}                     & \textbf{50}                      & \textbf{100}                     \\ \hline
@@ -811,12 +724,10 @@ SUREShrink has been shown to perform well with compression but as evident, in ou
 \textbf{LBFGS}                              & 0.02                            &  11.6                                   & 89.4                  & \textbf{90.3}                  & 89.0                    & 88.1                     \\
 \textbf{C\&W}                               & 0.04                            &  05.2                                   & 91.8                  & \textbf{93.1}                  & 90.5                    & 89.2                      \\ \hline
 \end{tabular}
-%\vspace{-3mm}
 \caption[Different Window Sizes]{Top-1 accuracy with different window sizes.}
-%\vspace{-4mm}
 \end{table}
 
-%For the following studies we present results averaged across all six attacks.
+For the following studies we present results averaged across all six attacks.
 
 \begin{table}[H]
 %\vspace{-2mm}
@@ -838,17 +749,11 @@ Random & \textbf{86.7}       & \textbf{87.5}         & \textbf{86.1}           &
 78.1     & 84.1        & 77.26           & 85.12  & \textbf{87.5  } 
 
 \end{tabular}
-%\vspace{-3mm}
 \caption[Average Accuracy of atacks]{Top-1 accuracy averaged across all six attacks.}
-%\vspace{-4mm}
 \end{table}
 
 
-%\paragraph{Contributions} 
-%\clearpage
 \section{Conclusion}
-%Our work proposes simple and improved technique, Pixel Deflection, to mitigate adversarial images and a variation of CAM that is robust to attack.
-%Finally, we show merits of wavelet denoising over other techniques.
 Motivated by the robustness of CNNs and the fragility of adversarial attacks, we have presented a technique which combines a computationally-efficient image transform, \emph{pixel deflection}, with soft wavelet denoising. 
 This combination provides an effective defense against state-of-the-art adversarial attacks. 
 We show that most attacks are agnostic to semantic content, and using \emph{pixel deflection} with probability inversely proportionate to robust activation maps (R-CAM) protects regions of interest.
