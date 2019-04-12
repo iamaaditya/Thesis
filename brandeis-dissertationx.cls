@@ -208,6 +208,7 @@ brandeis-dissertation class.}}%
   \cleardoublepage
   \if@bd@lot{\listoftables\cleardoublepage}%
   \if@bd@lof{\listoffigures\cleardoublepage}%
+  \if@bd@loa{\listofalgorithms\cleardoublepage}%
   \mainmatter}
 \let\if@bd@onlinesubmission\@firstoftwo
 \newcommand{\bd@tf@onlinesubmission}{%
@@ -223,6 +224,9 @@ brandeis-dissertation class.}}%
 \let\if@bd@lof\@gobble
 \newcommand{\bd@tf@lof}{\let\if@bd@lof\@iden}
 \newcommand{\bd@tf@nolof}{\let\if@bd@lof\@gobble}
+\let\if@bd@loa\@gobble
+\newcommand{\bd@tf@loa}{\let\if@bd@loa\@iden}
+\newcommand{\bd@tf@noloa}{\let\if@bd@loa\@gobble}
 \setcounter{tocdepth}{1}
 \let\bd@org@tableofcontents\tableofcontents
 \renewcommand{\tableofcontents}{%
@@ -239,10 +243,16 @@ brandeis-dissertation class.}}%
   \begin{singlespace}
     \bd@org@listoffigures
   \end{singlespace}}
+\let\bd@org@listofalgorithms\listofalgorithms
+% \renewcommand{\listofalgorithms}{%
+%   \begin{singlespace}
+%     \bd@org@listofalgorithms
+%   \end{singlespace}}
 \renewcommand\mainmatter{%
   \clearpage
   \@mainmattertrue
-  \pagenumbering{arabic}}
+  %\pagenumbering{arabic}}
+  }
 \gdef\@acknowledgments{}
 \gdef\@advisor{}
 \gdef\@dean{}
