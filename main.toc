@@ -44,41 +44,41 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.2}Background}{43}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Adversarial Attacks}{44}{section.3.3}
+\contentsline {subsection}{\numberline {3.2.1}Adversarial Attacks}{44}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}Fast Gradient Sign Method (FGSM)}{45}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.2.2}Fast Gradient Sign Method (FGSM)}{45}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Iterative Gradient Sign Method}{45}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.2.3}Iterative Gradient Sign Method}{45}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.3}Gradient Attack (GA)}{46}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.2.4}Gradient Attack (GA)}{46}{subsection.3.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.4}Deep Fool}{46}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.2.5}Deep Fool}{46}{subsection.3.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.5}Jacobian-based Saliency Map Attack}{47}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.2.6}Jacobian-based Saliency Map Attack}{47}{subsection.3.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.6}L-BFGS}{47}{subsection.3.3.6}
+\contentsline {subsection}{\numberline {3.2.7}L-BFGS}{47}{subsection.3.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Defenses}{48}{section.3.4}
+\contentsline {subsection}{\numberline {3.2.8}Defenses}{48}{subsection.3.2.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.1}Adversarial Training}{48}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.2.9}Adversarial Training}{48}{subsection.3.2.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.2}Defensive Distillation}{49}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.2.10}Defensive Distillation}{49}{subsection.3.2.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.3}Transformations}{50}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.2.11}Transformations}{50}{subsection.3.2.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Semantic Quantization}{51}{section.3.5}
+\contentsline {section}{\numberline {3.3}Semantic Quantization}{51}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.6}Augmented MSROI}{52}{section.3.6}
+\contentsline {section}{\numberline {3.4}Augmented MSROI}{52}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6.1}Quantization}{54}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.4.1}Quantization}{54}{subsection.3.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.7}Experiments}{54}{section.3.7}
+\contentsline {section}{\numberline {3.5}Experiments}{54}{section.3.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Metrics for comparison}{55}{paragraph*.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.8}Results}{57}{section.3.8}
+\contentsline {section}{\numberline {3.6}Results}{57}{section.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.9}Conclusion}{58}{section.3.9}
+\contentsline {section}{\numberline {3.7}Conclusion}{58}{section.3.7}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Pixel Deflection}{59}{chapter.4}
 \defcounter {refsection}{0}\relax 
@@ -263,3 +263,5 @@
 \contentsline {subsection}{\numberline {8.5.2}Results and Analysis}{172}{subsection.8.5.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {8.6}Conclusion}{173}{section.8.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{173}{section.8.6}

@@ -87,7 +87,7 @@ Such attacks are called black box attacks, and they begin by training a secondar
 This secondary model can then be attacked using white box methods, and the resulting adversarial images are transferable to the target network \cite{Papernot2016PracticalBA}. 
 Black box attacks are weaker than white box attacks; here we focus on white box attacks. 
 
-\section{Adversarial Attacks} \label{attacks}
+\subsection{Adversarial Attacks} \label{attacks}
 Formally, the paradigm of adversarial attacks can be described as follows. 
 Let $x$ be an input image to a classifier. 
 Then, the class label (the model's evaluation of what object the image contains) for the image $x$ is: $c = \argmax_{i} F(x|\theta)$ where $i$ is an index into the output vector.
@@ -182,7 +182,7 @@ where $\alpha$ is an arbitrary value chosen by line search.
 This optimization is often carried out using L-BFGS, which is slower than other adversarial techniques.
 
 %\vspace{-2mm}
-\section{Defenses} \label{defenses}
+\subsection{Defenses} \label{defenses}
 Defenses against adversarial systems are either specific to a given attack or attack-agnostic. 
 We briefly discuss some well-known defenses from both categories.
 
