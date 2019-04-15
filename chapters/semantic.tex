@@ -55,7 +55,7 @@ Richter et al \cite{richter2009ms}\cite{richter2011ssim} addressed structural si
 We evaluate on these metrics, as well as \texttt{VIFP}\cite{vifp},  \texttt{PSNR-HVS}\cite{psnrhvs} and \texttt{PSNR-HVSM}\cite{psnrhvsm}, which have been shown to correlate with subjective visual quality.  Figure~\ref{fig_compressing_demo} compares close-up views of a salient object in a standard \textsc{jpeg} and our new content-aware method.
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.34]{figures/semantic/arrow_small.png}
+    \includegraphics[scale=0.40]{figures/semantic/arrow_small.png}
     \caption[Comparison with JPEG]{Comparison of compression of semantic objects in standard \textsc{jpeg}[left] and our model [right]\label{fig_compressing_demo}}
 \end{figure}
 
@@ -126,14 +126,14 @@ In a traditional \textsc{cnn}, there are two fully-connected (non-convolutional)
 %neurons at end of the pipeline, with connections to every activation from the feature map of the previous layer.
 The final layer has one neuron for every class in the training data, and the final step in the inference is to normalize the activations of the last layer to sum to one.
 The second to last layer, however, is fully connected to the last convolution layer, and a non-linearity is applied to its activations.
-The authors of \cite{oquab2015object}, \cite{zhou2015learning} modify this second to last layer to allow for class localization.
+The authors of \cite{oquab2015object}, \cite{CAMZhou2016LearningDF} modify this second to last layer to allow for class localization.
 In their architecture, the second to last layer is not learned, but consists of one neuron for each feature map, which has fixed  equally-weighted connections to each activation of its corresponding map.
 They suggest one neuron for each feature map from the last convolution layer, and this neuron has connections of equal weight to every activation of its feature map and no connections to any other feature map.
 No non-linearity is applied to the outputs of these neurons, so that each activation in this layer represents the global spatial average of one feature map from the previous layer.
 Since the output of this layer is connected directly to the classification layer, each class will in essence learn a weight for each feature map from the final convolution layer.
 Thus, given an image and a class, the classification weights for that class can be used to re-weight the layers of activations of the final convolution layer on that image.
 These activations can be collapsed along the feature axis to create a class activation map, spatially localizing the best evidence for that class within that image. 
-Taking the spatial average of the feature map (global average pooling) at the last convolution layer reveals possible locations of objects within the image \cite{oquab2015object}, \cite{zhou2015learning}. 
+Taking the spatial average of the feature map (global average pooling) at the last convolution layer reveals possible locations of objects within the image \cite{oquab2015object}, \cite{CAMZhou2016LearningDF}. 
 This is used to make Class Activation Maps (CAM), which shows the probability distribution of the most likely class.
 
 While standard max pooling combines spatially local activations for each feature independently, `global max pooling' instead combines the activations of all features for each spatial location.  
@@ -145,7 +145,7 @@ The substitution of a global max pooling layer retains this locality property in
 Pooling of feature maps is probabilistic \cite{li2015beyond}, which means the most salient object is not always the one with highest activation across the feature map. 
 If we plot the activation of each feature on the $2$-dimensional map and overlay them on each other, we find significant overlap of regions of high activations.
 This means taking a `global max pooling' would lead to missing some. 
-Zhou \cite{zhou2015learning} reported that they obtained better localization by performing `global average pooling' instead of `global max pooling'. 
+Zhou \cite{CAMZhou2016LearningDF} reported that they obtained better localization by performing `global average pooling' instead of `global max pooling'. 
 This is because taking an average across the feature map ensures each detected object has consistently high activations across many features, instead of a single maximal activation of one feature.
 The application of GAP after the final layer of convolution $ y_{ij} $ over $\mathbf{D}$ features would result in --
 CAM is obtained by taking output of the last convolution layer $f(x,y)$, and taking a weighted sum across the feature map.
@@ -211,7 +211,7 @@ This reduces the number of parameters and also allows for the joint learning of 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.45]{figures/semantic/girl_compression.pdf}
+    \includegraphics[scale=0.49]{figures/semantic/girl_compression.pdf}
     \caption[MSROI vs CAM vs Saliency]{Comparison of various methods of detecting objects in an image \label{fig_comparison_of_map}}
 \end{figure}
 
@@ -298,7 +298,7 @@ Figure ~\ref{fig_encoding_steps} shows the steps of taking an image and using th
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.45]{figures/semantic/variable_q_jpeg.png}
+    \includegraphics[scale=0.65]{figures/semantic/variable_q_jpeg.png}
     \caption[Encoding with MSROI]{Process of combining MSROI maps to obtain final encoded image \label{fig_encoding_steps}}
 \end{figure}
 
@@ -322,7 +322,7 @@ The average $Q$ for the final image generated using our model was $55$, whereas 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.37]{figures/semantic/all_images_small.png}
+    \includegraphics[scale=0.43]{figures/semantic/all_images_small.png}
     \caption[Results on KODAK]{Sample of our map for five KODAK images.\label{fig_kodak_combo}}
 \end{figure}
 
@@ -351,7 +351,7 @@ It should be noted that the validity of this metric is dependent on the correctn
 Std \textsc{jpeg} &   33.91   & 34.70     & 34.92          & 42.19  & 0.969  & 0.991 & 0.626      \\
 % 			  \midrule
 			  \cline{2-8}
-Our model &  39.16    & 34.82    & 35.05          & 42.33  & 0.969  & 0.991 Carlini2017TowardsET& 0.629     \\
+Our model &  39.16    & 34.82    & 35.05          & 42.33  & 0.969  & 0.991 & 0.629     \\
 			  \midrule
               & \multicolumn{6}{c}{MIT Saliency Benchmark [Outdoor Man-made + Natural, 200 images]} &              \\
 			  \midrule
@@ -373,13 +373,13 @@ Our model & 39.6  & 28.67  & 34.63 & 44.89     & 0.915 & 0.991 & 0.522     \\
         
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.23]{figures/semantic/image_size.pdf}
+    \includegraphics[scale=0.28]{figures/semantic/image_size.pdf}
     \caption[Impact on Image Size]{\texttt{PSNR-HVS} of our model - \textsc{jpeg} across various image size (higher is better). \label{fig_size}}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.23]{figures/semantic/image_mit.pdf}
+    \includegraphics[scale=0.28]{figures/semantic/image_mit.pdf}
     \caption[Impact on Image Type]{\texttt{PSNR-HVS} of our model - \textsc{jpeg} across various categories of MIT Saliency dataset (higher is better). \label{fig_mit}}
 \end{figure}
 

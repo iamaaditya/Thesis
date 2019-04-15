@@ -48,7 +48,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Combination of various jittered inputs}}{47}{figure.caption.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Augmented Multi-Structure ROI}}{51}{figure.caption.29}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Augmented Multi-Structure ROI}}{52}{figure.caption.29}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Classification accuracy of images on various attacks}}{52}{figure.caption.30}
 \defcounter {refsection}{0}\relax 
@@ -68,48 +68,48 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Performance Standard vs RePr}}{91}{figure.caption.49}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Performance Standard vs RePr}}{90}{figure.caption.49}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Correlation Analysis of filters}}{99}{figure.caption.50}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Correlation Analysis of filters}}{98}{figure.caption.50}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Correlation of Various Metrics}}{106}{figure.caption.51}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Correlation of Various Metrics}}{105}{figure.caption.51}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Percentage of filters pruned}}{108}{figure.caption.53}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Percentage of filters pruned}}{107}{figure.caption.53}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Multiple Iterations of RePr}}{109}{figure.caption.54}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Multiple Iterations of RePr}}{108}{figure.caption.54}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Optimizers on RePr}}{111}{figure.caption.55}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Optimizers on RePr}}{110}{figure.caption.55}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Learning Rate Schedule}}{112}{figure.caption.56}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Learning Rate Schedule}}{111}{figure.caption.56}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Impact of Dropout}}{113}{figure.caption.57}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Impact of Dropout}}{112}{figure.caption.57}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Comparison with Knowledge Distillation}}{115}{figure.caption.59}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Comparison with Knowledge Distillation}}{114}{figure.caption.59}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Impact of model depth}}{117}{figure.caption.61}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Impact of model depth}}{116}{figure.caption.61}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Comparison of Filter Overlap}}{120}{figure.caption.63}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Architecture of multi-modal highway networks\relax }}{127}{figure.caption.69}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Comparison of Filter Overlap}}{119}{figure.caption.63}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Sequence to Sequence Learning}}{135}{figure.caption.71}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.2}{\ignorespaces LSTM Cell\relax }}{137}{figure.caption.72}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Residual LSTM}}{139}{figure.caption.73}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Distribution of word length}}{142}{figure.caption.76}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Model Evaluation}}{144}{figure.caption.77}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Architecture of multi-modal highway networks\relax }}{126}{figure.caption.69}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Distribution of classes}}{156}{figure.caption.82}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Sequence to Sequence Learning}}{134}{figure.caption.71}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.2}{\ignorespaces CMemNN Structure}}{158}{figure.caption.83}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces LSTM Cell. Fig reproduced with permission from Chris Olah\relax }}{136}{figure.caption.72}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Residual LSTM}}{138}{figure.caption.73}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Distribution of word length}}{141}{figure.caption.76}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Model Evaluation}}{143}{figure.caption.77}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Distribution of classes}}{155}{figure.caption.82}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {8.2}{\ignorespaces CMemNN Structure}}{157}{figure.caption.83}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {8.3}{\ignorespaces Precision Plots}}{165}{figure.caption.85}

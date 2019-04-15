@@ -10113,53 +10113,6 @@
     \field{year}{2015}
   \endentry
 
-  \entry{zhou2015learning}{inproceedings}{}
-    \name{author}{5}{}{%
-      {{hash=ZB}{%
-         family={Zhou},
-         familyi={Z\bibinitperiod},
-         given={Bolei},
-         giveni={B\bibinitperiod},
-      }}%
-      {{hash=KA}{%
-         family={Khosla},
-         familyi={K\bibinitperiod},
-         given={Aditya},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=LA}{%
-         family={Lapedriza},
-         familyi={L\bibinitperiod},
-         given={Agata},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=OA}{%
-         family={Oliva},
-         familyi={O\bibinitperiod},
-         given={Aude},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=TA}{%
-         family={Torralba},
-         familyi={T\bibinitperiod},
-         given={Antonio},
-         giveni={A\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{ZB+1}
-    \strng{fullhash}{ZBKALAOATA1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelalpha}{Zho+16}
-    \field{extraalpha}{1}
-    \field{sortinit}{Z}
-    \field{sortinithash}{Z}
-    \field{booktitle}{The IEEE Conference on Computer Vision and Pattern
-  Recognition (CVPR)}
-    \field{title}{Learning Deep Features for Discriminative Localization}
-    \field{year}{2016}
-  \endentry
-
   \entry{CAMZhou2016LearningDF}{article}{}
     \name{author}{5}{}{%
       {{hash=ZB}{%
@@ -10194,11 +10147,10 @@
       }}%
     }
     \strng{namehash}{ZB+1}
-    \strng{fullhash}{ZBKALAOATA2}
+    \strng{fullhash}{ZBKALAOATA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelalpha}{Zho+16}
-    \field{extraalpha}{2}
     \field{sortinit}{Z}
     \field{sortinithash}{Z}
     \field{pages}{2921\bibrangedash 2929}

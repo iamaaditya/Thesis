@@ -244,9 +244,9 @@ The center plot on Figure 1 shows the map of the perturbations added by an adver
 
 \begin{figure}[H]
 \centering
-     \includegraphics[width=0.3\textwidth,angle=0,scale=0.7]{figures/protect/original_msroi.jpg}
-     \includegraphics[width=0.3\textwidth,angle=0,scale=0.7]{figures/protect/adversarial_msroi.jpg}
-     \includegraphics[width=0.3\textwidth,angle=0,scale=0.7]{figures/protect/MSROI_after.jpg}
+     \includegraphics[width=0.3\textwidth,angle=0,scale=0.8]{figures/protect/original_msroi.jpg}
+     \includegraphics[width=0.3\textwidth,angle=0,scale=0.8]{figures/protect/adversarial_msroi.jpg}
+     \includegraphics[width=0.3\textwidth,angle=0,scale=0.8]{figures/protect/MSROI_after.jpg}
      \label{fig:msroi}
           \caption[Multi-Structure ROI]{Left: MSROI on original image, Center: MSROI, Right: Aug-MSROI, on adversarial image}
  \end{figure}
@@ -271,7 +271,7 @@ M(i,j) = \sum_{c \in C} \begin{cases}
 \]
 
 \begin{figure}[H]
-\includegraphics[scale=0.4]{figures/protect/out2_small_small.png}
+\includegraphics[scale=0.5]{figures/protect/out2_small_small.png}
            %\vspace{-3mm} 
      \label{fig:combination}
           \caption[Combination of various jittered inputs]{Combination of various jittered inputs}
@@ -363,10 +363,10 @@ d = \frac{\sum_{i=1}^N C(x_i, y_i) \times (1 - C(x'_i,y)) \times C(T(x'_i),y_i)}
 
 \begin{figure}[H]
    \centering
-     \includegraphics[width=0.24\textwidth,angle=0]{figures/protect/ori.pdf}
-     \includegraphics[width=0.24\textwidth,angle=0]{figures/protect/adv.pdf}
-     \includegraphics[width=0.24\textwidth,angle=0]{figures/protect/jpg.pdf}
-     \includegraphics[width=0.24\textwidth,angle=0]{figures/protect/msroi.pdf}
+     \includegraphics[width=0.24\linewidth,angle=0]{figures/protect/ori.pdf}
+     \includegraphics[width=0.24\linewidth,angle=0]{figures/protect/adv.pdf}
+     \includegraphics[width=0.24\linewidth,angle=0]{figures/protect/jpg.pdf}
+     \includegraphics[width=0.24\linewidth,angle=0]{figures/protect/msroi.pdf}
           %\vspace{-4mm} 
               \caption[Augmented Multi-Structure ROI]{Original Image, Adversarial Image, JPEG, Aug-MSROI }
      \label{fig:compare}
@@ -376,7 +376,7 @@ d = \frac{\sum_{i=1}^N C(x_i, y_i) \times (1 - C(x'_i,y)) \times C(T(x'_i),y_i)}
  
  \begin{figure}[H]
      \centering
-     \includegraphics[width=0.99\textwidth,angle=0]{figures/protect/results.png}
+     \includegraphics[width=0.99\linewidth,angle=0]{figures/protect/results.png}
      %\vspace{-5mm} 
      \caption[Classification accuracy of images on various attacks]{Classification accuracy of images on various attacks}
      \label{fig:numbers}
@@ -387,7 +387,7 @@ d = \frac{\sum_{i=1}^N C(x_i, y_i) \times (1 - C(x'_i,y)) \times C(T(x'_i),y_i)}
 Figure ~\ref{fig:compare} shows a typical example of the results for qualitative comparison. In this case, while JPEG was also able to retrieve the original class, it does so with significantly lower confidence. 
 Table 1 shows the quantitative results averaged across 300 images of ImageNet.
 
-\begin{table}[H]
+\begin{table}[]
 \centering
 \label{tbl:results}
 %%\vspace{-10pt} 

@@ -32,50 +32,50 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {table}{\numberline {4.9}{\ignorespaces Number of Delfections}}{86}{table.caption.46}
 \defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.11}{\ignorespaces Average Accuracy of atacks}}{87}{table.caption.48}
+\defcounter {refsection}{0}\relax 
 \contentsline {table}{\numberline {4.10}{\ignorespaces Different Window Sizes}}{87}{table.caption.47}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {4.11}{\ignorespaces Average Accuracy of atacks}}{88}{table.caption.48}
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.1}{\ignorespaces Neuron Ranking Metrics}}{106}{table.caption.52}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.2}{\ignorespaces Orthogonality Loss}}{113}{table.caption.58}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.3}{\ignorespaces Comparison of Knowledge Distillation with RePr}}{114}{table.caption.60}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.4}{\ignorespaces RePr vs DSD vs BAN}}{116}{table.caption.62}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.5}{\ignorespaces Results on CIFAR-10/100}}{120}{table.caption.64}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.6}{\ignorespaces Results on ImageNet}}{120}{table.caption.65}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.7}{\ignorespaces Qualitative Results on VQA}}{122}{table.caption.66}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.8}{\ignorespaces Results on VQA}}{122}{table.caption.67}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.9}{\ignorespaces Results on Object Detection}}{123}{table.caption.68}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {5.1}{\ignorespaces Neuron Ranking Metrics}}{107}{table.caption.52}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {5.2}{\ignorespaces Orthogonality Loss}}{114}{table.caption.58}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {5.3}{\ignorespaces Comparison of Knowledge Distillation with RePr}}{115}{table.caption.60}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {5.4}{\ignorespaces RePr vs DSD vs BAN}}{117}{table.caption.62}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {5.5}{\ignorespaces Results on CIFAR-10/100}}{121}{table.caption.64}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {5.6}{\ignorespaces Results on ImageNet}}{121}{table.caption.65}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {5.7}{\ignorespaces Qualitative Results on VQA}}{123}{table.caption.66}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {5.8}{\ignorespaces Results on VQA}}{123}{table.caption.67}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {5.9}{\ignorespaces Results on Object Detection}}{124}{table.caption.68}
+\contentsline {table}{\numberline {6.1}{\ignorespaces Results of VQAv1\relax }}{130}{table.caption.70}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {6.1}{\ignorespaces Results of VQAv1\relax }}{131}{table.caption.70}
+\contentsline {table}{\numberline {7.1}{\ignorespaces Dataset details\relax }}{140}{table.caption.74}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {7.2}{\ignorespaces Models\relax }}{141}{table.caption.75}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {7.3}{\ignorespaces Sample paraphrases}}{145}{table.caption.78}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {7.4}{\ignorespaces Results}}{146}{table.caption.79}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {7.5}{\ignorespaces Test Set Variance}}{147}{table.caption.80}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {7.1}{\ignorespaces Dataset details\relax }}{141}{table.caption.74}
+\contentsline {table}{\numberline {8.1}{\ignorespaces Sample MIMIC note}}{156}{table.caption.81}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {7.2}{\ignorespaces Models\relax }}{142}{table.caption.75}
+\contentsline {table}{\numberline {8.2}{\ignorespaces Data from Wikipedia}}{159}{table.caption.84}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {7.3}{\ignorespaces Sample paraphrases}}{146}{table.caption.78}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {7.4}{\ignorespaces Results}}{147}{table.caption.79}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {7.5}{\ignorespaces Test Set Variance}}{148}{table.caption.80}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {8.1}{\ignorespaces Sample MIMIC note}}{157}{table.caption.81}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {8.2}{\ignorespaces Data from Wikipedia}}{160}{table.caption.84}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {8.3}{\ignorespaces Results}}{166}{table.caption.86}
+\contentsline {table}{\numberline {8.3}{\ignorespaces Results}}{165}{table.caption.86}

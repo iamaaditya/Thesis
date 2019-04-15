@@ -50,8 +50,8 @@ In the equations below, $W_{x\_}, W_{h\_}$ are the learned parameters for $x$ an
 
 \begin{figure}
     \centering
-    \includegraphics[scale=0.5]{figures/paraphrase/lstm.png}
-    \caption{LSTM Cell}
+    \includegraphics[scale=0.7]{figures/paraphrase/lstm_cell.png}
+    \caption{LSTM Cell. Fig reproduced with permission from Chris Olah}
     \label{fig:lstmcell}
 \end{figure}
  
@@ -128,7 +128,7 @@ For \texttt{PPDB} we remove the phrases that contain numbers, which includes all
 
 \begin{figure}
     \centering
-    \includegraphics[scale=0.30]{figures/paraphrase/wordlength.pdf}
+    \includegraphics[scale=0.50]{figures/paraphrase/wordlength.pdf}
     \caption[Distribution of word length]{Distribution of word length across datasets}
     \label{fig:res1}
 \end{figure}
@@ -143,7 +143,7 @@ We used a one-hot vector approach to represent the words in all models. Models w
 A beam search algorithm was used to generate optimal paraphrases by exploiting the trained models in the testing phase \cite{SutskeverVL14}. We used perplexity as the loss function during training. Perplexity measures the uncertainty of the language model, corresponding to how many bits on average would be needed to encode each word given the language model. A lower \texttt{PPLX} indicates a better score. While \texttt{WikiAnswers} and \texttt{MSCOCO} had a very good correlation of training and validation perplexity, \texttt{PPDB} easily overfitted and did not yield good validation perplexity (see Figure~\ref{fig:perplex}).
 \begin{figure}
     \centering
-    \includegraphics[scale=0.20]{figures/paraphrase/plots.pdf}
+    \includegraphics[scale=0.25]{figures/paraphrase/plots.pdf}
     \caption[Model Evaluation]{Perplexity ($\downarrow$) during training and validation for various models [shared legend]}
     \label{fig:perplex}
 \end{figure}
