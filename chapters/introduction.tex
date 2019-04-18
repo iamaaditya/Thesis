@@ -111,28 +111,28 @@ Learning of the neural networks is summarized in algorithm ~\ref{alg:nn}.
 \section{Introduction to Convolutional Neural Networks}
 
 Convolutional Neural Network (CNN) are like standard neural networks except that not all neurons are connected to every input. 
-Only local neighbourhood of inputs are shared for some set of neurons as depicted. Figure ~\ref{fig:cnn} shows the difference between standard Neural Networks (left) and Convolutional Neural Neworks (right).
+Only local neighbourhood of inputs are shared for some set of neurons as depicted. Figure ~\ref{fig:CNN} shows the difference between standard Neural Networks (left) and Convolutional Neural Neworks (right).
 
 \begin{figure}[H]
 	\centering
-   \includegraphics[scale=0.46]{figures/intro/cnn.png}
+   \includegraphics[scale=0.46]{figures/intro/CNN.png}
    \caption[Convolutional Neural Network]{Difference between Standard Neural Network (left) and Convolutional Neural Network (Right)}
-   \label{fig:cnn}
+   \label{fig:CNN}
 \end{figure}
 
 \subsection{Convolution}
 
-While figure ~\ref{fig:cnn} shows CNN in one-dimensional input, it is most widely used with images which are 2-D.
+While figure ~\ref{fig:CNN} shows CNN in one-dimensional input, it is most widely used with images which are 2-D.
 For 2-D data the local inputs shared are a smaller 2-D window in the given image. 
 In order to compute the output a smaller 2-D weights (filter) is convolved across the image. 
-Generally, this leads to 2-D output but with slighly smaller spatial dimensions due to lack of enough values during convolving at the extreme points. This kind of convolution is referred to as a 'VALID' convolution. In order to achieve the same spatial output the input can be padded with zeros. This kind of convolution is commonly referred to as 'SAME' convolution. An example of a VALID 2-D convolution is shown in the figure ~\ref{fig:cnn2d}. Resulting outputs are called as activation maps. If a layer learns $k$ filters, then there are $k$ activation maps as the output.
+Generally, this leads to 2-D output but with slighly smaller spatial dimensions due to lack of enough values during convolving at the extreme points. This kind of convolution is referred to as a 'VALID' convolution. In order to achieve the same spatial output the input can be padded with zeros. This kind of convolution is commonly referred to as 'SAME' convolution. An example of a VALID 2-D convolution is shown in the figure ~\ref{fig:CNN2d}. Resulting outputs are called as activation maps. If a layer learns $k$ filters, then there are $k$ activation maps as the output.
 
 
 \begin{figure}[H]
 	\centering
-   \includegraphics[scale=0.50]{figures/intro/cnn2d.png}
+   \includegraphics[scale=0.50]{figures/intro/CNN2d.png}
    \caption[2-D Convolution]{VALID 2-D Convolution}
-   \label{fig:cnn2d}
+   \label{fig:CNN2d}
 \end{figure}
 
 \subsection{Pooling}

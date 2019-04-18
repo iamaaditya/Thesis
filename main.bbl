@@ -6331,6 +6331,32 @@
     \field{year}{2015}
   \endentry
 
+  \entry{Prakash2016HighwayNF}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=PA}{%
+         family={Prakash},
+         familyi={P\bibinitperiod},
+         given={Aaditya},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BJS}{%
+         family={Brandeis},
+         familyi={B\bibinitperiod},
+         given={James\bibnamedelima Storer},
+         giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PABJS1}
+    \strng{fullhash}{PABJS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{PB16}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{title}{Highway Networks for Visual Question Answering}
+    \field{year}{2016}
+  \endentry
+
   \entry{psnrhvsm}{inproceedings}{}
     \name{author}{6}{}{%
       {{hash=PN}{%
@@ -6383,6 +6409,130 @@
   functions}
     \field{volume}{4}
     \field{year}{2007}
+  \endentry
+
+  \entry{Prakash2016CondensedMN}{inproceedings}{}
+    \name{author}{8}{}{%
+      {{hash=PA}{%
+         family={Prakash},
+         familyi={P\bibinitperiod},
+         given={Aaditya},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=ZS}{%
+         family={Zhao},
+         familyi={Z\bibinitperiod},
+         given={Siyuan},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=HSA}{%
+         family={Hasan},
+         familyi={H\bibinitperiod},
+         given={Sadid\bibnamedelima A.},
+         giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=DV}{%
+         family={Datla},
+         familyi={D\bibinitperiod},
+         given={Vivek},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=LK}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Kathy},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=QA}{%
+         family={Qadir},
+         familyi={Q\bibinitperiod},
+         given={Ashequl},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=LJ}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Joey},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=FO}{%
+         family={Farri},
+         familyi={F\bibinitperiod},
+         given={Oladimeji},
+         giveni={O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PA+1}
+    \strng{fullhash}{PAZSHSADVLKQALJFO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Pra+16}
+    \field{extraalpha}{1}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{booktitle}{AAAI}
+    \field{title}{Condensed Memory Networks for Clinical Diagnostic
+  Inferencing}
+    \field{year}{2016}
+  \endentry
+
+  \entry{Prakash2016NeuralPG}{inproceedings}{}
+    \name{author}{7}{}{%
+      {{hash=PA}{%
+         family={Prakash},
+         familyi={P\bibinitperiod},
+         given={Aaditya},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=HSA}{%
+         family={Hasan},
+         familyi={H\bibinitperiod},
+         given={Sadid\bibnamedelima A.},
+         giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=LK}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Kathy},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=DV}{%
+         family={Datla},
+         familyi={D\bibinitperiod},
+         given={Vivek},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=QA}{%
+         family={Qadir},
+         familyi={Q\bibinitperiod},
+         given={Ashequl},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=LJ}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Joey},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=FO}{%
+         family={Farri},
+         familyi={F\bibinitperiod},
+         given={Oladimeji},
+         giveni={O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PA+1}
+    \strng{fullhash}{PAHSALKDVQALJFO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Pra+16}
+    \field{extraalpha}{2}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{booktitle}{COLING}
+    \field{title}{Neural Paraphrase Generation with Stacked Residual LSTM
+  Networks}
+    \field{year}{2016}
   \endentry
 
   \entry{Prakash2017SemanticPI}{article}{}
@@ -6469,11 +6619,101 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelalpha}{Pra+18}
+    \field{extraalpha}{1}
     \field{sortinit}{P}
     \field{sortinithash}{P}
     \field{title}{Deflecting Adversarial Attacks with Pixel Deflection}
     \field{journaltitle}{arXiv preprint arXiv1801.08926}
     \field{year}{2018}
+  \endentry
+
+  \entry{Prakash2018ProtectingJI}{article}{}
+    \name{author}{5}{}{%
+      {{hash=PA}{%
+         family={Prakash},
+         familyi={P\bibinitperiod},
+         given={Aaditya},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=MN}{%
+         family={Moran},
+         familyi={M\bibinitperiod},
+         given={Nick},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=GS}{%
+         family={Garber},
+         familyi={G\bibinitperiod},
+         given={Solomon},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=DA}{%
+         family={DiLillo},
+         familyi={D\bibinitperiod},
+         given={Antonella},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SJA}{%
+         family={Storer},
+         familyi={S\bibinitperiod},
+         given={James\bibnamedelima A.},
+         giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PA+1}
+    \strng{fullhash}{PAMNGSDASJA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Pra+18}
+    \field{extraalpha}{2}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{pages}{137\bibrangedash 146}
+    \field{title}{Protecting JPEG Images Against Adversarial Attacks}
+    \field{journaltitle}{2018 Data Compression Conference}
+    \field{year}{2018}
+  \endentry
+
+  \entry{Prakash2018RePrIT}{article}{}
+    \name{author}{4}{}{%
+      {{hash=PA}{%
+         family={Prakash},
+         familyi={P\bibinitperiod},
+         given={Aaditya},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SJA}{%
+         family={Storer},
+         familyi={S\bibinitperiod},
+         given={James\bibnamedelima A.},
+         giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=FDAF}{%
+         family={Flor{\^e}ncio},
+         familyi={F\bibinitperiod},
+         given={Dinei A.\bibnamedelima F.},
+         giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim
+  F\bibinitperiod},
+      }}%
+      {{hash=ZC}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Cha},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PA+1}
+    \strng{fullhash}{PASJAFDAFZC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Pra+19}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{title}{RePr: Improved Training of Convolutional Filters}
+    \field{volume}{abs/1811.07275}
+    \field{journaltitle}{The IEEE Conference on Computer Vision and Pattern
+  Recognition (CVPR)}
+    \field{year}{2019}
   \endentry
 
   \entry{Poole2014AnalyzingNI}{article}{}

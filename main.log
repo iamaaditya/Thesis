@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.4.16)  15 APR 2019 13:48
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.4.16)  18 APR 2019 11:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -882,33 +882,32 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 22.
 LaTeX Info: Redefining \pageref on input line 22.
 LaTeX Info: Redefining \nameref on input line 22.
-LaTeX Font Info:    Try loading font information for U+msa on input line 26.
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+[1
+
+
+]
+LaTeX Font Info:    Try loading font information for U+msa on input line 28.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 26.
+LaTeX Font Info:    Try loading font information for U+msb on input line 28.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+wasy on input line 26.
+LaTeX Font Info:    Try loading font information for U+wasy on input line 28.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
-) [1
-
-] [1
-
-
-]
-[2
+) [2
 
 
 ] [3
 
 
-] (./ack.tex) [4
+]
+(./ack.tex) [4
 
 
 
@@ -985,11 +984,11 @@ $[]$
  []
 
 [5]
-File: figures/intro/cnn.png Graphic file (type bmp)
-<figures/intro/cnn.png>
+File: figures/intro/CNN.png Graphic file (type bmp)
+<figures/intro/CNN.png>
  [6]
-File: figures/intro/cnn2d.png Graphic file (type bmp)
-<figures/intro/cnn2d.png>
+File: figures/intro/CNN2d.png Graphic file (type bmp)
+<figures/intro/CNN2d.png>
 
 Overfull \hbox (23.02835pt too wide) in paragraph at lines 133--134
  [][] 
@@ -1310,60 +1309,60 @@ Overfull \vbox (102.93065pt too high) has occurred while \output is active []
 
 [126]
 
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 18.
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 17.
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 18.
-
-
-
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 20.
-
-
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 20.
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 17.
 
 
 
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 24.
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 19.
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 24.
-
-
-
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 24.
-
-
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 24.
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 19.
 
 
 
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 24.
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 23.
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 24.
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 23.
+
+
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 23.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 23.
+
+
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 23.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 23.
 
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 32.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 31.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 32.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 31.
 
 
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 32.
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 31.
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 32.
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 31.
 
 
 
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 32.
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 31.
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 32.
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 31.
 
 
 [127] [128]) [129] [130]
@@ -1489,13 +1488,13 @@ Overfull \hbox (24.25531pt too wide) in paragraph at lines 65--65
  on Deep Learning \TU/lmr/m/n/12 abs/1406.1831
  []
 
-
+[185]
 Overfull \hbox (5.99512pt too wide) in paragraph at lines 65--65
 []\TU/lmr/m/n/12 Jeffrey Pennington, Richard Socher, and Christopher D Manning.
  “Glove: Global
  []
 
-[185] [186] [187] [188] [189] [190] [191]
+[186] [187] [188] [189] [190] [191]
 Overfull \hbox (30.41931pt too wide) in paragraph at lines 65--65
 \TU/lmr/m/n/12 tributes and Their Related External Knowledge”. In: \TU/lmr/m/it
 /12 arXiv preprint arXiv:1603.02814
@@ -1525,12 +1524,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21328 strings out of 492970
- 359135 string characters out of 6133938
- 807241 words of memory out of 5000000
- 24913 multiletter control sequences out of 15000+600000
+ 21338 strings out of 492970
+ 359667 string characters out of 6133938
+ 811976 words of memory out of 5000000
+ 24923 multiletter control sequences out of 15000+600000
  19555 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  44i,19n,51p,1747b,4533s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (214 pages).
+Output written on main.pdf (213 pages).

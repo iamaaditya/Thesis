@@ -22,9 +22,9 @@ Measuring visual quality is an ongoing research area and there is no consensus a
 We evaluate our model on a variety of metrics, \texttt{SSIM}\cite{ssim}, \texttt{MS-SSIM}\cite{msssim}, \texttt{VIFP}\cite{vifp}, \texttt{PSNR-HVS}\cite{psnrhvs} and \texttt{PSNR-HVSM}\cite{psnrhvsm}; these robust metrics have been shown to correlate better with subjective quality measurement than pixel-level metrics such as \texttt{MSE} or \texttt{PSNR} \cite{psnrhvsm}.
 Yuri et al \cite{kerofsky2015perceptual} showed that \texttt{PSNR} as an image comparison metric has severe limitations.
 
-Convolutional Neural Networks (\textsc{cnn}s) have been successfully applied to a variety of computer vision tasks \cite{he2015deep} \cite{krizhevsky2012imagenet}.
+Convolutional Neural Networks (\textsc{CNN}s) have been successfully applied to a variety of computer vision tasks \cite{he2015deep} \cite{krizhevsky2012imagenet}.
 Their feature extraction and transfer learning capabilities are now well known\cite{zeiler2014visualizing} .
-\textsc{cnn}s, well known for their ability to classify images by their most prominent object, and have also been used to draw a bounding box around that object \cite{girshick2014rich}.
+\textsc{CNN}s, well known for their ability to classify images by their most prominent object, and have also been used to draw a bounding box around that object \cite{girshick2014rich}.
 This method is capable of providing a binary map for the presence of the most salient object. Some success has been obtained in predicting the visual saliency map of a given image \cite{jiang2015salicon} \cite{kummerer2014deep}.
 
 We propose a deep convolution network designed to locate several semantic objects within a single image.
@@ -37,10 +37,10 @@ Our proposed model captures the structure of the depicted scene and thus maintai
 
 
 Our proposed model produces a single class-invariant feature map by learning separate feature maps for each of a set of object classes and then summing over the top features.
-Our model trades lower confidence of bounding edges for the ability to find all salient regions of an image in a single pass, as opposed to standard object-detection \textsc{cnn}s, which require multiple passes over the image to identify and locate all the objects.
+Our model trades lower confidence of bounding edges for the ability to find all salient regions of an image in a single pass, as opposed to standard object-detection \textsc{CNN}s, which require multiple passes over the image to identify and locate all the objects.
 In comparison to grid-based features as described by Yuri et al \cite{reznik2013coding} our features are scale- and transformation-invariant, which allows application of the model to a wider class of images.
 
-We employ a Convolutional Neural Network (\textsc{cnn}) tailored to the specific task of semantic image understanding to achieve higher visual quality in lossy image compression.
+We employ a Convolutional Neural Network (\textsc{CNN}) tailored to the specific task of semantic image understanding to achieve higher visual quality in lossy image compression.
 We focus on the \textsc{jpeg} standard, which remains the dominant image representation on the internet and in consumer electronics. 
 Several attempts have been made to improve upon its lossy image compression, for example WebP \cite{ginesu2012objective} and Residual-GRU \cite{toderici2016full}, but many of these require custom decoders and are not sufficiently content-aware.
 
@@ -59,26 +59,26 @@ We evaluate on these metrics, as well as \texttt{VIFP}\cite{vifp},  \texttt{PSNR
     \caption[Comparison with JPEG]{Comparison of compression of semantic objects in standard \textsc{jpeg}[left] and our model [right]\label{fig_compressing_demo}}
 \end{figure}
 
-\textsc{cnn}s have been successfully applied to a variety of computer vision tasks \cite{krizhevsky2012imagenet}.
-The feature extraction and transfer learning capabilities of \textsc{cnn}s are well known \cite{zeiler2014visualizing}, as are their ability to classify images by their most prominent object \cite{he2015deep}, and compute a bounding box \cite{girshick2014rich}.
+\textsc{CNN}s have been successfully applied to a variety of computer vision tasks \cite{krizhevsky2012imagenet}.
+The feature extraction and transfer learning capabilities of \textsc{CNN}s are well known \cite{zeiler2014visualizing}, as are their ability to classify images by their most prominent object \cite{he2015deep}, and compute a bounding box \cite{girshick2014rich}.
 Some success has been obtained in predicting the visual saliency map of a given image \cite{jiang2015salicon},\cite{kummerer2014deep}.
 Previous work has shown that semantic object detection has a variety of advantages over saliency maps \cite{mnih2014recurrent}, \cite{zund2013content}.
 Semantic detection recognizes discrete objects and is thus able to generate maps that are more coherent for human perception.
 Visual saliency models are based on human eye fixations, and thus produce results which do not capture object boundaries \cite{kummerer2014deep}.
 This is evident in the results obtained by Stella et al \cite{stella2009image}, in which image compression is guided by a multi-scale saliency map, and the obtained images show blurred edges and soft focus.
 
-We present a \textsc{cnn} designed to locate multiple regions of interest (\textsc{roi}) within a single image.
+We present a \textsc{CNN} designed to locate multiple regions of interest (\textsc{roi}) within a single image.
 Our model differs from traditional object detection models like \cite{dai2016r}, \cite{girshick2014rich} as these models are restricted to detecting a single salient object in an image.
 It captures the structure of the depicted scene and thus maintains the integrity of semantic objects, unlike results produced using human eye fixations \cite{liu2015predicting}.
 We produce a single class-invariant feature map by learning separate feature maps for each of a set of object classes and then summing over the top features.
-Because this task does not require precise identification of object boundaries, our system is able to capture multiple salient regions of an image in a single pass, as opposed to standard object detection \textsc{cnn}s, which require multiple passes over the image to identify and locate multiple objects.
+Because this task does not require precise identification of object boundaries, our system is able to capture multiple salient regions of an image in a single pass, as opposed to standard object detection \textsc{CNN}s, which require multiple passes over the image to identify and locate multiple objects.
 Model training need only be done offline, and encoding with our model employs a standard \textsc{jpeg} encoder combined with efficient computation of saliency maps (over 60 images per second for 1920x1080 using a Titan X Maxwell \textsc{gpu}).
 A key advantage of our approach is that its compressed output can be decoded by any standard off-the-shelf \textsc{jpeg} implementation.  It serves to maintain the existing decoding complexity, the primary issue for distribution of electronic media.
 In contrast to grid based features as described by Yuri et al \cite{reznik2013coding} our features are scale and translation invariant, which allows application of the model to a wider class of images.
 
 
 % TODO fix section numbers
-Section 2 reviews \textsc{cnn} techniques used for object localization, semantic segmentation and class activation maps. We also discuss merits of using our technique over these methods.
+Section 2 reviews \textsc{CNN} techniques used for object localization, semantic segmentation and class activation maps. We also discuss merits of using our technique over these methods.
 Section 3 presents our new model which can generate a map showing multiple regions of interest. In Section 4 show how we combine this map to make \textsc{jpeg} semantically aware.
 Sections 5 presents experimental results on a variety of image datasets and metrics. Section 6 concludes with future areas for research.
 
@@ -87,29 +87,29 @@ Sections 5 presents experimental results on a variety of image datasets and metr
 \section{Review of localization using CNNs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textsc{cnn}s are multi-layered feed-forward architectures where the learned features at each level are the weights of the convolution filters to be applied to the output of the previous level. Learning is done via gradient-based optimization \cite{lecun1995convolutional}.
-\textsc{cnn}s differ from fully connected neural networks in that the dimensions of the learned convolution filters are, in general, much smaller than the dimensions of the input image, so the learned features are forced to be localized in space. Also, the convolution operation uses the same weight kernel at every image location, so feature detection is spatially invariant.
+\textsc{CNN}s are multi-layered feed-forward architectures where the learned features at each level are the weights of the convolution filters to be applied to the output of the previous level. Learning is done via gradient-based optimization \cite{lecun1995convolutional}.
+\textsc{CNN}s differ from fully connected neural networks in that the dimensions of the learned convolution filters are, in general, much smaller than the dimensions of the input image, so the learned features are forced to be localized in space. Also, the convolution operation uses the same weight kernel at every image location, so feature detection is spatially invariant.
 
 
-Given an image $x$, and a convolution filter of size $n \times n$, then a convolutional layer performs the operation shown in equation \ref{eqn_cnn}, where $\mathbf{W}$ is the learned filter.
+Given an image $x$, and a convolution filter of size $n \times n$, then a convolutional layer performs the operation shown in equation \ref{eqn_CNN}, where $\mathbf{W}$ is the learned filter.
 
 \begin{equation}
     y_{ij} = \sum_{a=0}^{n} \sum_{b=0}^{n} \; \mathbf{W}_{ab} \; x_{(i+a)(j+b)}
-    \label{eqn_cnn}
+    \label{eqn_CNN}
 \end{equation}
 
 In practice, multiple filters are learned in parallel within each layer, and thus the output of a convolution layer is a 3-\textit{d} feature map, where the depth represents the number of filters. The number of features in a given layer is a design choice, and may differ from layer to layer.
-\textsc{cnn}s include a max pooling \cite{lecun1995convolutional} step after every or every other layer of convolution, in which the height and width of the feature map (filter response) are reduced by replacing several neighboring activations (coefficients), generally within a square window, with a single activation equal to the maximum within that window.  This pooling operation is strided, but the size of the pooling window can be greater than the stride, so windows can overlap.
-This results in down-sampling of input data, and filters applied to such a map will have a larger receptive field (spatial support in the pixel space) for a given kernel size, thus reducing the number of parameters of the \textsc{cnn} model and allowing the training of much deeper networks.
+\textsc{CNN}s include a max pooling \cite{lecun1995convolutional} step after every or every other layer of convolution, in which the height and width of the feature map (filter response) are reduced by replacing several neighboring activations (coefficients), generally within a square window, with a single activation equal to the maximum within that window.  This pooling operation is strided, but the size of the pooling window can be greater than the stride, so windows can overlap.
+This results in down-sampling of input data, and filters applied to such a map will have a larger receptive field (spatial support in the pixel space) for a given kernel size, thus reducing the number of parameters of the \textsc{CNN} model and allowing the training of much deeper networks.
 Max pooling performed with a stride of $ k \times k $ will reduce a feature matrix of size $ N \times N $ to $ \frac{N}{k} \times \frac{N}{k}$.
 This does not change the depth of the feature map, but only its width and height.
 In practice, pooling windows are typically of size $2 \times 2$ or $4 \times 4$, with a stride of two, which reduces the number activations by 75\%.
-\textsc{cnn}s apply some form of non-linear operation such as sigmoid $ (1-e^{-x})^{-1} $ or linear rectifier $max(0,x)$ on the output of each convolution operation.
+\textsc{CNN}s apply some form of non-linear operation such as sigmoid $ (1-e^{-x})^{-1} $ or linear rectifier $max(0,x)$ on the output of each convolution operation.
 
 
-Region-based \textsc{cnn}s use a moving window to maximize the posterior of the presence of an object \cite{girshick2015fast}.
+Region-based \textsc{CNN}s use a moving window to maximize the posterior of the presence of an object \cite{girshick2015fast}.
 However, this is computationally expensive as it requires looking for all possible classes in all possible regions.
-Faster \textsc{rcnn}s \cite{ren2015faster} have been proposed, but they are still computationally expensive and are limited to determining the presence or absence of a single class of object within the entire image.
+Faster \textsc{rCNN}s \cite{ren2015faster} have been proposed, but they are still computationally expensive and are limited to determining the presence or absence of a single class of object within the entire image.
 Moving-window methods are able to produce rectangular bounding boxes, but cannot produce object silhouettes.
 In contrast, recent deep learning models proposed for semantic segmentation \cite{long2015fully}, \cite{girshick2014rich}, \cite{zheng2015conditional} are very good at drawing a close border around the objects.
 However, these methods do not scale well to more than a small number of object categories (e.g. $20$) \cite{everingham2010pascal}.
@@ -121,8 +121,8 @@ Obtaining training data where the locations of all the objects in the images are
 \subsection{Class Activation Mapping}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Convolution filters learned from natural images are sensitive to the object classes in the training data \cite{oquab2015object}, \cite{lin2013network}.
-In other words, regions of an image which contain relevant objects tend to produce high activations when convolved with learned filters, while regions that do not contain any object class have lower activations, and this is particularly true for the deeper levels of the \textsc{cnn}.
-In a traditional \textsc{cnn}, there are two fully-connected (non-convolutional) layers as the final layers of the network. 
+In other words, regions of an image which contain relevant objects tend to produce high activations when convolved with learned filters, while regions that do not contain any object class have lower activations, and this is particularly true for the deeper levels of the \textsc{CNN}.
+In a traditional \textsc{CNN}, there are two fully-connected (non-convolutional) layers as the final layers of the network. 
 %neurons at end of the pipeline, with connections to every activation from the feature map of the previous layer.
 The final layer has one neuron for every class in the training data, and the final step in the inference is to normalize the activations of the last layer to sum to one.
 The second to last layer, however, is fully connected to the last convolution layer, and a non-linearity is applied to its activations.
@@ -168,7 +168,7 @@ Training for \textsc{cam} minimizes the cross entropy between objects' true prob
 \end{equation}
 
 Since \textsc{cam}s are trained to maximize posterior probability for the class, they tend to only highlight a single most prominent object.
-This makes them useful for studying the output of \textsc{cnn}s, but not well suited to more general semantic saliency, as real world images  typically contain multiple objects of interest.
+This makes them useful for studying the output of \textsc{CNN}s, but not well suited to more general semantic saliency, as real world images  typically contain multiple objects of interest.
 This has practical applications in understanding and visualizing convolution neural networks but is less applicable to real world images, which typically contain multiple objects of interest.
 Without using standard resolution, color-space or types of object classes it is hard to use such systems to extract semantic information from the images.
 
@@ -186,7 +186,7 @@ For $ \mathbf{L} $ layers, where each layer $l$ contains $d_l$ features, an imag
 
 where $k$ is the max pooling stride size.
 This is computationally very expensive, and not practical for real world data.
-\textsc{cnn}s designed for full-scale color images have many filters per layer and are several layers deep.
+\textsc{CNN}s designed for full-scale color images have many filters per layer and are several layers deep.
 For such networks, learning a model with that many parameters would be unfeasible in terms of computational requirements.
 We propose two techniques to make this idea feasible for large networks: 
 
@@ -195,7 +195,7 @@ We propose two techniques to make this idea feasible for large networks:
     \item Share feature maps across classes to jointly learn lower level features
 \end{enumerate}
 
-Most \textsc{cnn} models are built for classification on the Large Scale Visual Recognition Challenge, commonly known as ImageNet.
+Most \textsc{CNN} models are built for classification on the Large Scale Visual Recognition Challenge, commonly known as ImageNet.
 \footnote{http://image-net.org/challenges/LSVRC/}.
 ImageNet has one thousand classes and many of the classes are fine-grained delineations of various types of animals, flowers and other objects.
 We significantly reduce the number of classes by collapsing these sets of similar classes to a single, more general class.
@@ -205,7 +205,7 @@ Details of the combined classes used in our model are provided in the Experiment
 
 It is self-evident that most images contain only a few classes and thus it is computationally inefficient to build a separate feature map for every class.
 More importantly, many classes have similar lower-level features, even when the number of classes is relatively small.
-The first few layers of a \textsc{cnn} learn filters which recognize small edges and motifs \cite{zeiler2014visualizing}, which are found across a wide variety of object classes.
+The first few layers of a \textsc{CNN} learn filters which recognize small edges and motifs \cite{zeiler2014visualizing}, which are found across a wide variety of object classes.
 Therefore, we propose parameter sharing across the feature maps for different classes.
 This reduces the number of parameters and also allows for the joint learning of these shared, low-level features.
 
@@ -401,8 +401,8 @@ Figure~\ref{fig_mit} shows the performance of our model across all categories of
 Performance was strongest in categories like `Outdoor Natural', `Outdoor Man Made', `Action' and `Object', while categories like `Line Drawing', `Fractal' and `Low Resolution' showed the least improvement.
 Not surprisingly, the category `Pattern', which lacks semantic objects, is the only category where our model did not improve upon standard \textsc{jpeg}.
 Figure~\ref{fig_size} shows results on the same image scaled to different sizes. 
-Because our model benefits from the scale-invariance of \textsc{cnn}s, we are able to preserve performance across a wide range of input sizes.
-Performance of our model on \texttt{PSNR-HVS} is consistent across all tested sizes. \textsc{cnn}s are able to learn scale-invariant features, and therefore the same object at any size should always be classified similarly.
+Because our model benefits from the scale-invariance of \textsc{CNN}s, we are able to preserve performance across a wide range of input sizes.
+Performance of our model on \texttt{PSNR-HVS} is consistent across all tested sizes. \textsc{CNN}s are able to learn scale-invariant features, and therefore the same object at any size should always be classified similarly.
 Our model preserves this feature even when looking for multiple objects.
 
 
@@ -417,4 +417,4 @@ Using the output of our model as a map to perform variable-quality compression p
 Our variable compression improves upon visual quality without sacrificing compression ratio. 
 Encoding requires a single inference over the pre-trained model, the cost of which is reasonable when performed using a \textsc{gpu}, along with a standard \textsc{jpeg} encoder. The cost of decoding, which employs a standard, off-the-shelf \textsc{jpeg} decoder remains unchanged.
 We believe it will be possible to incorporate our approach into other lossy compression methods such as \textsc{jpeg} 2000 and vector quantization, a subject of future work.
-Improvements to the power of our underlying \textsc{cnn}, addressing evolving visual quality metrics, and other applications such as video compression, are also potential areas of future work.
+Improvements to the power of our underlying \textsc{CNN}, addressing evolving visual quality metrics, and other applications such as video compression, are also potential areas of future work.
