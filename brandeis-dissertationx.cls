@@ -359,6 +359,11 @@ brandeis-dissertation class.}}%
     \thispagestyle{empty}%
     \begin{flushleft}%
       \vspace*{.15in}%
+      The signed version of this form is on file in the Graduate School of Arts and Sciences. \\
+      \bigskip
+      \bigskip
+      \bigskip
+      \vspace*{.10in}%
       This dissertation, directed and approved by \@author's
       committee, has been accepted and approved by the Graduate
       Faculty of Brandeis University in partial fulfillment of the
